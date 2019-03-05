@@ -10,8 +10,10 @@ $.getJSON("https://api.github.com/repositories/172893709/contents/releases", fun
     });
     $('#versions')
         .append(options.map(function (version) { return `<option value="${version}">${version}</option>` }).join(""));
-
-    $('#versions').val(options[0]);
+   
+    const latestRelease = options.length > 1 ? options[options.length-1] : "snapshot";
+    
+    $('#versions').val(latestRelease);
     $('#versions').selectmenu("refresh");
-    $('#doc').attr("src", `releases/${options[0]}/index.html`);
+    $('#doc').attr("src", `releases/${latestRelease}/index.html`);
 });
