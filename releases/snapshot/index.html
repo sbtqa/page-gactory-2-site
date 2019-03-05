@@ -613,6 +613,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_Примеры_создания_коннекта_к_mq">4.2. Примеры создания коннекта к MQ</a></li>
 </ul>
 </li>
+<li><a href="#_adaptavist_jira_test_manager">5. Adaptavist (Jira Test Manager)</a>
+<ul class="sectlevel2">
+<li><a href="#_Настройка_для_cucumber">5.1. Настройка для Cucumber</a>
+<ul class="sectlevel3">
+<li><a href="#_Сборка_результатов_тестов">5.1.1. Сборка результатов тестов</a></li>
+<li><a href="#_Синхронизация_результатов_для_code_cucumber_code">5.1.2. Синхронизация результатов для <code>Cucumber</code></a></li>
+</ul>
+</li>
+<li><a href="#_Настройка_для_junit">5.2. Настройка для JUnit</a>
+<ul class="sectlevel3">
+<li><a href="#_Сборка_результатов_тестов_2">5.2.1. Сборка результатов тестов</a></li>
+<li><a href="#_Синхронизация_результатов_для_code_junit_code">5.2.2. Синхронизация результатов для <code>JUnit</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -8029,11 +8045,346 @@ connProps.put(MqFactory.JMS_CONNECTION, queueConnection);</pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_adaptavist_jira_test_manager">5. Adaptavist (Jira Test Manager)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TAG позволяет использовать Adaptavist. Для этого достаточно сконфигурировать проект и установить соответствие между тестами в jira и автотестами проекта.</p>
+</div>
+<div class="paragraph">
+<p>Прежде всего, в <code>Jira</code> должна быть заведена тестовая база - кейсы с привязкой к тикетам.</p>
+</div>
+<div class="paragraph">
+<p>Предположим, что у нас есть задача в проекте <code>EFSTAG</code> - <code>EFSTAG-945</code>, к которой нужно привязать тестовые сценарии.</p>
+</div>
+<div class="paragraph">
+<p>В секции <code>Traceability</code> заведем тест:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href=""><img src="./images/create_case.png" alt="create case"></a></span></p>
+</div>
+<div class="paragraph">
+<p>Задаем имя и, при необходимости, другие параметры, сохраняем:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href=""><img src="./images/save.png" alt="save"></a></span></p>
+</div>
+<div class="paragraph">
+<p>После этого появится информация, что тест кейс сохранен с указанием <code>id</code> кейса, в нашем случае - <code>EFSTAG-T4</code>:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href=""><img src="./images/saved.png" alt="saved"></a></span></p>
+</div>
+<div class="paragraph">
+<p>Тест кейс появится в задаче:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href=""><img src="./images/saved-issue.png" alt="saved issue"></a></span></p>
+</div>
+<div class="paragraph">
+<p>Просмотреть список тестовых сценариев можно следующим образом:</p>
+</div>
+<div class="paragraph">
+<p>1. Перейти в раздел <code>Tests</code>:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href=""><img src="./images/tests.png" alt="tests"></a></span></p>
+</div>
+<div class="paragraph">
+<p>2. Найти кейс по <code>id</code>:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href=""><img src="./images/tests-id.png" alt="tests id"></a></span></p>
+</div>
+<div class="paragraph">
+<p>Подробную информацию о формировании тестовой структуры в jira можно найти в документации <a href="https://www.adaptavist.com/doco/display/KT/Documentation">Adaptavist</a></p>
+</div>
+<div class="sect2">
+<h3 id="_Настройка_для_cucumber">5.1. Настройка для Cucumber</h3>
+<div class="paragraph">
+<p>1. Дописать в test runner в опцию plugin две строки:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>@RunWith(Cucumber.class)
+@CucumberOptions(monochrome = true,
+        plugin = {"pretty","junit:target/cucumber/result.xml",
+                           "json:target/cucumber/pagefactory.json"},
+        glue = {"ru.sbtqa.tag.stepdefs",  "setting", "pagefactory.stepdefs"},
+        features = {"src/test/resources/features"}
+)
+public class CucumberTest {}</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+При необходимости можно задать несколько run-файлов, формируя результаты в разные файлы (в нашем случае файл <code>pagefactory.json</code>)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>2. Если в вашем проекте в файле <code>pom.xml</code> для плагина <code>maven-surefire-plugin</code> есть строка запуска, то аналогичным образом нужно добавить в нее две строки:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>      &lt;plugin&gt;
+        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+        &lt;version&gt;${surefire.version}&lt;/version&gt;
+        &lt;configuration&gt;
+          &lt;argLine&gt;
+            -Dcucumber.options="--plugin junit:target/cucumber/result.xml --plugin json:target/cucumber/pagefactory.json"
+          &lt;/argLine&gt;
+        &lt;/configuration&gt;
+
+        ....
+
+      &lt;/plugin&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Теперь, когда <code>Adaptavist</code> подключен, необходимо установить соответствие тестового сценария и сценария в <code>Jira</code>. Для этого нужно расставить тэги <code>@TestCaseKey</code>. В качестве значения тэга указывается <code>id</code> кейса. Например:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>  @TestCaseKey=EFSTAG-T4
+  Scenario: Test Stash
+    * user checks that the field "first name" is empty
+
+    ....</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Сборка_результатов_тестов">5.1.1. Сборка результатов тестов</h4>
+<div class="paragraph">
+<p>Для сборки отчетов для <code>Adaptavist</code> достаточно выполнить</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>  mvn clean test</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>После этого по указанному в "plugin" пути должен появиться заданный json-файл. В нашем случае в каталоге <code>target/cucumber</code> файл <code>pagefactory.json</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href=""><img src="./images/cucumber.png" alt="cucumber"></a></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Синхронизация_результатов_для_code_cucumber_code">5.1.2. Синхронизация результатов для <code>Cucumber</code></h4>
+<div class="sect4">
+<h5 id="_При_локальном_запуске">При локальном запуске</h5>
+<div class="paragraph">
+<p>1. Выполнить из командной строки в директории проекта либо создать вручную zip-архив, положив в него сгенерированные json-файлы</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code> zip output_results.zip target/cucumber/*.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>2. Выполнить</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl -k --basic --user user:password -F "file=@output_results.zip" https://sbtatlas.sigma.sbrf.ru/jira/rest/atm/1.0/automation/execution/cucumber/EFSTAG?autoCreateTestCases=true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>При этом:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Вместо <code>user</code> подставить пользователя <code>Jira</code>, вместо <code>password</code> - пароль пользователя</p>
+</li>
+<li>
+<p>При необходимости изменить <code>URL</code> для <code>Jira</code></p>
+</li>
+<li>
+<p>Вместо <code>EFSTAG</code> подставить имя проекта</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_jenkins">Jenkins</h5>
+<div class="paragraph">
+<p>Для запуска через <code>Jenkins</code> есть специальный плагин. Почитать о нем и увидеть полную инструкцию по работе с ним в картинках можно  <a href="https://www.adaptavist.com/doco/display/KT/Automated+Testing+Tools">здесь</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Результаты_в_jira">Результаты в Jira</h5>
+<div class="paragraph">
+<p>После выполнения синхронизации на странице <code>Tests</code> появится отметка о результате запуска (на рисунке отмечена <span class="lime">зеленым</span>, <span class="red">красным</span> отмечен <code>id</code> теста)</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href=""><img src="./images/cucumber_tests.png" alt="cucumber tests"></a></span></p>
+</div>
+<div class="paragraph">
+<p>Внутри теста появится информация о запуске в секции <code>Execution</code>:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href=""><img src="./images/cucumber-exec.png" alt="cucumber exec"></a></span></p>
+</div>
+<div class="paragraph">
+<p>Так же информация о запуске отобразится в задаче, для которой создавался тест кейс:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href=""><img src="./images/cucumber_issue.png" alt="cucumber issue"></a></span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Настройка_для_junit">5.2. Настройка для JUnit</h3>
+<div class="paragraph">
+<p>1. Добавить в <code>pom.xml</code> зависимость:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    &lt;dependency&gt;
+      &lt;groupId&gt;com.adaptavist&lt;/groupId&gt;
+      &lt;artifactId&gt;tm4j-junit-integration&lt;/artifactId&gt;
+      &lt;version&gt;1.0.0&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>2. Добавить в <code>pom.xml</code> для плагина <code>maven-surefire-plugin</code> listener:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    &lt;properties&gt;
+      &lt;property&gt;
+        &lt;name&gt;listener&lt;/name&gt;
+        &lt;value&gt;com.adaptavist.tm4j.junit.ExecutionListener&lt;/value&gt;
+      &lt;/property&gt;
+    &lt;/properties&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>3. Закрепить за <code>JUnit</code> тестами тесты в <code>Jira</code> через <code>id</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    @Test
+    @TestCase(name = "Test Stash")
+    public void testName() {
+        ....
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Или имя сценария:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    @Test
+    @TestCase(name = "Test Stash")
+    public void testName() {
+        ....
+    }</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Сборка_результатов_тестов_2">5.2.1. Сборка результатов тестов</h4>
+<div class="paragraph">
+<p>Для сборки отчетов для <code>Adaptavist</code> достаточно выполнить</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>  mvn clean test</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>После этого в корне проекта должен появиться json-файл - <code>tm4j_result.json</code>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href=""><img src="./images/junit.png" alt="junit"></a></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Синхронизация_результатов_для_code_junit_code">5.2.2. Синхронизация результатов для <code>JUnit</code></h4>
+<div class="sect4">
+<h5 id="_При_локальном_запуске_2">При локальном запуске</h5>
+<div class="paragraph">
+<p>1. Выполнить из командной строки в директории проекта либо создать вручную zip-архив, положив в него сгенерированный json-файл - <code>tm4j_result.json</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code> zip output_results.zip tm4j_result.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>2. Выполнить</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl -k --basic --user user:password -F "file=@output_results.zip" https://sbtatlas.sigma.sbrf.ru/jira/rest/atm/1.0/automation/execution/EFSTAG?autoCreateTestCases=true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>При этом:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Вместо <code>user</code> подставить пользователя <code>Jira</code>, вместо <code>password</code> - пароль пользователя</p>
+</li>
+<li>
+<p>При необходимости изменить <code>URL</code> для <code>Jira</code></p>
+</li>
+<li>
+<p>Вместо <code>EFSTAG</code> подставить имя проекта</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_jenkins_2">Jenkins</h5>
+<div class="paragraph">
+<p>Для запуска через <code>Jenkins</code> есть специальный плагин. Почитать о нем и увидеть полную инструкцию по работе с ним в картинках можно  <a href="https://www.adaptavist.com/doco/display/KT/Automated+Testing+Tools">здесь</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Результаты_в_jira_2">Результаты в Jira</h5>
+<div class="paragraph">
+<p>После выполнения синхронизации на странице <code>Tests</code> появится отметка о результате запуска</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href=""><img src="./images/junit-tests.png" alt="junit tests"></a></span></p>
+</div>
+<div class="paragraph">
+<p>Внутри теста появится информация о запуске в секции <code>Execution</code>:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href=""><img src="./images/junit-exec.png" alt="junit exec"></a></span></p>
+</div>
+<div class="paragraph">
+<p>Так же информация о запуске отобразится в задаче, для которой создавался тест кейс:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href=""><img src="./images/junit-issue.png" alt="junit issue"></a></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 11.0-SNAPSHOT<br>
-Last updated 2019-02-28 20:57:19 UTC
+Last updated 2019-03-05 08:55:49 UTC
 </div>
 </div>
 </body>
