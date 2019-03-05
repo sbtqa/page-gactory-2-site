@@ -11,7 +11,7 @@ $.getJSON("https://api.github.com/repositories/172893709/contents/releases", fun
     $('#versions')
         .append(options.map(function (version) { return `<option value="${version}">${version}</option>` }).join(""));
    
-    const latestRelease = options.length > 1 ? options[options.length-1] : "snapshot";
+    const latestRelease = options.length > 1 ? options[options.length - 2] : "snapshot";
     
     $('#versions').val(latestRelease);
     $('#versions').selectmenu("refresh");
