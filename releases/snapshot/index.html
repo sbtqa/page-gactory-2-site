@@ -706,7 +706,7 @@ public class CucumberTest extends Tag{}</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>package ru.sbt.qa.your.project.pages;
+<pre class="highlight"><code>package ru.your.project.pages;
 
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 import ru.sbtqa.tag.pagefactory.WebPage;
@@ -730,7 +730,7 @@ public abstract class YourPage extends WebPage {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>page.package = ru.sbt.qa.your.project.pages</code></pre>
+<pre class="highlight"><code>page.package = ru.your.project.pages</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -1844,7 +1844,7 @@ public abstract class YourPage extends WebPage {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>package ru.sbt.qa.your.project.pages;
+<pre class="highlight"><code>package ru.qa.your.project.pages;
 
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 import ru.sbtqa.tag.pagefactory.WebPage;
@@ -2459,7 +2459,7 @@ data.db = bd</code></pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">page.package</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Путь до пакета с классами страниц(pages)</p>
 <p class="tableblock">Пример:</p>
-<p class="tableblock">page.package = ru.sbtqa.tag.myproject.pages</p></td>
+<p class="tableblock">page.package = ru.myproject.pages</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Не задано</p></td>
 </tr>
 <tr>
@@ -3138,7 +3138,7 @@ selenoid.video.name = my-cool-video.mp4</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>package ru.sbt.qa.your.project.pages;
+<pre class="highlight"><code>package ru.qa.your.project.pages;
 
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 import ru.sbtqa.tag.pagefactory.WebPage;
@@ -3721,7 +3721,7 @@ public class CucumberTest extends Tag{}</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>package ru.sbt.qa.your.project.pages;
+<pre class="highlight"><code>package ru.your.project.pages;
 
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 import ru.sbtqa.tag.pagefactory.HTMLPage;
@@ -3745,7 +3745,7 @@ public abstract class YourPage extends HTMLPage {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>page.package = ru.sbt.qa.your.project.pages</code></pre>
+<pre class="highlight"><code>page.package = ru.your.project.pages</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -5351,7 +5351,7 @@ public class Product extends HtmlElement {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>package ru.sbt.qa.your.project.pages;
+<pre class="highlight"><code>package ru.qa.your.project.pages;
 
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 import ru.sbtqa.tag.pagefactory.HTMLPage;
@@ -5966,7 +5966,7 @@ data.db = bd</code></pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">page.package</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Путь до пакета с классами страниц(pages)</p>
 <p class="tableblock">Пример:</p>
-<p class="tableblock">page.package = ru.sbtqa.tag.myproject.pages</p></td>
+<p class="tableblock">page.package = ru.myproject.pages</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Не задано</p></td>
 </tr>
 <tr>
@@ -6749,7 +6749,7 @@ selenoid.video.name = my-cool-video.mp4</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>package ru.sbt.qa.your.project.pages;
+<pre class="highlight"><code>package ru.qa.your.project.pages;
 
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 import ru.sbtqa.tag.pagefactory.HTMLPage;
@@ -7360,7 +7360,7 @@ public class CucumberTest extends Tag{}</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>@Endpoint(method = Rest.GET, path = "repos/sbtqa", title = "Запрос")
+<pre class="highlight"><code>@Endpoint(method = Rest.GET, path = "repos/qa", title = "Запрос")
 public class ApiEntry extends EndpointEntry {
 ...
 }</code></pre>
@@ -7371,7 +7371,7 @@ public class ApiEntry extends EndpointEntry {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>api.endpoint.package = ru.sbtqa.rest</code></pre>
+<pre class="highlight"><code>api.endpoint.package = ru.qa.rest</code></pre>
 </div>
 </div>
 </div>
@@ -8055,7 +8055,7 @@ connProps.put(MqFactory.JMS_CONNECTION, queueConnection);</pre>
 <p>Прежде всего, в <code>Jira</code> должна быть заведена тестовая база - кейсы с привязкой к тикетам.</p>
 </div>
 <div class="paragraph">
-<p>Предположим, что у нас есть задача в проекте <code>EFSTAG</code> - <code>EFSTAG-945</code>, к которой нужно привязать тестовые сценарии.</p>
+<p>Предположим, что у нас есть задача в проекте <code>TAG</code> - <code>TAG-945</code>, к которой нужно привязать тестовые сценарии.</p>
 </div>
 <div class="paragraph">
 <p>В секции <code>Traceability</code> заведем тест:</p>
@@ -8070,7 +8070,7 @@ connProps.put(MqFactory.JMS_CONNECTION, queueConnection);</pre>
 <p><span class="image"><a class="image" href=""><img src="./images/save.png" alt="save"></a></span></p>
 </div>
 <div class="paragraph">
-<p>После этого появится информация, что тест кейс сохранен с указанием <code>id</code> кейса, в нашем случае - <code>EFSTAG-T4</code>:</p>
+<p>После этого появится информация, что тест кейс сохранен с указанием <code>id</code> кейса, в нашем случае - <code>TAG-T4</code>:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><a class="image" href=""><img src="./images/saved.png" alt="saved"></a></span></p>
@@ -8102,7 +8102,7 @@ connProps.put(MqFactory.JMS_CONNECTION, queueConnection);</pre>
 <div class="sect2">
 <h3 id="_Настройка_для_cucumber">5.1. Настройка для Cucumber</h3>
 <div class="paragraph">
-<p>1. Дописать в test runner в опцию plugin две строки:</p>
+<p>1. Дописать в test runner в опцию <code>plugin</code> две строки:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -8110,7 +8110,7 @@ connProps.put(MqFactory.JMS_CONNECTION, queueConnection);</pre>
 @CucumberOptions(monochrome = true,
         plugin = {"pretty","junit:target/cucumber/result.xml",
                            "json:target/cucumber/pagefactory.json"},
-        glue = {"ru.sbtqa.tag.stepdefs",  "setting", "pagefactory.stepdefs"},
+        glue = {"ru.sbtqa.tag.stepdefs", "tag.stepdefs"},
         features = {"src/test/resources/features"}
 )
 public class CucumberTest {}</code></pre>
@@ -8123,13 +8123,13 @@ public class CucumberTest {}</code></pre>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-При необходимости можно задать несколько run-файлов, формируя результаты в разные файлы (в нашем случае файл <code>pagefactory.json</code>)
+При необходимости можно задать несколько run-файлов, формируя результаты в разные файлы (в нашем случае <code>pagefactory.json</code>)
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>2. Если в вашем проекте в файле <code>pom.xml</code> для плагина <code>maven-surefire-plugin</code> есть строка запуска, то аналогичным образом нужно добавить в нее две строки:</p>
+<p>2. Если в вашем проекте в <code>pom.xml</code> для плагина <code>maven-surefire-plugin</code> есть строка запуска, то аналогичным образом нужно добавить в нее две строки:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -8153,8 +8153,8 @@ public class CucumberTest {}</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>  @TestCaseKey=EFSTAG-T4
-  Scenario: Test Stash
+<pre class="highlight"><code>  @TestCaseKey=TAG-T4
+  Scenario: Test
     * user checks that the field "first name" is empty
 
     ....</code></pre>
@@ -8194,7 +8194,7 @@ public class CucumberTest {}</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>curl -k --basic --user user:password -F "file=@output_results.zip" https://sbtatlas.sigma.sbrf.ru/jira/rest/atm/1.0/automation/execution/cucumber/EFSTAG?autoCreateTestCases=true</code></pre>
+<pre class="highlight"><code>curl -k --basic --user user:password -F "file=@output_results.zip" https://yourjira.ru/jira/rest/atm/1.0/automation/execution/cucumber/TAG?autoCreateTestCases=true</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -8206,10 +8206,10 @@ public class CucumberTest {}</code></pre>
 <p>Вместо <code>user</code> подставить пользователя <code>Jira</code>, вместо <code>password</code> - пароль пользователя</p>
 </li>
 <li>
-<p>При необходимости изменить <code>URL</code> для <code>Jira</code></p>
+<p>Подставить свой <code>URL</code> для <code>Jira</code></p>
 </li>
 <li>
-<p>Вместо <code>EFSTAG</code> подставить имя проекта</p>
+<p>Вместо <code>TAG</code> подставить имя проекта</p>
 </li>
 </ul>
 </div>
@@ -8277,8 +8277,8 @@ public class CucumberTest {}</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>    @Test
-    @TestCase(name = "Test Stash")
-    public void testName() {
+    @TestCase(key = "TAG-T5")
+    public void testKey() {
         ....
     }</code></pre>
 </div>
@@ -8289,7 +8289,7 @@ public class CucumberTest {}</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>    @Test
-    @TestCase(name = "Test Stash")
+    @TestCase(name = "JUnit Test")
     public void testName() {
         ....
     }</code></pre>
@@ -8329,7 +8329,7 @@ public class CucumberTest {}</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>curl -k --basic --user user:password -F "file=@output_results.zip" https://sbtatlas.sigma.sbrf.ru/jira/rest/atm/1.0/automation/execution/EFSTAG?autoCreateTestCases=true</code></pre>
+<pre class="highlight"><code>curl -k --basic --user user:password -F "file=@output_results.zip" https://yourjira.ru/jira/rest/atm/1.0/automation/execution/TAG?autoCreateTestCases=true</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -8341,10 +8341,10 @@ public class CucumberTest {}</code></pre>
 <p>Вместо <code>user</code> подставить пользователя <code>Jira</code>, вместо <code>password</code> - пароль пользователя</p>
 </li>
 <li>
-<p>При необходимости изменить <code>URL</code> для <code>Jira</code></p>
+<p>Подставить <code>URL</code> для <code>Jira</code></p>
 </li>
 <li>
-<p>Вместо <code>EFSTAG</code> подставить имя проекта</p>
+<p>Вместо <code>TAG</code> - имя проекта</p>
 </li>
 </ul>
 </div>
@@ -8384,7 +8384,7 @@ public class CucumberTest {}</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 11.0-SNAPSHOT<br>
-Last updated 2019-03-06 03:57:17 UTC
+Last updated 2019-03-06 04:17:21 UTC
 </div>
 </div>
 </body>
