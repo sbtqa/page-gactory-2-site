@@ -1,3 +1,9 @@
+function setVersion(version) {
+    document.title = "TAG documentation (" + version + ")";
+    $('#doc').attr("src", "releases/" + version + "/index.html");
+}
+
+
 $.getJSON("https://api.github.com/repositories/172893709/contents/releases", function (data) {
     const options = [];
     $.each(data, function (key, version) {
@@ -5,15 +11,15 @@ $.getJSON("https://api.github.com/repositories/172893709/contents/releases", fun
     });
     $('#versions').selectmenu({
         change: function (event, ui) {
-            $('#doc').attr("src", `releases/${ui.item.value}/index.html`);
+            setVersion(ui.item.value);
         }
     });
     $('#versions')
-        .append(options.map(function (version) { return `<option value="${version}">${version}</option>` }).join(""));
-   
+        .append(options.map(function (version) { return "<option value=" + version + ">" + version + "</option>" }).join(""));
+
     const latestRelease = options.length > 1 ? options[options.length - 2] : "snapshot";
-    
+
     $('#versions').val(latestRelease);
     $('#versions').selectmenu("refresh");
-    $('#doc').attr("src", `releases/${latestRelease}/index.html`);
+    setVersion(latestRelease);
 });
