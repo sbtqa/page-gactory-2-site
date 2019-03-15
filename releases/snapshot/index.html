@@ -487,7 +487,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_Параметры_работы_с_selenoid_moon">1.8.10. Параметры работы с Selenoid/Moon</a></li>
 </ul>
 </li>
-<li><a href="#_Построение_отчетов">1.9. Построение отчетов</a></li>
+<li><a href="#_Построение_отчетов">1.9. Построение отчетов</a>
+<ul class="sectlevel3">
+<li><a href="#_Отчеты_и_fluent_api">1.9.1. Отчеты и Fluent API</a></li>
+</ul>
+</li>
 <li><a href="#_Вспомогательные_методы">1.10. Вспомогательные методы</a>
 <ul class="sectlevel3">
 <li><a href="#_Вспомогательные_методы_использующие_рефлексию">1.10.1. Вспомогательные методы, использующие рефлексию</a></li>
@@ -568,7 +572,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_Параметры_работы_с_selenoid_moon_2">2.12.10. Параметры работы с Selenoid/Moon</a></li>
 </ul>
 </li>
-<li><a href="#_Построение_отчетов_2">2.13. Построение отчетов</a></li>
+<li><a href="#_Построение_отчетов_2">2.13. Построение отчетов</a>
+<ul class="sectlevel3">
+<li><a href="#_Отчеты_и_fluent_api_2">2.13.1. Отчеты и Fluent API</a></li>
+</ul>
+</li>
 <li><a href="#_Вспомогательные_методы_2">2.14. Вспомогательные методы</a>
 <ul class="sectlevel3">
 <li><a href="#_Вспомогательные_методы_использующие_рефлексию_2">2.14.1. Вспомогательные методы, использующие рефлексию</a></li>
@@ -1544,7 +1552,7 @@ T waitClickability(int timeout, String elementName)</code></pre>
 <div class="sect3">
 <h4 id="_Как_использовать_шаги_проекта_без_code_cucumber_code">1.6.5. Как использовать шаги проекта без <code>cucumber</code></h4>
 <div class="paragraph">
-<p>Чтобы использовать кастомные шаги вашего проекта через Fluent API, унаследуйте класс с шагами от <code>WebGenericSteps</code> с учетом типизации.</p>
+<p>Чтобы использовать кастомные шаги вашего проекта через Fluent API, унаследуйте класс с шагами от <code>WebStepsImpl</code> с учетом типизации.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1565,7 +1573,7 @@ T waitClickability(int timeout, String elementName)</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>public class YourGenericSteps&lt;T extends YourGenericSteps&lt;T&gt;&gt; extends WebGenericSteps&lt;T&gt; {
+<pre class="highlight"><code>public class YourStepsImpl&lt;T extends YourStepsImpl&lt;T&gt;&gt; extends WebStepsImpl&lt;T&gt; {
     public T yourMethod() {
         ...
         return (T) this;
@@ -1578,7 +1586,7 @@ T waitClickability(int timeout, String elementName)</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>public class YourSteps extends YourGenericSteps&lt;YourSteps&gt; {
+<pre class="highlight"><code>public class YourSteps extends YourStepsImpl&lt;YourSteps&gt; {
      private static YourSteps instance;
 
      public static YourSteps getInstance() {
@@ -1801,11 +1809,11 @@ public abstract class YourPage extends WebPage {
 <div class="sect4">
 <h5 id="_Переопределение_шага">Переопределение шага</h5>
 <div class="paragraph">
-<p>Чтобы переопределить шаг, нужно унаследоваться от класса с шагаими - WebGenericSteps и переопределить метод как в примере</p>
+<p>Чтобы переопределить шаг, нужно унаследоваться от класса с шагаими - WebStepsImpl и переопределить метод как в примере</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>public class YourGenericSteps&lt;T extends YourGenericSteps&lt;T&gt;&gt; extends WebGenericSteps&lt;T&gt; {
+<pre class="highlight"><code>public class YourStepsImpl&lt;T extends YourStepsImpl&lt;T&gt;&gt; extends WebStepsImpl&lt;T&gt; {
     @Override
     public T click(String elementTitle) throws PageException {
         ...
@@ -2162,6 +2170,44 @@ public abstract class YourPage extends WebPage {
 </td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Динамические_фрагменты">Динамические фрагменты</h5>
+<div class="paragraph">
+<p>Фрагменты можно подставлять динамически в зависимости от тестовых данных. Например:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dynamic-fragment.png" alt="dynamic fragment"></a>
+</div>
+</div>
+<div class="paragraph">
+<p>Это так же может быть удобно для запуска в условиях постоянно меняющихся тестовых данных либо условий тестирования (различные версий приложения)</p>
+</div>
+<div class="paragraph">
+<p>Рассмотрим подробнее. Допустим, у нас есть тестовый сценарий, проверяющий работу с данными клиента. Клиент может быть новым (нет в системе) и старым. Если клиент новый, его нужно завести. Если старый, то найти через поиск и проверить, что он был найден. Поэтому в нашем примере будет два фргамента - по одному для каждой из ситуаций плюс тестовые данные сценария</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dynamic_fragment_ex1.png" alt="dynamic fragment ex1"></a>
+</div>
+</div>
+<div class="paragraph">
+<p>В ситуации, когда клиент уже известен (Client = User) выполнится фрагмент "Проверка данных клиента"</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dynamic_fragment_ex2.png" alt="dynamic fragment ex2"></a>
+</div>
+</div>
+<div class="paragraph">
+<p>И, напротив, для неизвестного клиента (Client = Unauthorized user) выполнится "Заполнение данных клиента"</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dynamic_fragment_ex3.png" alt="dynamic fragment ex3"></a>
+</div>
 </div>
 </div>
 </div>
@@ -2945,6 +2991,73 @@ selenoid.video.name = my-cool-video.mp4</p></td>
 </div>
 <div class="paragraph">
 <p>Просмотреть результаты в виде страницы-отчета можно <a href="https://docs.qameta.io/allure/#_reporting" class="ext-link" target="_blank" rel="noopener">одним из способов</a></p>
+</div>
+<div class="sect3">
+<h4 id="_Отчеты_и_fluent_api">1.9.1. Отчеты и Fluent API</h4>
+<div class="paragraph">
+<p>Для того чтобы отчеты содержали шаги, которые вы используете в тестах без <code>cucumber</code>, необходимо следующее:</p>
+</div>
+<div class="paragraph">
+<p>5. Добавить <code>allure</code> зависимость в проект</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    &lt;dependency&gt;
+      &lt;groupId&gt;io.qameta.allure&lt;/groupId&gt;
+      &lt;artifactId&gt;allure-junit4&lt;/artifactId&gt;
+      &lt;version&gt;2.10.0&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>6. Добавить <code>listener</code> в конфигурацию <code>maven-surefire-plugin</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>&lt;properties&gt;
+  &lt;property&gt;
+    &lt;name&gt;listener&lt;/name&gt;
+    &lt;value&gt;io.qameta.allure.junit4.AllureJunit4&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/properties&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>7. В случае, если требуется английская локализация фреймворк-шагов, то добавить в <code>application.properties</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>   junit.lang = en</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+По умолчанию язык русский
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>8. Свои методы следует аннотировать <code>@Step</code></p>
+</div>
+<div class="paragraph">
+<p>Пример:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">    @Step("Мой тестовый метод \"{parameter}\"")
+    public T yourMethod(String parameter) {
+        ...
+        return (T) this;
+    }</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -4918,7 +5031,7 @@ T waitClickability(int timeout, String elementName)</code></pre>
 <div class="sect3">
 <h4 id="_Как_использовать_шаги_проекта_без_code_cucumber_code_2">2.8.5. Как использовать шаги проекта без <code>cucumber</code></h4>
 <div class="paragraph">
-<p>Чтобы использовать кастомные шаги вашего проекта через Fluent API, унаследуйте класс с шагами от <code>HtmlGenericSteps</code> с учетом типизации.</p>
+<p>Чтобы использовать кастомные шаги вашего проекта через Fluent API, унаследуйте класс с шагами от <code>HtmlStepsImpl</code> с учетом типизации.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -4939,7 +5052,7 @@ T waitClickability(int timeout, String elementName)</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>public class YourGenericSteps&lt;T extends YourGenericSteps&lt;T&gt;&gt; extends HtmlGenericSteps&lt;T&gt; {
+<pre class="highlight"><code>public class YourStepsImpl&lt;T extends YourStepsImpl&lt;T&gt;&gt; extends HtmlStepsImpl&lt;T&gt; {
     public T yourMethod() {
         ...
         return (T) this;
@@ -4952,7 +5065,7 @@ T waitClickability(int timeout, String elementName)</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>public class YourSteps extends YourGenericSteps&lt;YourSteps&gt; {
+<pre class="highlight"><code>public class YourSteps extends YourStepsImpl&lt;YourSteps&gt; {
      private static YourSteps instance;
 
      public static YourSteps getInstance() {
@@ -5308,11 +5421,11 @@ public class Product extends HtmlElement {
 <div class="sect4">
 <h5 id="_Переопределение_шага_2">Переопределение шага</h5>
 <div class="paragraph">
-<p>Чтобы переопределить шаг, нужно унаследоваться от класса с шагаими - HtmlGenericSteps и переопределить метод как в примере</p>
+<p>Чтобы переопределить шаг, нужно унаследоваться от класса с шагаими - HtmlStepsImpl и переопределить метод как в примере</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>public class YourGenericSteps&lt;T extends YourGenericSteps&lt;T&gt;&gt; extends HtmlGenericSteps&lt;T&gt; {
+<pre class="highlight"><code>public class YourStepsImpl&lt;T extends YourStepsImpl&lt;T&gt;&gt; extends HtmlStepsImpl&lt;T&gt; {
     @Override
     public T click(String elementTitle) throws PageException {
         ...
@@ -5563,8 +5676,8 @@ public abstract class YourPage extends HTMLPage {
 <div class="sect4">
 <h5 id="_Как_создавать_фрагменты_2">Как создавать фрагменты</h5>
 <div class="paragraph">
-<p>5. Создать фичу, которая будет содержать фрагменты<br>
-6. Прописать путь до каталога с фрагментами в файле конфигурациии <code>aplication.properties</code>. Например:</p>
+<p>9. Создать фичу, которая будет содержать фрагменты<br>
+10. Прописать путь до каталога с фрагментами в файле конфигурациии <code>aplication.properties</code>. Например:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -5584,8 +5697,8 @@ public abstract class YourPage extends HTMLPage {
 </table>
 </div>
 <div class="paragraph">
-<p>7. Создать сценарий-фрагмент<br>
-8. Аннотировать созданный сценарий как <code>@fragment</code></p>
+<p>11. Создать сценарий-фрагмент<br>
+12. Аннотировать созданный сценарий как <code>@fragment</code></p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -5669,6 +5782,44 @@ public abstract class YourPage extends HTMLPage {
 </td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Динамические_фрагменты_2">Динамические фрагменты</h5>
+<div class="paragraph">
+<p>Фрагменты можно подставлять динамически в зависимости от тестовых данных. Например:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dynamic-fragment.png" alt="dynamic fragment"></a>
+</div>
+</div>
+<div class="paragraph">
+<p>Это так же может быть удобно для запуска в условиях постоянно меняющихся тестовых данных либо условий тестирования (различные версий приложения)</p>
+</div>
+<div class="paragraph">
+<p>Рассмотрим подробнее. Допустим, у нас есть тестовый сценарий, проверяющий работу с данными клиента. Клиент может быть новым (нет в системе) и старым. Если клиент новый, его нужно завести. Если старый, то найти через поиск и проверить, что он был найден. Поэтому в нашем примере будет два фргамента - по одному для каждой из ситуаций плюс тестовые данные сценария</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dynamic_fragment_ex1.png" alt="dynamic fragment ex1"></a>
+</div>
+</div>
+<div class="paragraph">
+<p>В ситуации, когда клиент уже известен (Client = User) выполнится фрагмент "Проверка данных клиента"</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dynamic_fragment_ex2.png" alt="dynamic fragment ex2"></a>
+</div>
+</div>
+<div class="paragraph">
+<p>И, напротив, для неизвестного клиента (Client = Unauthorized user) выполнится "Заполнение данных клиента"</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dynamic_fragment_ex3.png" alt="dynamic fragment ex3"></a>
+</div>
 </div>
 </div>
 </div>
@@ -6452,6 +6603,73 @@ selenoid.video.name = my-cool-video.mp4</p></td>
 </div>
 <div class="paragraph">
 <p>Просмотреть результаты в виде страницы-отчета можно <a href="https://docs.qameta.io/allure/#_reporting" class="ext-link" target="_blank" rel="noopener">одним из способов</a></p>
+</div>
+<div class="sect3">
+<h4 id="_Отчеты_и_fluent_api_2">2.13.1. Отчеты и Fluent API</h4>
+<div class="paragraph">
+<p>Для того чтобы отчеты содержали шаги, которые вы используете в тестах без <code>cucumber</code>, необходимо следующее:</p>
+</div>
+<div class="paragraph">
+<p>13. Добавить <code>allure</code> зависимость в проект</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    &lt;dependency&gt;
+      &lt;groupId&gt;io.qameta.allure&lt;/groupId&gt;
+      &lt;artifactId&gt;allure-junit4&lt;/artifactId&gt;
+      &lt;version&gt;2.10.0&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>14. Добавить <code>listener</code> в конфигурацию <code>maven-surefire-plugin</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>&lt;properties&gt;
+  &lt;property&gt;
+    &lt;name&gt;listener&lt;/name&gt;
+    &lt;value&gt;io.qameta.allure.junit4.AllureJunit4&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/properties&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>15. В случае, если требуется английская локализация фреймворк-шагов, то добавить в <code>application.properties</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>   junit.lang = en</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+По умолчанию язык русский
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>16. Свои методы следует аннотировать <code>@Step</code></p>
+</div>
+<div class="paragraph">
+<p>Пример:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">    @Step("Мой тестовый метод \"{parameter}\"")
+    public T yourMethod(String parameter) {
+        ...
+        return (T) this;
+    }</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -8384,7 +8602,7 @@ public class CucumberTest {}</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 11.0-SNAPSHOT<br>
-Last updated 2019-03-11 10:59:35 UTC
+Last updated 2019-03-15 05:59:53 UTC
 </div>
 </div>
 </body>
