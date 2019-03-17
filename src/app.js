@@ -4,8 +4,8 @@ function iframeHash() {
 
 
 function iframeHashListener() {
-    const iframeWindow = document.getElementById('doc');contentWindow;
-    iframeWindow.location.hash=window.location.hash;
+    const iframeWindow = document.getElementById('doc');
+    iframeWindow.location.hash = window.location.hash;
     iframeWindow.document.body.addEventListener("hashchange", iframeHash);
     iframeWindow.addEventListener("hashchange", iframeHash);
 }
