@@ -6,6 +6,7 @@ function iframeHash() {
 
 function iframeHashListener() {
     document.getElementById('doc').contentWindow.document.body.addEventListener("hashchange", iframeHash);
+    document.getElementById('doc').contentWindow.addEventListener("hashchange", iframeHash);
 }
 
 function setVersion(version) {
