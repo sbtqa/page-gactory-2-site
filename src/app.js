@@ -4,9 +4,10 @@ function iframeHash() {
 
 
 function iframeHashListener() {
-    document.getElementById('doc').contentWindow.location.hash=window.location.hash;
-    document.getElementById('doc').contentWindow.document.body.addEventListener("hashchange", iframeHash);
-    document.getElementById('doc').contentWindow.addEventListener("hashchange", iframeHash);
+    const iframeWindow = document.getElementById('doc');contentWindow;
+    iframeWindow.location.hash=window.location.hash;
+    iframeWindow.document.body.addEventListener("hashchange", iframeHash);
+    iframeWindow.addEventListener("hashchange", iframeHash);
 }
 
 function setVersion(version) {
