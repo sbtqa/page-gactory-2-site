@@ -1,8 +1,7 @@
-function iframeHash() {
+function iframeHashListener() {
     window.location.hash = document.getElementById('doc').contentWindow.location.hash;
     console.log(window.location.hash);
 }
-
 
 function setVersion(version) {
     document.title = "TAG documentation (" + version + ")";
