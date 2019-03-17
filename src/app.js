@@ -5,14 +5,14 @@ function iframeHash() {
 
 function iframeHashListener() {
     const iframeWindow = document.getElementById('doc');
-    iframeWindow.contentDocument.location.href = window.location.hash;
     iframeWindow.document.body.addEventListener("hashchange", iframeHash);
     iframeWindow.addEventListener("hashchange", iframeHash);
 }
 
 function setVersion(version) {
     document.title = "TAG documentation (" + version + ")";
-    $('#doc').attr("src", "releases/" + version + "/index.html");
+    $('#doc').attr("src", "releases/" + version + "/index.html" + window.location.hash);
+    window.location.hash = "";
 }
 
 
