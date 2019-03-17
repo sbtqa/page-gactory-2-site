@@ -1,6 +1,13 @@
+function iframeHash() {
+    window.location.hash = document.getElementById('doc').contentWindow.location.hash;
+    console.log(window.location.hash);
+}
+
+
 function setVersion(version) {
     document.title = "TAG documentation (" + version + ")";
     $('#doc').attr("src", "releases/" + version + "/index.html");
+    document.getElementById('doc').window.onhashchange = iframeHash;
 }
 
 
