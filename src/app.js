@@ -7,7 +7,7 @@ function iframeHash() {
 function setVersion(version) {
     document.title = "TAG documentation (" + version + ")";
     $('#doc').attr("src", "releases/" + version + "/index.html");
-    document.getElementById('doc').window.onhashchange = iframeHash;
+    document.getElementById('doc').contentWindow.onhashchange = iframeHash;
 }
 
 
