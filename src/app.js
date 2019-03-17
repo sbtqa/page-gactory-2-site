@@ -12,7 +12,6 @@ function iframeHashListener() {
 function setVersion(version) {
     document.title = "TAG documentation (" + version + ")";
     $('#doc').attr("src", "releases/" + version + "/index.html" + window.location.hash);
-    window.location.hash = "";
 }
 
 
@@ -27,11 +26,12 @@ $.getJSON("https://api.github.com/repositories/172893709/contents/releases", fun
         }
     });
     $('#versions')
-        .append(options.map(function (version) { return "<option value=" + version + ">" + version + "</option>" }).join(""));
-
+    .append(options.map(function (version) { return "<option value=" + version + ">" + version + "</option>" }).join(""));
+    
     const latestRelease = options.length > 1 ? options[options.length - 2] : "snapshot";
-
+    
     $('#versions').val(latestRelease);
     $('#versions').selectmenu("refresh");
     setVersion(latestRelease);
+    window.location.hash = "";
 });
