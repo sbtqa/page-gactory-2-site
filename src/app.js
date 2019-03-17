@@ -4,7 +4,7 @@ function iframeHash() {
 
 
 function iframeHashListener() {
-    const iframeWindow = document.getElementById('doc');
+    const iframeWindow = document.getElementById('doc').contentWindow;
     iframeWindow.document.body.addEventListener("hashchange", iframeHash);
     iframeWindow.addEventListener("hashchange", iframeHash);
 }
