@@ -464,7 +464,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_Как_использовать_шаги_без_code_cucumber_code_fluent_api">1.6.4. Как использовать шаги без <code>cucumber</code> (Fluent API)</a></li>
 <li><a href="#_Как_использовать_шаги_проекта_без_code_cucumber_code">1.6.5. Как использовать шаги проекта без <code>cucumber</code></a></li>
 <li><a href="#_Глагольные_выражения">1.6.6. Глагольные выражения</a></li>
-<li><a href="#_Переопределение_стандартных_методов">1.6.7. Переопределение стандартных методов</a></li>
+<li><a href="#_Некритичные_шаги_тестовых_сценариев">1.6.7. Некритичные шаги тестовых сценариев</a></li>
+<li><a href="#_Некритичные_пользовательские_ошибки">1.6.8. Некритичные пользовательские ошибки</a></li>
+<li><a href="#_Переопределение_стандартных_методов">1.6.9. Переопределение стандартных методов</a></li>
 </ul>
 </li>
 <li><a href="#_Тестовые_сценарии">1.7. Тестовые сценарии</a>
@@ -549,7 +551,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_Шаги_работы_с_блоками">2.10. Шаги работы с блоками</a>
 <ul class="sectlevel3">
 <li><a href="#_Шаги_работы_с_блоками_в_английской_локализации">2.10.1. Шаги работы с блоками в английской локализации</a></li>
-<li><a href="#_Переопределение_стандартных_методов_2">2.10.2. Переопределение стандартных методов</a></li>
+<li><a href="#_Некритичные_шаги_тестовых_сценариев_2">2.10.2. Некритичные шаги тестовых сценариев</a></li>
+<li><a href="#_Некритичные_пользовательские_ошибки_2">2.10.3. Некритичные пользовательские ошибки</a></li>
+<li><a href="#_Переопределение_стандартных_методов_2">2.10.4. Переопределение стандартных методов</a></li>
 </ul>
 </li>
 <li><a href="#_Тестовые_сценарии_2">2.11. Тестовые сценарии</a>
@@ -1792,7 +1796,76 @@ public abstract class YourPage extends WebPage {
 </div>
 </div>
 <div class="sect3">
-<h4 id="_Переопределение_стандартных_методов">1.6.7. Переопределение стандартных методов</h4>
+<h4 id="_Некритичные_шаги_тестовых_сценариев">1.6.7. Некритичные шаги тестовых сценариев</h4>
+<div class="paragraph">
+<p>Есть возможность пометить шаг как некритичный, для этого перед шагом необходимо поставить "? ". Например:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* ? пользователь заполняет поле "Поле" "Значение"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>То же самое работает и для глагольных выражений:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* ? (любое глагольное выражение)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><em>В случае падения некритичного шага:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>выполнение сценария остановлено не будет</p>
+</li>
+<li>
+<p>в консоль будет выведен лог ошибки</p>
+</li>
+<li>
+<p>в allure отчете сценарий будет помечен как "Passed". Некритичный шаг будет помечен как "Unknown", к нему будут прикреплены скриншот в момент падения и текст ошибки</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Посмотреть, какие сценарии содержат некритичные ошибки можно на вкладке <code>Categories</code> отчета в категории <code>Non-critical failures</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/non-critical.png" alt="non critical"></a>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Некритичные_пользовательские_ошибки">1.6.8. Некритичные пользовательские ошибки</h4>
+<div class="paragraph">
+<p>Если возникает ситуация, когда в шаге или глагольном выражении в зависимости от ситуации ошибка может быть как критичной так и не критичной, то можно для второй ситуации использовать <code>AllureNonCriticalError</code>. Например:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    @Given("^check string \"([^\"]*)\"$")
+    public void checkString(String str) {
+        if (str.isEmpty()) {
+            throw new AllureNonCriticalError("String is empty!");
+        } else {
+            Assert.assertEquals("Strings are not equal", "expected", str);
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Обработка некритичной ошибки происходит аналогично работе с некритиными шагами</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/non-critical-error.png" alt="non critical error"></a>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Переопределение_стандартных_методов">1.6.9. Переопределение стандартных методов</h4>
 <div class="paragraph">
 <p>Переопределить шаги плагина web-plugin можно одним из двух способов:</p>
 </div>
@@ -5404,7 +5477,76 @@ public class Product extends HtmlElement {
 </div>
 </div>
 <div class="sect3">
-<h4 id="_Переопределение_стандартных_методов_2">2.10.2. Переопределение стандартных методов</h4>
+<h4 id="_Некритичные_шаги_тестовых_сценариев_2">2.10.2. Некритичные шаги тестовых сценариев</h4>
+<div class="paragraph">
+<p>Есть возможность пометить шаг как некритичный, для этого перед шагом необходимо поставить "? ". Например:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* ? пользователь заполняет поле "Поле" "Значение"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>То же самое работает и для глагольных выражений:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* ? (любое глагольное выражение)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><em>В случае падения некритичного шага:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>выполнение сценария остановлено не будет</p>
+</li>
+<li>
+<p>в консоль будет выведен лог ошибки</p>
+</li>
+<li>
+<p>в allure отчете сценарий будет помечен как "Passed". Некритичный шаг будет помечен как "Unknown", к нему будут прикреплены скриншот в момент падения и текст ошибки</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Посмотреть, какие сценарии содержат некритичные ошибки можно на вкладке <code>Categories</code> отчета в категории <code>Non-critical failures</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/non-critical.png" alt="non critical"></a>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Некритичные_пользовательские_ошибки_2">2.10.3. Некритичные пользовательские ошибки</h4>
+<div class="paragraph">
+<p>Если возникает ситуация, когда в шаге или глагольном выражении в зависимости от ситуации ошибка может быть как критичной так и не критичной, то можно для второй ситуации использовать <code>AllureNonCriticalError</code>. Например:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    @Given("^check string \"([^\"]*)\"$")
+    public void checkString(String str) {
+        if (str.isEmpty()) {
+            throw new AllureNonCriticalError("String is empty!");
+        } else {
+            Assert.assertEquals("Strings are not equal", "expected", str);
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Обработка некритичной ошибки происходит аналогично работе с некритиными шагами</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/non-critical-error.png" alt="non critical error"></a>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Переопределение_стандартных_методов_2">2.10.4. Переопределение стандартных методов</h4>
 <div class="paragraph">
 <p>Переопределить шаги плагина html-plugin можно одним из двух способов:</p>
 </div>
@@ -8602,7 +8744,7 @@ public class CucumberTest {}</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 12.0-SNAPSHOT<br>
-Last updated 2019-03-27 03:00:45 UTC
+Last updated 2019-03-29 10:38:56 UTC
 </div>
 </div>
 </body>
