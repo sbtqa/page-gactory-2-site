@@ -11,6 +11,7 @@
     <script src="lib/jquery-3.3.1.min.js"></script>
     <script src="lib/jquery-ui-1.12.1.min.js"></script>
     <script src="src/app.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 
 <body class="body__container">
@@ -18,6 +19,14 @@
         <label>Select version: </label>
         <select name="versions" id="versions" class="select__element">
         </select>
+        <div class="github__buttons">
+            <a class="github-button" href="https://github.com/sbtqa/page-factory-2/fork" 
+                data-icon="octicon-repo-forked" data-size="large" data-show-count="true" 
+                aria-label="Fork sbtqa/page-factory-2 on GitHub">Fork</a>
+            <a class="github-button" href="https://github.com/sbtqa/page-factory-2/subscription" 
+                data-icon="octicon-eye" data-size="large" data-show-count="true" 
+                aria-label="Watch sbtqa/page-factory-2 on GitHub">Watch</a>
+        </div>
     </div>
     <iframe id="doc" class="iframe__container" onload="iframeHashListener()"></iframe>
 </body>

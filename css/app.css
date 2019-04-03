@@ -3,3 +3,4 @@
 .header__conatiner {display: block; padding-top: 5px; padding-bottom: 5px; width: auto; background:lightgray;}
 .select__element {width: 6em;}
 .iframe__container {position: absolute; height: 94%; border: none; width: 100%;}
+.github__buttons {position: absolute; right: 10px; top: 7px;}
