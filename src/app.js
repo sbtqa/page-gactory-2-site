@@ -1,33 +1,3 @@
-function UpdateQueryString(key, value, url) {
-    if (!url) url = window.location.href;
-    var re = new RegExp("([?&])" + key + "=.*?(&|#|$)(.*)", "gi"),
-        hash;
-
-    if (re.test(url)) {
-        if (typeof value !== 'undefined' && value !== null)
-            return url.replace(re, '$1' + key + "=" + value + '$2$3');
-        else {
-            hash = url.split('#');
-            url = hash[0].replace(re, '$1$3').replace(/(&|\?)$/, '');
-            if (typeof hash[1] !== 'undefined' && hash[1] !== null) 
-                url += '#' + hash[1];
-            return url;
-        }
-    }
-    else {
-        if (typeof value !== 'undefined' && value !== null) {
-            var separator = url.indexOf('?') !== -1 ? '&' : '?';
-            hash = url.split('#');
-            url = hash[0] + separator + key + '=' + value;
-            if (typeof hash[1] !== 'undefined' && hash[1] !== null) 
-                url += '#' + hash[1];
-            return url;
-        }
-        else
-            return url;
-    }
-}
-
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -38,6 +8,13 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
+
+function updateURL(version) {
+    if (history.pushState) {
+        var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?version=' + version;
+        window.history.pushState({path:newurl},'',newurl);
+    }
+  }
 
 function iframeHash() {
     window.location.hash = document.getElementById('doc').contentWindow.location.hash;
@@ -53,7 +30,7 @@ function iframeHashListener() {
 function setVersion(version) {
     document.title = "TAG documentation (" + version + ")";
     if(getParameterByName('version') !== version) {
-        window.location= UpdateQueryString('version', version);
+        updateURL(version);
     }
     $('#doc').attr("src", "releases/" + version + "/index.html" + window.location.hash);
 }
@@ -74,7 +51,7 @@ $.getJSON("https://api.github.com/repositories/172893709/contents/releases", fun
     
     const latestRelease = options.length > 1 ? options[options.length - 2] : "snapshot";  
     const queryVersion = getParameterByName('version');  
-    const version = queryVersion && options.indexOf(queryVersion) ? queryVersion : latestRelease;
+    const version = queryVersion && options.indexOf(queryVersion) > -1 ? queryVersion : latestRelease;
 
     $('#versions').val(version);
     $('#versions').selectmenu("refresh");
