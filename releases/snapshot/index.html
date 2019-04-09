@@ -2404,6 +2404,45 @@ data.db = bd</code></pre>
 </div>
 </div>
 <div class="sect5">
+<h6 id="_Ссылки_на_другие_элементы">Ссылки на другие элементы</h6>
+<div class="paragraph">
+<p>Поддерживается работа со ссылками в данных, как внутри одной коллекции, так и на другие коллекции.</p>
+</div>
+<div class="paragraph">
+<p>Для <code>mongodb</code> используется втроенный механизм ссылок.</p>
+</div>
+<div class="paragraph">
+<p>Для <code>excel</code> достаточно в ячейке значения указать ссылку вида <code>$ref:&lt;имя коллекции&gt;:&lt;путь&gt;</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ref:Data:price</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Для <code>json</code> ссылки задавать можно как объект вида <code>{ "$ref" : "&lt;имя коллекции&gt;.&lt;путь&gt;" }</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+    "some reference": {
+        "$ref": "Data:price"
+    },
+    "price": 20.00
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Для <code>properties</code> ссылки задавать можно как объект вида <code>&lt;property name&gt;.$ref = &lt;имя коллекции&gt;.&lt;путь&gt;</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>someReference.$ref = Data:price
+price = 20.00</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
 <h6 id="_Примеры">Примеры</h6>
 <div class="paragraph">
 <p><strong><em>Простой пример с заданием коллекции через тэг `@data`</em></strong></p>
@@ -2454,6 +2493,14 @@ data.db = bd</code></pre>
 <div class="imageblock">
 <div class="content">
 <a class="image" href=""><img src="./images/dataInit.png" alt="dataInit"></a>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><em>Пример рабооты со ссылками</em></strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/data_relative.png" alt="data relative"></a>
 </div>
 </div>
 </div>
@@ -6085,6 +6132,45 @@ data.db = bd</code></pre>
 </div>
 </div>
 <div class="sect5">
+<h6 id="_Ссылки_на_другие_элементы_2">Ссылки на другие элементы</h6>
+<div class="paragraph">
+<p>Поддерживается работа со ссылками в данных, как внутри одной коллекции, так и на другие коллекции.</p>
+</div>
+<div class="paragraph">
+<p>Для <code>mongodb</code> используется втроенный механизм ссылок.</p>
+</div>
+<div class="paragraph">
+<p>Для <code>excel</code> достаточно в ячейке значения указать ссылку вида <code>$ref:&lt;имя коллекции&gt;:&lt;путь&gt;</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ref:Data:price</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Для <code>json</code> ссылки задавать можно как объект вида <code>{ "$ref" : "&lt;имя коллекции&gt;.&lt;путь&gt;" }</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+    "some reference": {
+        "$ref": "Data:price"
+    },
+    "price": 20.00
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Для <code>properties</code> ссылки задавать можно как объект вида <code>&lt;property name&gt;.$ref = &lt;имя коллекции&gt;.&lt;путь&gt;</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>someReference.$ref = Data:price
+price = 20.00</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
 <h6 id="_Примеры_2">Примеры</h6>
 <div class="paragraph">
 <p><strong><em>Простой пример с заданием коллекции через тэг `@data`</em></strong></p>
@@ -6135,6 +6221,14 @@ data.db = bd</code></pre>
 <div class="imageblock">
 <div class="content">
 <a class="image" href=""><img src="./images/dataInit.png" alt="dataInit"></a>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><em>Пример рабооты со ссылками</em></strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/data_relative.png" alt="data relative"></a>
 </div>
 </div>
 </div>
@@ -8744,7 +8838,7 @@ public class CucumberTest {}</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 12.0-SNAPSHOT<br>
-Last updated 2019-04-09 03:47:27 UTC
+Last updated 2019-04-09 03:54:34 UTC
 </div>
 </div>
 </body>
