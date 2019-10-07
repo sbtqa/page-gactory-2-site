@@ -2586,12 +2586,22 @@ price = 20.00</code></pre>
 <div class="sect3">
 <h4 id="_Конфигурационный_файл">1.8.1. Конфигурационный файл</h4>
 <div class="paragraph">
-<p>Конфигурационный файл по умолчанию должен быть расположен по пути '/src/test/resources/application.properties'.<br>
-Но этот путь можно переопределить, передав местоположение через системную переменную 'TagConfigFile':</p>
+<p>Конфигурационный файл по умолчанию должен быть расположен по пути '/src/test/resources/config/application.properties'. <br>
+Но этот путь можно переопределить, передав путь до файла через системную переменную 'TagConfigFileFolder', таким образом что директория находится в папке с ресурсами (/src/test/resources). По умолчанию это папка config в ресурсах.
+Пример:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>mvn test -DTagConfigFile=custom-place/config.properties</code></pre>
+<pre class="highlight"><code>mvn test -DTagConfigFileFolder=custom-place</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Также можно переопределить наименование самого конфига, передав название через системную переменную 'TagConfigFile'. По умолчанию это файл с наименованием application.
+Пример:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>mvn test -DTagConfigFile=config.properties</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -6317,12 +6327,22 @@ price = 20.00</code></pre>
 <div class="sect3">
 <h4 id="_Конфигурационный_файл_2">2.12.1. Конфигурационный файл</h4>
 <div class="paragraph">
-<p>Конфигурационный файл по умолчанию должен быть расположен по пути '/src/test/resources/application.properties'.<br>
-Но этот путь можно переопределить, передав местоположение через системную переменную 'TagConfigFile':</p>
+<p>Конфигурационный файл по умолчанию должен быть расположен по пути '/src/test/resources/config/application.properties'. <br>
+Но этот путь можно переопределить, передав путь до файла через системную переменную 'TagConfigFileFolder', таким образом что директория находится в папке с ресурсами (/src/test/resources). По умолчанию это папка config в ресурсах.
+Пример:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>mvn test -DTagConfigFile=custom-place/config.properties</code></pre>
+<pre class="highlight"><code>mvn test -DTagConfigFileFolder=custom-place</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Также можно переопределить наименование самого конфига, передав название через системную переменную 'TagConfigFile'. По умолчанию это файл с наименованием application.
+Пример:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>mvn test -DTagConfigFile=config.properties</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -8844,7 +8864,7 @@ public class CucumberTest {}</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 15.0-SNAPSHOT<br>
-Last updated 2019-10-04 12:05:34 UTC
+Last updated 2019-10-07 09:19:39 UTC
 </div>
 </div>
 </body>
