@@ -1346,8 +1346,8 @@ T waitChangeAttribute(int timeout, String attribute, String elementName, String 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>T waitAttributeContains(String attribute, String elementName, Condition negation, String partAttributeValue)
-T waitAttributeContains(int timeout, String attribute, String elementName, Condition negation, String partAttributeValue)</code></pre>
+<pre class="highlight"><code>T waitAttributeContains(String attribute, String elementName, Condition condition, String partAttributeValue)
+T waitAttributeContains(int timeout, String attribute, String elementName, Condition condition, String partAttributeValue)</code></pre>
 </div>
 </div>
 </div>
@@ -1376,8 +1376,8 @@ T waitAttributeContains(int timeout, String attribute, String elementName, Condi
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>T waitElementContainsText(String elementName, Condition negation, String text)
-T waitElementContainsText(int timeout, String elementName, Condition negation, String text)</code></pre>
+<pre class="highlight"><code>T waitElementContainsText(String elementName, Condition condition, String text)
+T waitElementContainsText(int timeout, String elementName, Condition condition, String text)</code></pre>
 </div>
 </div>
 </div>
@@ -4954,8 +4954,8 @@ T waitChangeAttribute(int timeout, String attribute, String elementName, String 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>T waitAttributeContains(String attribute, String elementName, Condition negation, String partAttributeValue)
-T waitAttributeContains(int timeout, String attribute, String elementName, Condition negation, String partAttributeValue)</code></pre>
+<pre class="highlight"><code>T waitAttributeContains(String attribute, String elementName, Condition condition, String partAttributeValue)
+T waitAttributeContains(int timeout, String attribute, String elementName, Condition condition, String partAttributeValue)</code></pre>
 </div>
 </div>
 </div>
@@ -4984,8 +4984,8 @@ T waitAttributeContains(int timeout, String attribute, String elementName, Condi
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>T waitElementContainsText(String elementName, Condition negation, String text)
-T waitElementContainsText(int timeout, String elementName, Condition negation, String text)</code></pre>
+<pre class="highlight"><code>T waitElementContainsText(String elementName, Condition condition, String text)
+T waitElementContainsText(int timeout, String elementName, Condition condition, String text)</code></pre>
 </div>
 </div>
 </div>
@@ -8864,7 +8864,7 @@ public class CucumberTest {}</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 15.0-SNAPSHOT<br>
-Last updated 2019-11-05 02:02:25 UTC
+Last updated 2019-11-05 07:21:04 UTC
 </div>
 </div>
 </body>
