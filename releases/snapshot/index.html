@@ -625,18 +625,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_Примеры_создания_коннекта_к_mq">4.2. Примеры создания коннекта к MQ</a></li>
 </ul>
 </li>
-<li><a href="#_adaptavist_jira_test_manager">5. Adaptavist (Jira Test Manager)</a>
+<li><a href="#_mobile_plugin">5. Mobile plugin</a>
 <ul class="sectlevel2">
-<li><a href="#_Настройка_для_cucumber">5.1. Настройка для Cucumber</a>
+<li><a href="#_Параллельный_запуск_тестов_на_симуляторах">5.1. Параллельный запуск тестов на симуляторах</a>
 <ul class="sectlevel3">
-<li><a href="#_Сборка_результатов_тестов">5.1.1. Сборка результатов тестов</a></li>
-<li><a href="#_Синхронизация_результатов_для_code_cucumber_code">5.1.2. Синхронизация результатов для <code>Cucumber</code></a></li>
+<li><a href="#_Скачать_и_запустить_selenium_server_standalone">5.1.1. Скачать и запустить selenium-server-standalone</a></li>
+<li><a href="#_Отконфигурировать_и_запустить_по_экземпляру_appium_на_каждый_симулятор">5.1.2. Отконфигурировать и запустить по экземпляру appium на каждый симулятор</a></li>
+<li><a href="#_Внести_правки_в_application_properties">5.1.3. Внести правки в application.properties</a></li>
 </ul>
 </li>
-<li><a href="#_Настройка_для_junit">5.2. Настройка для JUnit</a>
+</ul>
+</li>
+<li><a href="#_adaptavist_jira_test_manager">6. Adaptavist (Jira Test Manager)</a>
+<ul class="sectlevel2">
+<li><a href="#_Настройка_для_cucumber">6.1. Настройка для Cucumber</a>
 <ul class="sectlevel3">
-<li><a href="#_Сборка_результатов_тестов_2">5.2.1. Сборка результатов тестов</a></li>
-<li><a href="#_Синхронизация_результатов_для_code_junit_code">5.2.2. Синхронизация результатов для <code>JUnit</code></a></li>
+<li><a href="#_Сборка_результатов_тестов">6.1.1. Сборка результатов тестов</a></li>
+<li><a href="#_Синхронизация_результатов_для_code_cucumber_code">6.1.2. Синхронизация результатов для <code>Cucumber</code></a></li>
+</ul>
+</li>
+<li><a href="#_Настройка_для_junit">6.2. Настройка для JUnit</a>
+<ul class="sectlevel3">
+<li><a href="#_Сборка_результатов_тестов_2">6.2.1. Сборка результатов тестов</a></li>
+<li><a href="#_Синхронизация_результатов_для_code_junit_code">6.2.2. Синхронизация результатов для <code>JUnit</code></a></li>
 </ul>
 </li>
 </ul>
@@ -8526,7 +8537,157 @@ connProps.put(MqFactory.JMS_CONNECTION, queueConnection);</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_adaptavist_jira_test_manager">5. Adaptavist (Jira Test Manager)</h2>
+<h2 id="_mobile_plugin">5. Mobile plugin</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_Параллельный_запуск_тестов_на_симуляторах">5.1. Параллельный запуск тестов на симуляторах</h3>
+<div class="paragraph">
+<p>Будет описан метод при использовании Selenium Grid.</p>
+</div>
+<div class="sect3">
+<h4 id="_Скачать_и_запустить_selenium_server_standalone">5.1.1. Скачать и запустить selenium-server-standalone</h4>
+<div class="paragraph">
+<p>Скачать здесь</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>https://www.seleniumhq.org/download/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Запустить</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>java -jar selenium-server-standalone-3.141.59.jar -role hub</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Отконфигурировать_и_запустить_по_экземпляру_appium_на_каждый_симулятор">5.1.2. Отконфигурировать и запустить по экземпляру appium на каждый симулятор</h4>
+<div class="paragraph">
+<p>Будет приведен пример для двух симуляторов.</p>
+</div>
+<div class="paragraph">
+<p>Запуск первого экземпляра appium</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>appium -p 4723 --nodeconfig &lt;path_to_config_file&gt;/node-config-4723.json --default-capabilities &lt;path_to_capability_file&gt;/node-capabilities-4723.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>node-config-4723.json</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+  "capabilities": [
+    {
+      "maxInstances": 1,
+      "platformName": "ios"
+    }
+  ],
+  "configuration": {
+    "cleanUpCycle": 2000,
+    "timeout": 30000,
+    "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+    "url": "http://&lt;хост_где_будет_открыт_экземпляр_аппиума&gt;:4723/wd/hub",
+    "host": "&lt;хост_где_будет_открыт_экземпляр_аппиума&gt;",
+    "port": 4723,
+    "maxSession": 1,
+    "register": true,
+    "registerCycle": 5000,
+    "hubPort": 4444,
+    "hubHost": "&lt;хост_где_открыт_selenium-standalone&gt;",
+    "hubProtocol": "http"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>node-capabilities-4723.json</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+  "deviceName": "11 Pro 13.0",
+  "platformVersion": "13.0",
+  "wdaLocalPort": 8100
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Запуск второго экземпляра appium</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>appium -p 4724 --nodeconfig &lt;path_to_config_file&gt;/node-config-4724.json --default-capabilities &lt;path_to_capability_file&gt;/node-capabilities-4724.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>node-config-4724.json</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+  "capabilities": [
+    {
+      "maxInstances": 1,
+      "platformName": "ios"
+    }
+  ],
+  "configuration": {
+    "cleanUpCycle": 2000,
+    "timeout": 30000,
+    "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+    "url": "http://&lt;хост_где_будет_открыт_экземпляр_аппиума&gt;:4724/wd/hub",
+    "host": "&lt;хост_где_будет_открыт_экземпляр_аппиума&gt;",
+    "port": 4724,
+    "maxSession": 1,
+    "register": true,
+    "registerCycle": 5000,
+    "hubPort": 4444,
+    "hubHost": "&lt;хост_где_открыт_selenium-standalone&gt;",
+    "hubProtocol": "http"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>node-capabilities-4724.json</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+  "deviceName": "iPhone Xs",
+  "platformVersion": "12.1",
+  "wdaLocalPort": 8101
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Внести_правки_в_application_properties">5.1.3. Внести правки в application.properties</h4>
+<div class="paragraph">
+<p>В качестве appium.url указать адрес на котором открыт selenium-standalone.</p>
+</div>
+<div class="paragraph">
+<p>Удалить параметры</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>appium.device.name = ...
+appium.device.platform.name = ...
+appium.device.platform.version = ...</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adaptavist_jira_test_manager">6. Adaptavist (Jira Test Manager)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>TAG позволяет использовать Adaptavist. Для этого достаточно сконфигурировать проект и установить соответствие между тестами в jira и автотестами проекта.</p>
@@ -8580,7 +8741,7 @@ connProps.put(MqFactory.JMS_CONNECTION, queueConnection);</pre>
 <p>Подробную информацию о формировании тестовой структуры в jira можно найти в документации <a href="https://www.adaptavist.com/doco/display/KT/Documentation" class="ext-link" target="_blank" rel="noopener">Adaptavist</a></p>
 </div>
 <div class="sect2">
-<h3 id="_Настройка_для_cucumber">5.1. Настройка для Cucumber</h3>
+<h3 id="_Настройка_для_cucumber">6.1. Настройка для Cucumber</h3>
 <div class="paragraph">
 <p>1. Дописать в test runner в опцию <code>plugin</code> две строки:</p>
 </div>
@@ -8641,7 +8802,7 @@ public class CucumberTest {}</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_Сборка_результатов_тестов">5.1.1. Сборка результатов тестов</h4>
+<h4 id="_Сборка_результатов_тестов">6.1.1. Сборка результатов тестов</h4>
 <div class="paragraph">
 <p>Для сборки отчетов для <code>Adaptavist</code> достаточно выполнить</p>
 </div>
@@ -8658,7 +8819,7 @@ public class CucumberTest {}</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_Синхронизация_результатов_для_code_cucumber_code">5.1.2. Синхронизация результатов для <code>Cucumber</code></h4>
+<h4 id="_Синхронизация_результатов_для_code_cucumber_code">6.1.2. Синхронизация результатов для <code>Cucumber</code></h4>
 <div class="sect4">
 <h5 id="_При_локальном_запуске">При локальном запуске</h5>
 <div class="paragraph">
@@ -8724,7 +8885,7 @@ public class CucumberTest {}</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_Настройка_для_junit">5.2. Настройка для JUnit</h3>
+<h3 id="_Настройка_для_junit">6.2. Настройка для JUnit</h3>
 <div class="paragraph">
 <p>1. Добавить в <code>pom.xml</code> зависимость:</p>
 </div>
@@ -8776,7 +8937,7 @@ public class CucumberTest {}</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_Сборка_результатов_тестов_2">5.2.1. Сборка результатов тестов</h4>
+<h4 id="_Сборка_результатов_тестов_2">6.2.1. Сборка результатов тестов</h4>
 <div class="paragraph">
 <p>Для сборки отчетов для <code>Adaptavist</code> достаточно выполнить</p>
 </div>
@@ -8793,7 +8954,7 @@ public class CucumberTest {}</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_Синхронизация_результатов_для_code_junit_code">5.2.2. Синхронизация результатов для <code>JUnit</code></h4>
+<h4 id="_Синхронизация_результатов_для_code_junit_code">6.2.2. Синхронизация результатов для <code>JUnit</code></h4>
 <div class="sect4">
 <h5 id="_При_локальном_запуске_2">При локальном запуске</h5>
 <div class="paragraph">
@@ -8864,7 +9025,7 @@ public class CucumberTest {}</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 15.0-SNAPSHOT<br>
-Last updated 2019-11-13 09:28:27 UTC
+Last updated 2019-11-13 11:00:03 UTC
 </div>
 </div>
 </body>
