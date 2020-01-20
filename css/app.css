@@ -1,6 +1,40 @@
-.ui-selectmenu-button {width: 6em !important;}
-.body__container {margin: 0; overflow: hidden;}
-.header__conatiner {display: block; padding-top: 5px; padding-bottom: 5px; width: auto; background:lightgray;}
-.select__element {width: 6em;}
-.iframe__container {position: absolute; height: 94%; border: none; width: 100%;}
-.github__buttons {position: absolute; right: 10px; top: 7px;}
+.ui-selectmenu-button {
+    width: 6em !important;
+}
+
+ul.ui-menu {
+    max-height: 420px !important;
+}
+
+.body__container {
+    margin: 0;
+    overflow: hidden;
+}
+
+.header__conatiner {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: auto;
+    background: lightgray;
+}
+
+.select__element {
+    width: 6em;
+    overflow-y: scroll;
+    height: 150px;
+    overflow-x: hidden;
+}
+
+.iframe__container {
+    position: absolute;
+    height: 94%;
+    border: none;
+    width: 100%;
+}
+
+.github__buttons {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+}
