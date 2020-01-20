@@ -36,7 +36,7 @@ function setVersion(version) {
 }
 
 
-$.getJSON("https://api.github.com/repositories/172893709/contents/releases", function (data) {
+$.getJSON("releases.json", function (data) {
     const options = [];
     $.each(data.reverse(), function (key, version) {
         options.push(version.name);
