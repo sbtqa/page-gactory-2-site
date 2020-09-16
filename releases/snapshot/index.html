@@ -605,6 +605,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_Отправка_запроса">4.3. Отправка запроса</a>
 <ul class="sectlevel3">
 <li><a href="#_Параметры_запроса">4.3.1. Параметры запроса</a></li>
+<li><a href="#_Модификаторы_параметров">4.3.2. Модификаторы параметров</a></li>
 </ul>
 </li>
 <li><a href="#_Проверки">4.4. Проверки</a>
@@ -3792,6 +3793,29 @@ public abstract class YourPage extends WebPage {
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">static void presence(By by, String message, int timeout)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ожидает появления элемента в структуре DOM в течение заданного времени. Принимает на вход локатор для поиска элемента</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_Ожидания_исчезновения_элемента_из_структуры_dom">Ожидания исчезновения элемента из структуры DOM</h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Метод</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Описание</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static void absence(WebElement element, String message)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ожидает исчезновение элемента из структуры DOM. Принимает на вход элемент</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static void absence(WebElement element, String message, int timeout)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ожидает исчезновение элемента из структуры DOM в течение заданного времени. Принимает на вход элемент</p></td>
 </tr>
 </tbody>
 </table>
@@ -7647,6 +7671,29 @@ public abstract class YourPage extends HTMLPage {
 </table>
 </div>
 <div class="sect4">
+<h5 id="_Ожидания_исчезновения_элемента_из_структуры_dom_2">Ожидания исчезновения элемента из структуры DOM</h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Метод</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Описание</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static void absence(WebElement element, String message)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ожидает исчезновение элемента из структуры DOM. Принимает на вход элемент</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static void absence(WebElement element, String message, int timeout)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ожидает исчезновение элемента из структуры DOM в течение заданного времени. Принимает на вход элемент</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
 <h5 id="_Ожидания_кликабельности_элемента_2">Ожидания кликабельности элемента</h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -8061,6 +8108,84 @@ public class ReplacerEntry extends EndpointEntry {
 <div class="content">
 <a class="image" href=""><img src="./images/rest-replace.png" alt="rest replace"></a>
 </div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Модификаторы_параметров">4.3.2. Модификаторы параметров</h4>
+<div class="paragraph">
+<p>Модификаторы представляют из себя аннотации, которые помогают изменить параметры перед отправкой запроса</p>
+</div>
+<div class="sect4">
+<h5 id="_mutator">@Mutator</h5>
+<div class="paragraph">
+<p>По отношению к полю будет применен метод, указанный в method, после применения остальных модификаторов.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+    @Header(name = "Header name")
+    @Mutator(method = "toUpperCase")
+    private String header = "header_value";
+
+
+    public String toUpperCase(String value) {
+        return value.toUpperCase();
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>К полю <code>header</code> будет применен метод <code>toUpperCase</code>, в результате чего поле <code>header</code> получит значение <code>HEADER_VALUE</code>, затем
+будет произведена сборка и отправка запроса.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<span class="red">Метод, являющийся мутатором, обязательно должен иметь один параметр типа <code>String</code> в сигнатуре, в него будет передано текущее
+значение мутируемого поля</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>В <code>clazz</code> можно указать, где искать <code>method</code>. Если <code>clazz</code> не указан, то мутатор будет искаться в текущем <code>Endpoint</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+    @Header(name = "Header name")
+    @Mutator(clazz = DefaultMutators.class, method = "toUpperCase")
+    private String header = "header_value";
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>public class DefaultMutators {
+
+    public static String toUpperCase(String value) {
+        return value.toUpperCase();
+    }
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<span class="red">В случае если указан <code>clazz</code>, метод указанный в <code>method</code> должен быть <code>static</code>, иначе возникнет ошибка
+<code>java.lang.IllegalArgumentException: object is not an instance of declaring class</code></span>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -9068,7 +9193,7 @@ public class CucumberTest {}</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 16.0-SNAPSHOT<br>
-Last updated 2020-09-10 07:44:30 UTC
+Last updated 2020-09-16 05:58:29 UTC
 </div>
 </div>
 </body>
