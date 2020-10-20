@@ -1,1 +1,211 @@
-{"message":"API rate limit exceeded for 104.196.57.92. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)","documentation_url":"https://developer.github.com/v3/#rate-limiting"}
+[
+  {
+    "name": "10.1.3",
+    "path": "releases/10.1.3",
+    "sha": "3dabbc8f085c02ff19e3eab900f14c72bd570824",
+    "size": 0,
+    "url": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/10.1.3?ref=master",
+    "html_url": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/10.1.3",
+    "git_url": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/3dabbc8f085c02ff19e3eab900f14c72bd570824",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/10.1.3?ref=master",
+      "git": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/3dabbc8f085c02ff19e3eab900f14c72bd570824",
+      "html": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/10.1.3"
+    }
+  },
+  {
+    "name": "11.2.0",
+    "path": "releases/11.2.0",
+    "sha": "a771ec289845b4b6e96c773e8b1de7a158de2b50",
+    "size": 0,
+    "url": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/11.2.0?ref=master",
+    "html_url": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/11.2.0",
+    "git_url": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/a771ec289845b4b6e96c773e8b1de7a158de2b50",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/11.2.0?ref=master",
+      "git": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/a771ec289845b4b6e96c773e8b1de7a158de2b50",
+      "html": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/11.2.0"
+    }
+  },
+  {
+    "name": "12.0.4",
+    "path": "releases/12.0.4",
+    "sha": "e6234534e875ca439d21276bada29c1fdaf85a06",
+    "size": 0,
+    "url": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/12.0.4?ref=master",
+    "html_url": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/12.0.4",
+    "git_url": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/e6234534e875ca439d21276bada29c1fdaf85a06",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/12.0.4?ref=master",
+      "git": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/e6234534e875ca439d21276bada29c1fdaf85a06",
+      "html": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/12.0.4"
+    }
+  },
+  {
+    "name": "13.0.5",
+    "path": "releases/13.0.5",
+    "sha": "c356db0c1a9de6464de21e2881bacf2a6a9fd452",
+    "size": 0,
+    "url": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/13.0.5?ref=master",
+    "html_url": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/13.0.5",
+    "git_url": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/c356db0c1a9de6464de21e2881bacf2a6a9fd452",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/13.0.5?ref=master",
+      "git": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/c356db0c1a9de6464de21e2881bacf2a6a9fd452",
+      "html": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/13.0.5"
+    }
+  },
+  {
+    "name": "14.9.0",
+    "path": "releases/14.9.0",
+    "sha": "887e825f120b2e75b933bbaf7d06b790d81792f0",
+    "size": 0,
+    "url": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/14.9.0?ref=master",
+    "html_url": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/14.9.0",
+    "git_url": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/887e825f120b2e75b933bbaf7d06b790d81792f0",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/14.9.0?ref=master",
+      "git": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/887e825f120b2e75b933bbaf7d06b790d81792f0",
+      "html": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/14.9.0"
+    }
+  },
+  {
+    "name": "15.5.0",
+    "path": "releases/15.5.0",
+    "sha": "625d1c0d90a20f71353c424be2d40cdc58201daa",
+    "size": 0,
+    "url": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/15.5.0?ref=master",
+    "html_url": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/15.5.0",
+    "git_url": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/625d1c0d90a20f71353c424be2d40cdc58201daa",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/15.5.0?ref=master",
+      "git": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/625d1c0d90a20f71353c424be2d40cdc58201daa",
+      "html": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/15.5.0"
+    }
+  },
+  {
+    "name": "15.6.0",
+    "path": "releases/15.6.0",
+    "sha": "5c05ba526dacdb14ddfc134a5ce8e708158fd127",
+    "size": 0,
+    "url": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/15.6.0?ref=master",
+    "html_url": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/15.6.0",
+    "git_url": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/5c05ba526dacdb14ddfc134a5ce8e708158fd127",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/15.6.0?ref=master",
+      "git": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/5c05ba526dacdb14ddfc134a5ce8e708158fd127",
+      "html": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/15.6.0"
+    }
+  },
+  {
+    "name": "15.7.2",
+    "path": "releases/15.7.2",
+    "sha": "48ad1378091902bc3bb8cb07f2f1c3a6e2ac09fd",
+    "size": 0,
+    "url": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/15.7.2?ref=master",
+    "html_url": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/15.7.2",
+    "git_url": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/48ad1378091902bc3bb8cb07f2f1c3a6e2ac09fd",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/15.7.2?ref=master",
+      "git": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/48ad1378091902bc3bb8cb07f2f1c3a6e2ac09fd",
+      "html": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/15.7.2"
+    }
+  },
+  {
+    "name": "15.8.0",
+    "path": "releases/15.8.0",
+    "sha": "af9148c5d15e8a735083530bbab16b0809f1f154",
+    "size": 0,
+    "url": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/15.8.0?ref=master",
+    "html_url": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/15.8.0",
+    "git_url": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/af9148c5d15e8a735083530bbab16b0809f1f154",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/15.8.0?ref=master",
+      "git": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/af9148c5d15e8a735083530bbab16b0809f1f154",
+      "html": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/15.8.0"
+    }
+  },
+  {
+    "name": "15.9.0",
+    "path": "releases/15.9.0",
+    "sha": "61b297839a56405009435b47af72d31c18717949",
+    "size": 0,
+    "url": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/15.9.0?ref=master",
+    "html_url": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/15.9.0",
+    "git_url": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/61b297839a56405009435b47af72d31c18717949",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/15.9.0?ref=master",
+      "git": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/61b297839a56405009435b47af72d31c18717949",
+      "html": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/15.9.0"
+    }
+  },
+  {
+    "name": "15.9.1",
+    "path": "releases/15.9.1",
+    "sha": "ac5a266be4bc5d62b91a575c24167110b18d2eb2",
+    "size": 0,
+    "url": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/15.9.1?ref=master",
+    "html_url": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/15.9.1",
+    "git_url": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/ac5a266be4bc5d62b91a575c24167110b18d2eb2",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/15.9.1?ref=master",
+      "git": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/ac5a266be4bc5d62b91a575c24167110b18d2eb2",
+      "html": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/15.9.1"
+    }
+  },
+  {
+    "name": "15.9.2",
+    "path": "releases/15.9.2",
+    "sha": "4e32ddf7fcbd42a58a0cc9b7a5e970e18488464c",
+    "size": 0,
+    "url": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/15.9.2?ref=master",
+    "html_url": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/15.9.2",
+    "git_url": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/4e32ddf7fcbd42a58a0cc9b7a5e970e18488464c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/15.9.2?ref=master",
+      "git": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/4e32ddf7fcbd42a58a0cc9b7a5e970e18488464c",
+      "html": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/15.9.2"
+    }
+  },
+  {
+    "name": "snapshot",
+    "path": "releases/snapshot",
+    "sha": "6bc302565725fbfad0e7ec83770ca6f4add245ac",
+    "size": 0,
+    "url": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/snapshot?ref=master",
+    "html_url": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/snapshot",
+    "git_url": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/6bc302565725fbfad0e7ec83770ca6f4add245ac",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/snapshot?ref=master",
+      "git": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/6bc302565725fbfad0e7ec83770ca6f4add245ac",
+      "html": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/snapshot"
+    }
+  }
+]
+
