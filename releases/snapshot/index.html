@@ -629,12 +629,69 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_mobile_plugin">6. Mobile plugin</a>
 <ul class="sectlevel2">
-<li><a href="#_Параллельный_запуск_тестов_на_симуляторах">6.1. Параллельный запуск тестов на симуляторах</a>
+<li><a href="#_Как_начать_использовать_5">6.1. Как начать использовать</a></li>
+<li><a href="#_Настройки_проекта_3">6.2. Настройки проекта</a>
 <ul class="sectlevel3">
-<li><a href="#_Скачать_и_запустить_selenium_server_standalone">6.1.1. Скачать и запустить selenium-server-standalone</a></li>
-<li><a href="#_Отконфигурировать_и_запустить_по_экземпляру_appium_на_каждый_симулятор">6.1.2. Отконфигурировать и запустить по экземпляру appium на каждый симулятор</a></li>
-<li><a href="#_Внести_правки_в_application_properties">6.1.3. Внести правки в application.properties</a></li>
-<li><a href="#_Внести_правки_в_pom_xml">6.1.4. Внести правки в pom.xml</a></li>
+<li><a href="#_Конфигурационный_файл_3">6.2.1. Конфигурационный файл</a></li>
+<li><a href="#_Общие_конфигурации_3">6.2.2. Общие конфигурации</a></li>
+<li><a href="#_Конфигурирование_отчетов_3">6.2.3. Конфигурирование отчетов</a></li>
+<li><a href="#_Конфигурирование_записи_видео_3">6.2.4. Конфигурирование записи видео</a></li>
+<li><a href="#_Параметры_работы_с_фрагментами_3">6.2.5. Параметры работы с фрагментами</a></li>
+<li><a href="#_Параметры_работы_с_тестовыми_данными_3">6.2.6. Параметры работы с тестовыми данными</a></li>
+<li><a href="#_Параметры_для_работы_с_code_appium_code">6.2.7. Параметры для работы с <code>Appium</code></a></li>
+<li><a href="#_Параметры_работы_с_selenoid_moon_3">6.2.8. Параметры работы с Selenoid/Moon</a></li>
+</ul>
+</li>
+<li><a href="#_Описание_страниц_3">6.3. Описание страниц</a>
+<ul class="sectlevel3">
+<li><a href="#_Методы_для_работы_со_страницами_3">6.3.1. Методы для работы со страницами</a></li>
+</ul>
+</li>
+<li><a href="#_Описание_элементов_3">6.4. Описание элементов</a></li>
+<li><a href="#_Методы_работы_с_элементами_3">6.5. Методы работы с элементами</a>
+<ul class="sectlevel3">
+<li><a href="#_Проверки_атрибутов_3">6.5.1. Проверки атрибутов</a></li>
+<li><a href="#_Поиск_в_списке_элементов_по_атрибуту_3">6.5.2. Поиск в списке элементов по атрибуту</a></li>
+<li><a href="#_Получение_текстовых_значений_элементов_3">6.5.3. Получение текстовых значений элементов</a></li>
+<li><a href="#_Получение_элемента_списка_по_текстовому_значению_3">6.5.4. Получение элемента списка по текстовому значению</a></li>
+<li><a href="#_Получение_элемента_списка_по_индексу_3">6.5.5. Получение элемента списка по индексу</a></li>
+<li><a href="#_Поиск_элемента_в_списке_по_предикату_3">6.5.6. Поиск элемента в списке по предикату</a></li>
+<li><a href="#_Другие_полезные_методы_5">6.5.7. Другие полезные методы</a></li>
+</ul>
+</li>
+<li><a href="#_Шаги_и_глагольные_выражения_3">6.6. Шаги и глагольные выражения</a>
+<ul class="sectlevel3">
+<li><a href="#_Шаги_тестовых_сценариев_3">6.6.1. Шаги тестовых сценариев</a></li>
+<li><a href="#_Шаги_для_работы_с_ожиданиями_3">6.6.2. Шаги для работы с ожиданиями</a></li>
+<li><a href="#_Шаги_в_английской_локализации_3">6.6.3. Шаги в английской локализации</a></li>
+<li><a href="#_Как_использовать_шаги_без_code_cucumber_code_fluent_api_3">6.6.4. Как использовать шаги без <code>cucumber</code> (Fluent API)</a></li>
+<li><a href="#_Как_использовать_шаги_проекта_без_code_cucumber_code_3">6.6.5. Как использовать шаги проекта без <code>cucumber</code></a></li>
+<li><a href="#_Глагольные_выражения_3">6.6.6. Глагольные выражения</a></li>
+<li><a href="#_Переопределение_стандартных_методов_3">6.6.7. Переопределение стандартных методов</a></li>
+</ul>
+</li>
+<li><a href="#_Тестовые_сценарии_3">6.7. Тестовые сценарии</a>
+<ul class="sectlevel3">
+<li><a href="#_Фрагменты_3">6.7.1. Фрагменты</a></li>
+<li><a href="#_Работа_с_тестовыми_данными_3">6.7.2. Работа с тестовыми данными</a></li>
+</ul>
+</li>
+<li><a href="#_Построение_отчетов_3">6.8. Построение отчетов</a>
+<ul class="sectlevel3">
+<li><a href="#_Отчеты_и_fluent_api_3">6.8.1. Отчеты и Fluent API</a></li>
+</ul>
+</li>
+<li><a href="#_Вспомогательные_методы_3">6.9. Вспомогательные методы</a>
+<ul class="sectlevel3">
+<li><a href="#_Вспомогательные_методы_использующие_рефлексию_3">6.9.1. Вспомогательные методы, использующие рефлексию</a></li>
+</ul>
+</li>
+<li><a href="#_Параллельный_запуск_тестов_на_симуляторах">6.10. Параллельный запуск тестов на симуляторах</a>
+<ul class="sectlevel3">
+<li><a href="#_Скачать_и_запустить_selenium_server_standalone">6.10.1. Скачать и запустить selenium-server-standalone</a></li>
+<li><a href="#_Отконфигурировать_и_запустить_по_экземпляру_appium_на_каждый_симулятор">6.10.2. Отконфигурировать и запустить по экземпляру appium на каждый симулятор</a></li>
+<li><a href="#_Внести_правки_в_application_properties">6.10.3. Внести правки в application.properties</a></li>
+<li><a href="#_Внести_правки_в_pom_xml">6.10.4. Внести правки в pom.xml</a></li>
 </ul>
 </li>
 </ul>
@@ -8017,11 +8074,18 @@ public class ReplacerEntry extends EndpointEntry {
 
     @Body(name = "number")
     private String bodyNumber = "79236666666";
+
+    @Body(name = "array")
+    private BodyArray&lt;String&gt; = new BodyArray&lt;&gt;("[hello, world, string\\, with\\, commas]")
 }</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>При этом подстановка в шаблон будет выполнена по соответствию параметра <code>name</code> аннотации <code>@Body</code> и значения, обозначенного через <code>${}</code></p>
+</div>
+<div class="paragraph">
+<p>BodyArray используется для параметризации массивов. Элементы массива приводятся к одному типу.
+Если надо в строковом типе поставить запятую, то она экранируется обратным слешем в фиче.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -8687,13 +8751,2487 @@ connProps.put(MqFactory.JMS_CONNECTION, queueConnection);</pre>
 <div class="sect1">
 <h2 id="_mobile_plugin">6. Mobile plugin</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Плагин для автоматизации тестирования мобильных приложений (Android). Базируется на <code>appium</code> и <code>cucumber</code>.</p>
+</div>
+<div class="paragraph">
+<p>Для запуска тестов необходим запущенный эмулятор android-устройства (или подключенное реальное android-устройство) и запущенный appium-сервер.</p>
+</div>
+<div class="paragraph">
+<p>Подробности по установке и запуску эмуляторов можно найти здесь:
+<a href="https://developer.android.com/studio/run/emulator" class="bare">https://developer.android.com/studio/run/emulator</a></p>
+</div>
+<div class="paragraph">
+<p>Подробности по установке и запуску appium-сервера можно найти здесь:
+<a href="https://github.com/appium/appium/blob/master/docs/en/about-appium/getting-started.md" class="bare">https://github.com/appium/appium/blob/master/docs/en/about-appium/getting-started.md</a></p>
+</div>
 <div class="sect2">
-<h3 id="_Параллельный_запуск_тестов_на_симуляторах">6.1. Параллельный запуск тестов на симуляторах</h3>
+<h3 id="_Как_начать_использовать_5">6.1. Как начать использовать</h3>
+<div class="paragraph">
+<p>Для начала использования необходимо подключить зависимость, указав актуальную версию плагина</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    &lt;dependency&gt;
+      &lt;groupId&gt;ru.sbtqa.tag.pagefactory&lt;/groupId&gt;
+      &lt;artifactId&gt;mobile-plugin&lt;/artifactId&gt;
+      &lt;version&gt;Актуальная версия&lt;/version&gt;
+    &lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Затем создать, если еще не создан, файл запуска тестов, унаследовав его от класса <code>Tag</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
+import ru.sbtqa.tag.pagefactory.Tag;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(monochrome = true, plugin = {"pretty"},
+        // Укажите здесь корневые пакеты, в которых хранятся шаги
+        // Если вы написали свои классы с шагами, не забудьте указать здесь пакеты, в которых они находятся
+        glue = {"ru.sbtqa.tag.stepdefs",
+                "ru.your.project.stepdefs"},
+        // Укажите здесь путь до каталога с фичами
+        features = {"src/test/resources/ru/features/"},
+	    // Здесь можно указать тэг теста или нескольких тестов, которые нужно запустить
+        tags = {"@test"}
+)
+
+public class CucumberTest extends Tag{}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Настройки_проекта_3">6.2. Настройки проекта</h3>
+<div class="sect3">
+<h4 id="_Конфигурационный_файл_3">6.2.1. Конфигурационный файл</h4>
+<div class="paragraph">
+<p>Конфигурационный файл по умолчанию должен быть расположен по пути '/src/test/resources/config/application.properties'. <br>
+Но этот путь можно переопределить, передав путь до файла через системную переменную 'TagConfigFileFolder', таким образом что директория находится в папке с ресурсами (/src/test/resources). По умолчанию это папка config в ресурсах.
+Пример:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>mvn test -DTagConfigFileFolder=custom-place</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Также можно переопределить наименование самого конфига, передав название через системную переменную 'TagConfigFile'. По умолчанию это файл с наименованием application.
+Пример:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>mvn test -DTagConfigFile=config.properties</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Так же можно задавать отдельные свойства через переменные окружения, либо через java system properties.</p>
+</div>
+<div class="paragraph">
+<p>Все последующие свойства переопределяют предыдущие. Приоритет значений следующий:<br>
+* По-умолчанию читается application.properties
+* Далее идет чтнетние TagConfigFile
+* Затем считытываются переменные окружения
+* И в конце - java system properties</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Общие_конфигурации_3">6.2.2. Общие конфигурации</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Параметр</th>
+<th class="tableblock halign-center valign-middle">Описание</th>
+<th class="tableblock halign-center valign-middle">Значение по умолчанию</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><strong>Обязательные</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">page.package</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Путь до пакета с классами страниц(pages)</p>
+<p class="tableblock">Пример:</p>
+<p class="tableblock">page.package = ru.myproject.pages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Не задано</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><strong>Опциональные</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Таймаут операций в секундах</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tasks.to.kill</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Параметр позволяет принудительно убить процессы перед запуском тестовго прогона, если они запущены</p>
+<p class="tableblock">Пример:</p>
+<p class="tableblock">tasks.to.kill = iexplorer,chrome</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Не задано</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">driver.shared</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Определяет, оставлять ли драйвер после каждого тестовго сценария (кроме последнего из набора) запущенным или нет</p>
+<p class="tableblock">Возможные значения: <code>true</code> или <code>false</code><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_Конфигурирование_отчетов_3">6.2.3. Конфигурирование отчетов</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Параметр</th>
+<th class="tableblock halign-center valign-middle">Описание</th>
+<th class="tableblock halign-center valign-middle">Значение по умолчанию</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">screenshot.strategy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Параметр определяет стратегию для работы с инструментами скриншотинга</p>
+<p class="tableblock">Возможные значения: <code>driver</code> или <code>raw</code>.<br>
+<code>driver</code> - скриншот будет создаваться средствами <code>Selenium WebDriver</code>, т.е будет сделан только скриншот страницы<br>
+<code>raw</code> - будет сделан скриншот всего экрана</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>raw</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aspects.report.fill.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Определяет, добавлять ли параметры заполнения полей в отчет<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aspects.report.click.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Определяет, добавлять ли параметры нажатия на элемент в отчет<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aspects.report.press.key.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Определяет, добавлять ли параметры нажатия клавиш в отчет<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aspects.report.set.checkbox.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Определяет, добавлять ли параметры установки признаков в отчет<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aspects.report.select.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Определяет, добавлять ли параметры выбора из выпадающих списков в отчет<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aspects.report.error.source.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Определяет, добавлять ли исходный код страницы на которой произошла ошибка во время теста<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_Конфигурирование_записи_видео_3">6.2.4. Конфигурирование записи видео</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Параметр</th>
+<th class="tableblock halign-center valign-middle">Описание</th>
+<th class="tableblock halign-center valign-middle">Значение по умолчанию</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">video.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Включает или выключает запись видео<br>
+Возможные значения: <code>true</code> или <code>false</code><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">video.path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Путь, куда будут сохранятся файлы. Можно указать сетевую папку</p>
+<p class="tableblock">Пример:</p>
+<p class="tableblock">video.path = /tmp/video</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Стандартная для ОС папка для хранения временных файлов</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_Параметры_работы_с_фрагментами_3">6.2.5. Параметры работы с фрагментами</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Параметр</th>
+<th class="tableblock halign-center valign-middle">Описание</th>
+<th class="tableblock halign-center valign-middle">Значение по умолчанию</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fragments.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Включает или выключает работу с фрагментами<br>
+Возможные значения: <code>true</code> или <code>false</code><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fragments.path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Путь до каталога с фрагментами</p>
+<p class="tableblock">Пример:</p>
+<p class="tableblock">fragments.path = src/test/resources/fragments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Путь до папки с фичами из параметров запуска (@CucumberOptions)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_Параметры_работы_с_тестовыми_данными_3">6.2.6. Параметры работы с тестовыми данными</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Параметр</th>
+<th class="tableblock halign-center valign-middle">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><p class="tableblock">Обязательные</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data.type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Тип данных</p>
+<p class="tableblock">Возможные значения: <code>json</code>, <code>mongo</code>, <code>excel</code>, <code>properties</code><br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data.folder</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Путь до каталога с данными. Для <code>excel</code> путь до файла без расширения</p>
+<p class="tableblock">Пример:</p>
+<p class="tableblock">data.folder = src/test/resources/data/</p>
+<p class="tableblock">Пример для <code>excel</code></p>
+<p class="tableblock">data.folder = src/test/resources/data/Data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data.initial.collection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Коллекция данных по умолчанию. Указывается без расширения. Для <code>excel</code> - имя вкладки</p>
+<p class="tableblock">Пример:</p>
+<p class="tableblock">data.initial.collection = Data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><p class="tableblock">Обязательные при работе с <code>mongodb</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data.uri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Адрес базы данных. Параметр для <code>data.type = mongo</code></p>
+<p class="tableblock">Пример:</p>
+<p class="tableblock">data.uri = mongodb://username:password@host.ru:8080</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data.db</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Имя базы данных. Параметр для <code>data.type = mongo</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><p class="tableblock">Необязательные</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data.extension</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Расширение файлов данных (используется для задания нестандартных расширений). Для <code>excel</code> не учитывается (всегда будет <code>xslx</code>)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_Параметры_для_работы_с_code_appium_code">6.2.7. Параметры для работы с <code>Appium</code></h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Параметр</th>
+<th class="tableblock halign-center valign-middle">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Адрес, на котором открыт appium-сервер (хост:порт)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Версия appium-сервер (актуально для saucelabs, где можно выбирать какую версию appium использовать)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.app</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Абсолютный локальный путь или удаленный URL-адрес к файлу .apk (Android) или файлу .apks (комплект приложений Android) или к файлу .zip, содержащему один из них. Appium попытается сначала установить этот файл приложения на соответствующее устройство. Обратите внимание, что эта возможность не требуется для Android, если вы указываете функции appPackage и appActivity. Несовместимо с 'appium.browser.name'.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.app.package</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Android-only. Java-пакет запускаемого приложения</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.app.activity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Имя activity, которое нужно запускать</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.device.orientation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ориентация устройства. Актуально только для эмуляторов</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.device.name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Имя мобильного устройства или эмулятора</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.device.platform.version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Версия мобильной платформы (например 4.4)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.browser.name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Имя мобильного веб-браузера. Должно быть пустой строкой, если тестируется приложение.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.device.platform.name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Имя мобильной платформы ANDROID или IOS (регистр важен). По-умолчанию IOS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.strategies.reset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Если будет указано 'noreset', то будет активирована стратетия noReset. Если 'fullreset', то fullReset стратегия, в остальных случаях - стратегия по-умолчанию.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.permissions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iOS-only с applesimutils. Детали <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/README.md">здесь</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.automation.name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Движок автоматизации. Appium по-умолчанию</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.permissions.autogrant</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Давать ли доступ или нет (boolean), по-умолчанию false</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.keyboard.unicode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Включить ввод Unicode (boolean), по-умолчанию false</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.keyboard.reset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Сбрасывать ли клавиатуру после ввода (boolean), по-умолчанию false</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.udid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Уникальный идентификатор физического устройства, например 1ae203187fc012g</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.bundleid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Идентификатор пакета приложения</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.alerts.autoaccept</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Принимать ли алерты (boolean), по-умолчанию false</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.timeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Тайм-аут в секундах, по-умолчанию 60</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.video.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Вести ли запись видео (boolean), по-умолчанию false</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.video.folder</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Директория для сохранения видео, по-умолчанию target</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.video.name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Название видеофайла, по-умолчанию mobiletest</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.video.extension</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Расширение видеофайла, по-умолчанию mp4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.video.type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Тип видеокодека, по-умолчанию h264</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.video.scale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iOS-only. Разрешение, по-умолчанию 1920:1080.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.video.timeLimit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Лимит длительности видео в секундах, по-умолчанию 180</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.video.quality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Качество видео. Доступные значения: LOW, MEDIUM, HIGH, PHOTO. По-умолчанию MEDIUM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.video.fps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Количество кадров в секунду, по-умолчанию 10</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.video.bitrate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Битрейт, по-умолчанию 200000000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.video.videoSize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Android-only. Размер видео, по-умолчанию 1280x720.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.video.bugReport</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Android-only. Показывает дополнительную информацию на видео (boolean), по-умолчанию false</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.xcodeOrgId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iOS-only. Идентификатор организации в Xcode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.xcodeSigningId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iOS only. Идентификатор подписи кода в Xcode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.disableWindowAnimation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Android only. Следует ли отключать анимацию окон при запуске, по умолчанию false</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appium.waitForIdleTimeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Android only. Тайм-аут, используемый для ожидания перехода пользовательского интерфейса в состояние ожидания, по умолчанию 10000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_Параметры_работы_с_selenoid_moon_3">6.2.8. Параметры работы с Selenoid/Moon</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Параметр</th>
+<th class="tableblock halign-center valign-middle">Описание</th>
+<th class="tableblock halign-center valign-middle">Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Версия андроида</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.version = 8.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.enableVNC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Включение/выключение доступа по VNC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.enableVNC = true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.screenResolution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Разрешение экрана</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.screenResolution = 1280x1024x24</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.enableVideo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Включение/выключение записи видео</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.enableVideo = true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.video.name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Имя видеофайла
+selenoid.video.name = my-cool-video.mp4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.video.screenSize</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Разрешение видео</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.video.screenSize = 1024x768</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.video.frameRate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Количество кадров в секунду</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.video.frameRate = 24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.nameOfTests</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Имя теста, по умолчанию наименование берется из названия сценария (для cucumber сценария)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.nameOfTests = myCoolTestName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.timeZone</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Таймзона</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.timeZone = Europe/Moscow</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.hostEntries</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Список передаваемых хостов</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.hostEntries = example.com:192.168.0.1,test.com:192.168.0.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.applicationContainers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Контейнеры</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.applicationContainers = spring-application-main:my-cool-app,spring-application-gateway</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selenoid.containerLabels</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Описание_страниц_3">6.3. Описание страниц</h3>
+<div class="paragraph">
+<p>При описании страниц нужно придерживаться паттерна <code>PageObject</code></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Страница</em></strong> - это класс, внутри которого хранится описание элементов пользовательского UI, а так же действия(actions), которые можно выполнить на этой странице.</p>
+</div>
+<div class="paragraph">
+<p>Чтобы пользоваться всеми преимуществами плагина, необходимо унаследовать каждую страницу вашего проекта от <code>MobilePage</code> и именовать страницу при помощи аннотации <code>@PageEntry</code></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Пример</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>package ru.your.project.pages;
+
+import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
+import ru.sbtqa.tag.pagefactory.MobilePage;
+
+@PageEntry(title = "Ваша страница")
+public abstract class YourPage extends MobilePage {
+
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>По имени, заданному аннотацией <code>@PageEntry</code>, можно будет обратиться к странице из тестового сценария.</p>
+</div>
+<div class="paragraph">
+<p>Путь до корневого пакета с классами страниц должен быть прописан в файле конфигурации (application.properties) в параметре <code>page.package</code>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Пример</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>page.package = ru.your.project.pages</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<span class="aqua">Рекомендуется заводить в проекте базовую страницу, унаследованную от <code>MobilePage</code>, и уже от нее наследовать все остальные. Это позволит в случае необходимости описать ряд действий на базовой странице проекта.</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_Методы_для_работы_со_страницами_3">6.3.1. Методы для работы со страницами</h4>
+<div class="paragraph">
+<p>Обратиться к методам можно через класс <code>PageManager</code></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Метод</th>
+<th class="tableblock halign-center valign-middle">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static Map&lt;Class&lt;? extends Page&gt;, Map&lt;Field, String&gt;&gt; getPageRepository()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Получает репозиторий страниц (набор: страница - набор полей-элементов страницы с именами)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static Page getPage(String title)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Получает страницу по имени (значение <code>title</code> аннотации <code>@PageEntry</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static Page getPage(Class&lt;? extends Page&gt; page)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Получает страницу по имени класса</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static Page changeUrlByTitle(String title)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Перенаправляет на URL (по значению <code>url</code> аннотации <code>@PageEntry</code>) страницы с заданным именем (значение <code>title</code> аннотации <code>@PageEntry</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static void cachePages()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Вносит все страницы проекта в репозиторий страниц</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Описание_элементов_3">6.4. Описание элементов</h3>
+<div class="paragraph">
+<p>Элемент web-страницы можно описать в классе-странице задав путь до него в структуре DOM и имя. Элемент может не иметь имени, если к нему не нужно обращаться из тестового сценария, например в ситуации, когда он используется только в методах страницы.</p>
+</div>
+<div class="paragraph">
+<p>Для задания пути, как правило, используется стандартная аннотация selenium - <code>@FindBy</code> или другие аналогичные аннотации. Почитать о методах поиска и локаторах можно <a href="https://kreisfahrer.gitbooks.io/selenium-webdriver/content/webdriver_intro/tipi_lokatorov.html" class="ext-link" target="_blank" rel="noopener">в документации selenium</a>. Для задания имени - аннотация <code>@ElementTitle</code></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Пример</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    @ElementTitle(value = "Элемент")
+    @FindBy(xpath = "//span")
+    public WebElement element;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Инициализировать элементы страницы не нужно, так как этот функционал уже зафиксирован на странице-родителе - <code>MobilePage</code></p>
+</div>
+<div class="paragraph">
+<p>Если же такая необходимость возникла, то достаточно определить конструктор страницы, вызвав в нем родительский конструктор с нужным декоратором.</p>
+</div>
+<div class="paragraph">
+<p>Например:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>@PageEntry(title = "Ваша страница")
+public abstract class YourPage extends MobilePage {
+
+    public YourPage() {
+        super(new HtmlElementDecorator(new HtmlElementLocatorFactory(Environment.getDriverService().getDriver())));
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Методы_работы_с_элементами_3">6.5. Методы работы с элементами</h3>
+<div class="sect3">
+<h4 id="_Проверки_атрибутов_3">6.5.1. Проверки атрибутов</h4>
+<div class="paragraph">
+<p>Обратиться к методам можно через `ElementUtils`</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Метод</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Описание</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; boolean isElementAttributeContains(T element, String attribute, String partialAttributeValue)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Проверяет, что атрибут элемента содержит переданное значение</p>
+<p class="tableblock">Вернет <code>true</code>, если значение найдено в атрибуте элемента и <code>false</code>, если не найдено</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; boolean isElementAttributeEquals(T element, String attribute, String attributeValue)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Проверяет, что атрибут элемента равен переданному значению</p>
+<p class="tableblock">Вернет <code>true</code>, если переданное значение равно значению атрибута элемента и <code>false</code>, если нет</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_Поиск_в_списке_элементов_по_атрибуту_3">6.5.2. Поиск в списке элементов по атрибуту</h4>
+<div class="paragraph">
+<p>Обратиться к методам можно через `ElementUtils`</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Метод</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Описание</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; T getElementWithAttributeWithEmptyResult(List&lt;T&gt; elements, String attribute, String attributeValue)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Возвращает элемент, заданный атрибут которого равен переданному значению</p>
+<p class="tableblock">Если такой элемент в списке не найден, вернет <code>null</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; T getElementWithAttribute(List&lt;T&gt; elements, String attribute, String attributeValue)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Возвращает элемент, заданный атрибут которого равен переданному значению</p>
+<p class="tableblock">Если такой элемент в списке не найден, будет выброшено исключение</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; T getElementWithPartAttributeWithEmptyResult(List&lt;T&gt; elements, String attribute, String partialAttributeValue)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Возвращает элемент, атрибут которого содержит переданное значение</p>
+<p class="tableblock">Если такой элемент в списке не найден, вернет <code>null</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; T getElementWithPartAttribute(List&lt;T&gt; elements, String attribute, String partialAttributeValue)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Возвращает элемент, атрибут которого содержит переданное значение</p>
+<p class="tableblock">Если такой элемент в списке не найден, будет выброшено исключение</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_Получение_текстовых_значений_элементов_3">6.5.3. Получение текстовых значений элементов</h4>
+<div class="paragraph">
+<p>Обратиться к методам можно через `ElementUtils`</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Метод</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Описание</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; List&lt;String&gt; getElementsText(List&lt;T&gt; elements)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Получает текстовые значения переданных элементов</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_Получение_элемента_списка_по_текстовому_значению_3">6.5.4. Получение элемента списка по текстовому значению</h4>
+<div class="paragraph">
+<p>Обратиться к методам можно через `ElementUtils`</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Метод</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Описание</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; T getElementByTextWithEmptyResult(List&lt;T&gt; elements, String text)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Возвращает элемент заданного типа и с заданным текстовым значением. Если такой элемент не найден, вернет <code>null</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; T getElementByText(List&lt;T&gt; elements, String text)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Возвращает элемент заданного типа и с заданным текстовым значением</p>
+<p class="tableblock">Если такой элемент не найден, то будет выброшено исключение</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_Получение_элемента_списка_по_индексу_3">6.5.5. Получение элемента списка по индексу</h4>
+<div class="paragraph">
+<p>Обратиться к методам можно через `ElementUtils`</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Метод</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Описание</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; T getElementByIndex(List&lt;T&gt; elements, int index)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Возвращает элемент списка по индексу с обработкой граничных значений</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_Поиск_элемента_в_списке_по_предикату_3">6.5.6. Поиск элемента в списке по предикату</h4>
+<div class="paragraph">
+<p>Обратиться к методам можно через `ElementUtils`</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Метод</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Описание</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; T getElementByPredicateWithEmptyResult(List&lt;T&gt; elements, Predicate&lt;T&gt; predicate)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Возвращает элемент списка, соответствующий предикату</p>
+<p class="tableblock">Если такой элемент не найден в списке, вернет <code>null</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; T getElementByPredicate(List&lt;T&gt; elements, Predicate&lt;T&gt; predicate)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Возвращает элемент списка, соответствующий предикату</p>
+<p class="tableblock">Если такой элемент не найден в списке, будет выброшено исключение</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_Другие_полезные_методы_5">6.5.7. Другие полезные методы</h4>
+<div class="paragraph">
+<p>Обратиться к методам можно через `ElementUtils`</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Метод</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Описание</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; void doubleClick(T element)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Выполняет двойной клик по элементу</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; boolean isListContains(List&lt;T&gt; elements, String text)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Проверяет, что список элементов содержит текстовое значение, строго равное переданному</p>
+<p class="tableblock">Вернет <code>true</code>, если текст найден в списке элементов и <code>false</code>, если не найден</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; void clickOnElemenByText(List&lt;T&gt; elements, String text)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Находит элемент в списке элементов с заданным текстом и кликает по нему.</p>
+<p class="tableblock">Проверяет, не является ли элемент недоступным для редактирования. Если недоступен, кидает исключение</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; String getTextByElementXpath(T currentContext, String xpath)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Получает текстовое значение элемента по его xpath выражению</p>
+<p class="tableblock">В качетве параметра передается элемент, относительно которого будем выполнять
+поиск</p>
+<p class="tableblock">Если элемент не был найден по указанному пути, то возвращает пустую строку</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Шаги_и_глагольные_выражения_3">6.6. Шаги и глагольные выражения</h3>
+<div class="paragraph">
+<p>Использовать элементы в тестовых сценариях можно двумя способами: в шагах либо в глагольных выражениях</p>
+</div>
+<div class="sect3">
+<h4 id="_Шаги_тестовых_сценариев_3">6.6.1. Шаги тестовых сценариев</h4>
+<div class="paragraph">
+<p>Под шагами(Step Definitions) предполагаются стандартные шаги тестовых сценариев, описанных по логике работы с <code>cucumber</code></p>
+</div>
+<div class="paragraph">
+<p><code>mobile-plugin</code> содержит набор стандартных шагов, необходимых для автоматизации любого проекта. Step Definitions, которые уже есть во фреймворке, поддерживают локализацию на двух языках: русском и английском</p>
+</div>
+<div class="paragraph">
+<p>Ниже приведен список доступных шагов с описанием и примерами:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Перед шагом можно прописать действующее лицо - <strong><em>пользователь</em></strong> или <strong><em>он</em></strong> в любом из шагов, предполагающих что кто-либо совершает какое-либо действие, например <strong><em>заполняет поле</em></strong>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_Свайп">Свайп</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    * пользователь свайпает в направлении "DOWN" до текста "Выход"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Возможные значения направлений: 'UP', 'DOWN', 'RIGHT', 'LEFT'. Свайп экрана будет прекращен, когда на экране станет виден искомый текст, либо свайп больше не возможен, так как достигнут конец страницы в данном направлении.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    * пользователь свайпает по стратегии совпадения "EXACT" до текста "Выход"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Возможные значения стратегии совпадений: 'EXACT' (точное совпадение текста), 'CONTAINS' (полное или частичное совпадение текста). Свайп производится при помощи 'UIAutomator'</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Открытие_страницы_3">Открытие страницы</h5>
+<div class="paragraph">
+<p>Все приведенные ниже шаги выполняют одно и то же действие</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    * пользователь находится на странице "Имя страницы"
+    * открывается страница "Имя страницы"
+    * открывается вкладка мастера "Имя страницы"</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<span class="red">Шаги открытия страницы не гарантируют, что страница приложения была открыта и что открыта именно та страница, которая ожидалась, они лишь определяют текущий контекст</span> (где искать элементы и глагольные выражения, с которыми ниже в сценарии будет происходить взаимодействие)
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Заполнение_полей_3">Заполнение полей</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    * заполняет поле "Элемент" "Текст"
+    * заполняет поле "Элемент" значением "Текст"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Нажатие_на_элемент_3">Нажатие на элемент</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    * кликает по ссылке "Элемент"
+    * нажимает кнопку "Элемент"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Нажатие_клавиш_3">Нажатие клавиш</h5>
+<div class="paragraph">
+<p>В качестве параметра используется имя клавиши (пр. ESC, ENTER)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    * нажимает клавишу "Имя клавиши"
+    * нажимает клавишу "Имя клавиши" на элементе "Элемент"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Выбор_из_стандартного_выпадающего_списка_опции_имееют_тэг_option_3">Выбор из стандартного выпадающего списка (опции имееют тэг option)</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    * выбирает в "Элемент" значение "Опция"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Отметка_признака_3">Отметка признака</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    * отмечает чекбокс "Элемент"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Проверки_текстовых_значений_полей_3">Проверки текстовых значений полей</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    * проверяет что в поле "Элемент" значение "Текст"
+    * проверяет что в поле "Элемент" не значение "Не этот текст"
+    * проверяет что поле "Элемент" непустое
+    * проверяет что поле "Элемент" пустое</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Выполнение_фрагмента_3">Выполнение фрагмента</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    * вставляет фрагмент "Имя сценария-фрагмента"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Шаги_для_работы_с_ожиданиями_3">6.6.2. Шаги для работы с ожиданиями</h4>
+<div class="sect4">
+<h5 id="_Ожидание_появления_элемента_3">Ожидание появления элемента</h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Способ использования</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* ожидает появления элемента "Элемент"
+* ожидает 5 секунд появления элемента "Элемент"
+
+Где вместо 5 может быть любое время ожидания</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Сигнатура методов</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>T appearElement(String elementName)
+T appearElement(int timeout, String elementName)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Ожидание_исчезновения_элемента_3">Ожидание исчезновения элемента</h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Способ использования</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* ожидает исчезновения элемента "Элемент"
+* ожидает 5 секунд исчезновения элемента "Элемент"
+
+Где вместо 5 может быть любое время ожидания</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Сигнатура метода</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>T waitInvisibility(String elementName)
+T waitInvisibility(int timeout, String elementName)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Ожидание_соответствия_атрибута_переданному_значению_3">Ожидание соответствия атрибута переданному значению</h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Способ использования</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* ожидает что значение атрибута "class" в элементе "Элемент" станет равно "значение атрибута"
+* ожидает 5 секунд что значение атрибута "class" в элементе "Элемент" станет равно "значение атрибута"
+
+Где вместо 5 может быть любое время ожидания</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Сигнатура метода</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>T waitChangeAttribute(String attribute, String elementName, String attributeValue)
+T waitChangeAttribute(int timeout, String attribute, String elementName, String attributeValue)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Ожидание_изменения_атрибута_3">Ожидание изменения атрибута</h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Способ использования</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* ожидает что значение атрибута "class" в элементе "Элемент" должно содержать "часть значения атрибута"
+* ожидает 5 секунд что значение атрибута "class" в элементе "Элемент" должно содержать "часть значения атрибута"
+
+* ожидает что значение атрибута "class" в элементе "Элемент" не должно содержать "часть значения атрибута"
+* ожидает 5 секунд что значение атрибута "class" в элементе "Элемент" не должно содержать "часть значения атрибута"
+
+Где вместо 5 может быть любое время ожидания</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Сигнатура метода</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>T waitAttributeContains(String attribute, String elementName, Condition condition, String partAttributeValue)
+T waitAttributeContains(int timeout, String attribute, String elementName, Condition condition, String partAttributeValue)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Ожидание_появления_или_исчезновения_текстового_фрагмента_в_элементе_3">Ожидание появления или исчезновения текстового фрагмента в элементе</h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Способ использования</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* ожидает что элемент "Элемент" должен содержать текст "текст"
+* ожидает 5 секунд что элемент "Элемент" должен содержать текст "текст"
+
+* ожидает что элемент "Элемент" не должен содержать текст "текст"
+* ожидает 5 секунд что элемент "Элемент" не должен содержать текст "текст"
+
+Где вместо 5 может быть любое время ожидания</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Сигнатура метода</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>T waitElementContainsText(String elementName, Condition condition, String text)
+T waitElementContainsText(int timeout, String elementName, Condition condition, String text)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Ожидание_кликабельности_элемента_3">Ожидание кликабельности элемента</h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Способ использования</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* ожидает что элемент "Элемент" станет кликабельным
+* ожидает 5 секунд что элемент "Элемент" станет кликабельным
+
+Где вместо 5 может быть любое время ожидания</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Сигнатура метода</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>T waitClickability(String elementName)
+T waitClickability(int timeout, String elementName)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>О том, как писать свои шаги, можно узнать в документации <a href="https://docs.cucumber.io/guides/10-minute-tutorial" class="ext-link" target="_blank" rel="noopener">cucumber</a></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<span class="red">Чтобы использовать свои шаги, нужно в файле запуска тестов прописать путь до них через запятую в опцию <code>glue</code></span>
+</td>
+</tr>
+</table>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Рекомендации</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Параметры рекомендуется задавать регулярным выражением <code>"([^\"]*)\"</code></p>
+</li>
+<li>
+<p>Если шаг используется только на одной странице, лучше описать глагольное выражение на странице</p>
+</li>
+<li>
+<p>Шаги лучше хранить в отдельном от страниц каталоге (как правило, <code>stepdefs</code>), разбив их на логичесике группы, чтобы быстро и удобно находить их в зависимости от функциональности или принадлежности</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Шаги_в_английской_локализации_3">6.6.3. Шаги в английской локализации</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    * user fills the field "Element" "Text"
+    * user fills the field "Element" with value "Text"
+
+    * user clicks the link "Element"
+    * user clicks the button "Element"
+
+    * user presses the key "KEY"
+    * user presses the key "KEY" on the element "Element"
+
+    * user selects in "Element" the value "Option"
+
+    * user selects the checkbox "Element"
+
+    * user checks in the element "Element" value "Text"
+    * user checks in the element "Element" that the value is not equal "Text"
+    * user checks that the field "Element" is not empty
+    * user checks that the field "Element" is empty
+
+    * element "Element" is focused
+
+    * inserts fragment "Fragment"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Как_использовать_шаги_без_code_cucumber_code_fluent_api_3">6.6.4. Как использовать шаги без <code>cucumber</code> (Fluent API)</h4>
+<div class="paragraph">
+<p>Обратиться к методам-шагам можно следующим образом: <code>MobileSteps.getInstance()</code></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Пример</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>MobileSteps.getInstance().openPage("Main")
+                      .find("menu", "button", "Home")
+                      .click("Contact")
+                      .openPage("Contact")
+                      .checkEmpty("first name");</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Как_использовать_шаги_проекта_без_code_cucumber_code_3">6.6.5. Как использовать шаги проекта без <code>cucumber</code></h4>
+<div class="paragraph">
+<p>Чтобы использовать кастомные шаги вашего проекта через Fluent API, унаследуйте класс с шагами от <code>MobileStepsImpl</code> с учетом типизации.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Каждый метод вашего класса с шгами должен возвращать объект типа <code>this</code> приведенный к <code>T</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Пример класса</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>public class YourStepsImpl&lt;T extends YourStepsImpl&lt;T&gt;&gt; extends MobileStepsImpl&lt;T&gt; {
+    public T yourMethod() {
+        ...
+        return (T) this;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Далее на основе этого класса нужно создать строго типизированный класс, который позволит до комплияции понимать, с каким контекстом происходит взаимодействие в текущий  момент. Сделать это можно следующим образом:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>public class YourSteps extends YourStepsImpl&lt;YourSteps&gt; {
+     private static YourSteps instance;
+
+     public static YourSteps getInstance() {
+        if (instance == null) {
+            instance = new YourSteps();
+        }
+        return instance;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Пример работы:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>YourSteps.getInstance().openPage("Main")
+                      .find("menu", "button", "Home")
+                      .yourMethod()
+                      .openPage("Contact")
+                      .checkEmpty("first name");</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Глагольные_выражения_3">6.6.6. Глагольные выражения</h4>
+<div class="paragraph">
+<p><code>mobile-plugin</code> позволяет описывать шаги, свойственные отдельной странице, непосредственно на ней. Такие шаги называются глагольными выражениями и описываются при помощи аннотации <code>@ActionTitle</code>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Пример</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>@PageEntry(title = "Ваша страница")
+public abstract class YourPage extends MobilePage {
+
+    @ActionTitle(value = "тестирует")
+    public void check() {
+        ....
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Чтобы использовать глагольное выражение в тестовом сценарии, достаточно указать его имя в круглых скобках в контексте страницы. Например:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* открывается страница "Ваша страница"
+* пользователь (тестирует)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Одно глагольное выражение может иметь несколько именований. В этом может быть необходимость, когда есть желание внести конкретику в тестовом сценарии. Сделать это можно при помощи аннотации <code>@ActionTitles</code> Например:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>@PageEntry(title = "Ваша страница")
+public abstract class YourPage extends MobilePage {
+
+    @ActionTitles({
+        @ActionTitle(value = "тестирует"),
+        @ActionTitle(value = "тестирует вашу страницу")
+    })
+    public void check() {
+        ....
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Глагольные выражения могут иметь какие угодно параметры для этого достаточно добавить параметр в сигнатуре метода. Например:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>@PageEntry(title = "Ваша страница")
+public abstract class YourPage extends MobilePage {
+
+    @ActionTitle(value = "тестирует")
+    public void check(String param) {
+        ....
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Пример использования:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* открывается страница "Ваша страница"
+* пользователь (тестирует) с параметром "Параметр"</code></pre>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">При написании глагольных выражений важно помнить</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Значение, возвращаемое методом, никуда не сохраняется, поэтому в качестве типа возвращаемого значения стоит всегда указывать void</p>
+</li>
+<li>
+<p>В качестве параметров метода можно использовать следующие типы: String, List&lt;String&gt;, DataTable</p>
+</li>
+<li>
+<p>Если шага с нужным набором параметров для вашего экшена нет, вы можете написать его сами</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_База_для_глагольных_выражений_3">База для глагольных выражений</h5>
+<div class="paragraph">
+<p>Как уже говорилось выше, глагольные выражения базируются на уже описанных в `mobile-plugin`шагах особой структуры. Они приведены ниже</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Перед шагом можно прописать действующее лицо - <strong><em>пользователь</em></strong> или <strong><em>он</em></strong> в любом из русскоязычных шагов
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">RU</th>
+<th class="tableblock halign-center valign-middle">EN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><p class="tableblock">Действие без параметров</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* ()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* user ()</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><p class="tableblock">Действие с параметром</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* () ""<br>
+* () с параметром ""</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* user () ""<br>
+* user () with param ""</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><p class="tableblock">Действие с двумя параметрами</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* () "" ""<br>
+* () с параметрами "" ""</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* user () "" ""<br>
+* user () with the parameters "" ""</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><p class="tableblock">Действие с тремя параметрами</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* () "" "" ""<br>
+* () с параметрами "" "" ""</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* user () "" "" ""<br>
+* user () with the parameters "" "" ""</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><p class="tableblock">Действия с таблицей данных (DataTable)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* () данными<br>
+* () "" данными</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* user () data<br>
+* user () "" data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><p class="tableblock">Действие со списком</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* () из списка</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* user () from the list</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Переопределение_стандартных_методов_3">6.6.7. Переопределение стандартных методов</h4>
+<div class="paragraph">
+<p>Переопределить шаги плагина mobile-plugin можно одним из двух способов:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Переопределить непосредственно шаг</p>
+</li>
+<li>
+<p>Переопределить действие внутри шага</p>
+</li>
+</ol>
+</div>
+<div class="sect4">
+<h5 id="_Переопределение_шага_3">Переопределение шага</h5>
+<div class="paragraph">
+<p>Чтобы переопределить шаг, нужно унаследоваться от класса с шагаими - MobileStepsImpl и переопределить метод как в примере</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>public class YourStepsImpl&lt;T extends YourStepsImpl&lt;T&gt;&gt; extends MobileStepsImpl&lt;T&gt; {
+    @Override
+    public T click(String elementTitle) throws PageException {
+        ...
+        return (T) this;
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Переопределение_действия_3">Переопределение действия</h5>
+<div class="paragraph">
+<p>Для переопределения нужно:</p>
+</div>
+<div class="paragraph">
+<p>Создать класс, в котором будут храниться переопределенные методы, унаследовавшись от <code>MobilePageActions</code>, и описать в нем методы. Пример для клика:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>public class YourMobilePageActions extends MobilePageActions {
+
+    @Override
+    public void click(Object element){
+        ...
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Создать базовую страницу проекта, унаследовав её от базовой страницы плагина. Переопределить необходимые классы <code>Environment</code>. Унаследовать все страницы своего проекта от этой базовой страницы.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Пример</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>package ru.qa.your.project.pages;
+
+import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
+import ru.sbtqa.tag.pagefactory.MobilePage;
+
+@PageEntry(title = "Ваша страница")
+public abstract class YourPage extends MobilePage {
+
+    public YourPage() {
+        Environment.setPageActions(yourMobilePageActions);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_Действия_для_переопределения_3">Действия для переопределения</h6>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Метод</th>
+<th class="tableblock halign-center valign-middle">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">void fill(Object element, String text)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Заполняет поле</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">void click(Object element);</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Выполняет нажатие по элементу</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">void press(Object element, String key);</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Выполняет нажатие клавиши</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">void select(Object element, String option);</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Выбирает из выпадающего списка</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">void setCheckbox</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Отмечает признак или снимает отметку</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">void acceptAlert()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Принимает алерт</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">void dismissAlert()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Отклоняет алерт</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Тестовые_сценарии_3">6.7. Тестовые сценарии</h3>
+<div class="paragraph">
+<p><strong><em>Тестовый сценарий</em></strong> - это совокупность шагов, конкретных условий и параметров, необходимых для проверки реализации тестируемой функции или её части</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Фича</em></strong> - набора сценариев, имеющих общую функциональность. Фичи представляют собой файлы с расширением <code>feature</code>, написанные на языке <code>Gherkin</code> с использованием возможностей фреймворка <code>Cucumber</code></p>
+</div>
+<div class="paragraph">
+<p>С учетом локализации шагов, фичи могут быть написаны по крайней мере на одном из двух языков: русском или английском</p>
+</div>
+<div class="paragraph">
+<p>Рассмотрим структуру фичи на примере:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>#language:ru
+@feature-tag
+Функционал: Тестирование поиска Google
+
+  Предыстория:
+    Когда открывается страница "Главная страница"
+
+  @test-tag
+  Сценарий: Тестирование поиска
+    И пользователь (тестирует) "Элемент"
+
+  @test-tag-examples
+  Структура сценария: Тестирование поиска
+    И пользователь (тестирует) "&lt;element&gt;"
+
+  Примеры:
+    | element   |
+    | Элемент 1 |
+    | Элемент 2 |</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><em>#language:ru</em></strong> - язык фичи</p>
+</div>
+<div class="paragraph">
+<p><strong><em>@feature-tag</em></strong> - тэг запуска фичи. Позволяет запустить все тестовые сценарии фичи одной группой. Может быть любым, но обязан всегда начинаться с <code>@</code></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Функционал (Feature:)</em></strong> - описание функциональности фичи</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Предыстория: (Background:)</em></strong> - шаги, которые будут выполняться перед каждым тестовым сценарием</p>
+</div>
+<div class="paragraph">
+<p><strong><em>@test-tag и @test-tag-examples</em></strong> - тэги запуска тестов. Могут быть любыми, но обязаны всегда начинаться с <code>@</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+На одном сценарии может быть сколько угодно тэгов<br>
+<br>
+Не рекомендуется использовать на разных сценариях или фичах только одинаковые тэги. Всегда должна быть возможность запустить любой тест отдельно от остальных
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong><em>Сценарий: (Scenario:)</em></strong> - описание функциональности тестового сценария</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Структура сценария: (Scenario Outline:)</em></strong> - описание функциональности тестового сценария. Используется при параметризации тестов в связке с ключевим словом <code>Примеры:</code></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Шаги и глагольные выражения</em></strong>  тестового сценария. Начинаются сразу после ключевого слова <code>Сценарий:</code>. Шаги должны начинаться с ключевых слов, таких как  <code>Если</code>, <code>Когда</code>, <code>Тогда</code> (<code>Given</code>, <code>When</code>, <code>Then</code>) либо с <code>*</code>. Для работоспособности не имеет значения, какое ключевое слово используется, но они позволяют сделать фичи более удобными для чтения</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Чтобы использовать элемент или глагольное выражение нужно обозначить текущий контекст - страницу. Сделать это можно, например, шагом "открывается страница"
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong><em>Примеры: (Examples:)</em></strong> - используются для параметризации тестового сценария. Значения подставляются по имени параметра. В нашем примере тест бы выполнился два раза: сначала с "Элемент 1", затем с "Элемент 2"</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Рекомендации:<br>
+<br>
+ 1. Каждый сценарий должен быть независим от всех остальных, то есть его можно запустить независимо от остальных и он выполнится успешно<br>
+<br>
+ 2. Лучше всего разбивать сценарии на группы по их функциональности, чтобы фичи были небольшими. Это значительно упростит поддержку автотестов в дальнейшем
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_Фрагменты_3">6.7.1. Фрагменты</h4>
+<div class="paragraph">
+<p><strong><em>Фрагмент</em></strong> - набор шагов, который может быть подставлен в любой сценарий вместо заранее определенного шага</p>
+</div>
+<div class="paragraph">
+<p>Чтобы использовать фраменты, необходимо прописать в файле конфигурации <code>aplication.properties</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>fragments.enabled = true</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Рассмотрим пример</dt>
+<dd>
+<p><strong><em>Сценарий A</em></strong> - сценарий, в который нужно подстановить шаги<br>
+<strong><em>Сценарий B</em></strong> - сценарий-фрагмент, шаги которого можно подставить в любой сценарий</p>
+</dd>
+</dl>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/fragment.png" alt="fragment"></a>
+</div>
+</div>
+<div class="paragraph">
+<p>Подстановку фрагмента можно выполнить, используя один из шагов</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    * пользователь вставляет фрагмент "Название фрагмента"
+    * пользователь вставляет фрагмент "Название фрагмента"
+		| параметр 1 | параметр 2 |
+		| значение   | значение   |</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>В примере выше "Название фргамента" выделено <span class="lime">зеленым</span>.</p>
+</div>
+<div class="sect4">
+<h5 id="_Как_создавать_фрагменты_3">Как создавать фрагменты</h5>
+<div class="paragraph">
+<p>17. Создать фичу, которая будет содержать фрагменты<br>
+18. Прописать путь до каталога с фрагментами в файле конфигурациии <code>aplication.properties</code>. Например:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>fragments.path = src/test/resources/fragments</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+В случае, если этот параметр не указан, то поиск фрагментов будет происходить в директории, которая указана в @CucumberOptions.features
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>19. Создать сценарий-фрагмент<br>
+20. Аннотировать созданный сценарий как <code>@fragment</code></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<span class="red">Не используйте фрагменты как независимые тестовые сценарии</span>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Пример_параметризованного_фрагмента_3">Пример параметризованного фрагмента</h5>
+<div class="paragraph">
+<p><strong><em>Параметры</em></strong>: логин и пароль<br>
+<strong><em>Значения параметров</em></strong>: User и 123<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/param_fragment.png" alt="param fragment"></a>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>В <strong>B</strong> подстановка обозначена символами <strong>"&lt;&gt;"</strong>. Внутри указано имя параметра</p>
+</li>
+<li>
+<p>В <strong>А</strong> выполняется вставка фрагмента с параметрами в виде таблицы данных. Первая строка таблицы - имена парметров, вторая - значения</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Пример_параметризованного_фрагмента_с_несколькими_строками_значений_3">Пример параметризованного фрагмента с несколькими строками значений</h5>
+<div class="paragraph">
+<p><strong><em>Параметры</em></strong>: логин и пароль<br>
+<strong><em>Значения параметров</em></strong>: Alex и 123, Tony и 456<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/many_param_fragment.png" alt="many param fragment"></a>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>В случаях, когда в таблице параметров более одной строки, фрагмент будет подставлен столько раз, сколько строк в таблице. В каждой подстановоке будут использованы значения соответствующей строки</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Цепочки_фргаментов_3">Цепочки фргаментов</h5>
+<div class="paragraph">
+<p>Допускается использование фрагментов внутри других фрагментов</p>
+</div>
+<div class="paragraph">
+<p>Пример</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/fragments.png" alt="fragments"></a>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<span class="red"><strong><em>Не допускается:</em></strong><br>
+1. Вызывать фрагмент из самого себя<br>
+2. Зацикливать вызовов фрагментов</span><br>
+<br>
+ Эти исключительные ситуации обрабатываются и тесты будут остановлены до запуска обработчика <code>cucumber</code>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Динамические_фрагменты_3">Динамические фрагменты</h5>
+<div class="paragraph">
+<p>Фрагменты можно подставлять динамически в зависимости от тестовых данных. Например:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dynamic-fragment.png" alt="dynamic fragment"></a>
+</div>
+</div>
+<div class="paragraph">
+<p>Это так же может быть удобно для запуска в условиях постоянно меняющихся тестовых данных либо условий тестирования (различные версий приложения)</p>
+</div>
+<div class="paragraph">
+<p>Рассмотрим подробнее. Допустим, у нас есть тестовый сценарий, проверяющий работу с данными клиента. Клиент может быть новым (нет в системе) и старым. Если клиент новый, его нужно завести. Если старый, то найти через поиск и проверить, что он был найден. Поэтому в нашем примере будет два фргамента - по одному для каждой из ситуаций плюс тестовые данные сценария</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dynamic_fragment_ex1.png" alt="dynamic fragment ex1"></a>
+</div>
+</div>
+<div class="paragraph">
+<p>В ситуации, когда клиент уже известен (Client = User) выполнится фрагмент "Проверка данных клиента"</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dynamic_fragment_ex2.png" alt="dynamic fragment ex2"></a>
+</div>
+</div>
+<div class="paragraph">
+<p>И, напротив, для неизвестного клиента (Client = Unauthorized user) выполнится "Заполнение данных клиента"</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dynamic_fragment_ex3.png" alt="dynamic fragment ex3"></a>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Работа_с_тестовыми_данными_3">6.7.2. Работа с тестовыми данными</h4>
+<div class="sect4">
+<h5 id="_Тестовые_данные_из_файлов_3">Тестовые данные из файлов</h5>
+<div class="paragraph">
+<p>Тестовые данные могут быть использованы в любом шаге сценария. Тестовые данные могут храниться в одном из форматов:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>json</p>
+</li>
+<li>
+<p>properties</p>
+</li>
+<li>
+<p>excel</p>
+</li>
+<li>
+<p>mongo</p>
+</li>
+</ul>
+</div>
+<div class="sect5">
+<h6 id="_Тип_и_расположение_файлов_тестовых_данных_3">Тип и расположение файлов тестовых данных</h6>
+<div class="paragraph">
+<p>Задать тип тестовых данных можно в файле конфигурации <code>application.properties</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>data.type = json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Задать расположение тестовых данных можно следующим образом:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>data.folder = src/test/resources/data/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Для <code>excel</code> путь указывается до файла без расширения:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>data.folder = src/test/resources/data/Data</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Если файлы имеют нестандартное для типа данных расширение, нужно указать его в настройках. Для <code>excel</code> не будет учитываться (всегда будет <code>xslx</code>). Например, для файлов с раширением <code>jsonp</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>data.extension = jsonp</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_Инициализация_коллекции_3">Инициализация коллекции</h6>
+<div class="paragraph">
+<p>Для инициализации коллекции нужно задать ее через конфигурацию. Имя файла задается без расширения. Если в проекте используется несколько коллекций, то в параметре нужно указать наиболее часто используемую. Пример инициализации коллекции для <code>Data.json</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>data.initial.collection = Data</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Обратиться к инициализированной можно через символ <code>$</code>, к неинициализированной через <code>$</code> и имя.
+Для обращения из фичи существует тэг <code>@data</code>. Пример:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>@data=$OtherData</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Для <code>excel</code> коллекция - это имя вкладки</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_Особенности_работы_code_mongodb_code_3">Особенности работы <code>mongodb</code></h6>
+<div class="paragraph">
+<p>Для <code>mongodb</code> есть два дополнительных обязательных параметра: адрес и имя базы данных. Например:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>data.uri = mongodb://username:password@host.ru:8080
+data.db = bd</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_Особенности_работы_code_properties_code_3">Особенности работы <code>properties</code></h6>
+<div class="paragraph">
+<p>Для <code>properties</code> файлов доступен функционал раскладывания значения на массив по разделителю. По-умолчанию это <code>,</code>, но можно переопределить следующим образом:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>data.arrayDelimiter = !</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_Путь_к_элементу_коллекции_3">Путь к элементу коллекции</h6>
+<div class="paragraph">
+<p>Для обозначения пути внутри коллекции используются фигурные скобки</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Обратите внимание, если имя коллекции не указывается явно перед параметром, то перед фигурными скобками должен стоять символ <code>$</code> (брать данные из текущей коллекции)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Пример для элемента <code>first name</code> из набора <code>Admin</code> коллекции <code>Data</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>И пользователь (тестирует) "Элемент" с параметром "$Data{Admin.first name}"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_Ссылки_на_другие_элементы_3">Ссылки на другие элементы</h6>
+<div class="paragraph">
+<p>Поддерживается работа со ссылками в данных, как внутри одной коллекции, так и на другие коллекции.</p>
+</div>
+<div class="paragraph">
+<p>Для <code>mongodb</code> используется втроенный механизм ссылок.</p>
+</div>
+<div class="paragraph">
+<p>Для <code>excel</code> достаточно в ячейке значения указать ссылку вида <code>$ref:&lt;имя коллекции&gt;:&lt;путь&gt;</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ref:Data:price</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Для <code>json</code> ссылки задавать можно как объект вида <code>{ "$ref" : "&lt;имя коллекции&gt;.&lt;путь&gt;" }</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+    "some reference": {
+        "$ref": "Data:price"
+    },
+    "price": 20.00
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Для <code>properties</code> ссылки задавать можно как объект вида <code>&lt;property name&gt;.$ref = &lt;имя коллекции&gt;.&lt;путь&gt;</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>someReference.$ref = Data:price
+price = 20.00</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_Примеры_3">Примеры</h6>
+<div class="paragraph">
+<p><strong><em>Простой пример с заданием коллекции через тэг `@data`</em></strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dataSimpleEx.png" alt="dataSimpleEx"></a>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><em>Через <code>@data</code> можно задать не только имя коллекции, но и путь к набору данных внутри нее</em></strong></p>
+</div>
+<div class="paragraph">
+<p>Пример:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dataEx2.png" alt="dataEx2"></a>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><em>Пример инициализации коллекции для сценария с использованием параметров в таблице данных</em></strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dataTableEx.png" alt="dataTableEx"></a>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><em>Пример использования нескольких файлов данных в одном тестовом сценарии, массивов данных</em></strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dataTwoCollections.png" alt="dataTwoCollections"></a>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><em>Пример задания пути данных с учетом коллекции, описанной в конфигурации</em></strong></p>
+</div>
+<div class="paragraph">
+<p>Пример для значения</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>data.initial.collection = Data</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/dataInit.png" alt="dataInit"></a>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><em>Пример рабооты со ссылками</em></strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href=""><img src="./images/data_relative.png" alt="data relative"></a>
+</div>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_Запоминание_значений_и_работа_с_ними_stash_3">Запоминание значений и работа с ними (Stash)</h5>
+<div class="paragraph">
+<p>5. Для запоминания значения необходимо в одном из шагов выполнить</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Stash.put("key", "value");</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Обратите внимание! Для использования запомненных значений в шагах необходимо, чтобы ключ и значение были типа <code>String</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>6. Используйте запомненное значение в любом шаге, например:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* пользователь заполняет поле "Поле" "#{key}"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><em>Особенности:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ключ может использоваться в любых возможных вариантах: в списке или таблице с данными, в многострочных параметрах, параметрах сценария.</p>
+</li>
+<li>
+<p>Ключ может быть именем поля или частью текста</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* пользователь заполняет поле "Поле"
+"""
+Это многострочный параметр
+с #{key} в качестве фрагмента
+текста
+"""</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>В одном параметре может использоваться сколько угодно ключей, в том числе один и тот же ключ несколько раз:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>* пользователь заполняет поле "Поле"
+"""
+Это многострочный параметр с двумя разными данными
+с ключами #{key1} и #{key2} в качестве фрагментов
+текста
+"""</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Построение_отчетов_3">6.8. Построение отчетов</h3>
+<div class="paragraph">
+<p>По умолчанию mobile-plugin поддерживают создание отчетов с использованием Allure версии 2.</p>
+</div>
+<div class="paragraph">
+<p>Чтобы настроить автоматическое создание отчетов после прохождения автотестов, нужно сделать следующее:</p>
+</div>
+<div class="paragraph">
+<p>Для плагина <code>maven-surefire-plugin</code> добавить параметр запуска. Пример:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    &lt;plugin&gt;
+        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+        &lt;version&gt;2.20&lt;/version&gt;
+        &lt;configuration&gt;
+          &lt;argLine&gt;
+            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+            -Dcucumber.options="--plugin io.qameta.allure.cucumber2jvm.AllureCucumber2Jvm --plugin pretty"
+          &lt;/argLine&gt;
+        &lt;/configuration&gt;
+        &lt;dependencies&gt;
+          &lt;dependency&gt;
+            &lt;groupId&gt;org.aspectj&lt;/groupId&gt;
+            &lt;artifactId&gt;aspectjweaver&lt;/artifactId&gt;
+            &lt;version&gt;${aspectj.version}&lt;/version&gt;
+          &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+      &lt;/plugin&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>После выполнения тестов в папке allure-results/ будут созданы json файлы с результатами прохождения тестов - для каждого теста отдельный файл. В отчетах можно в том числе найти скриншоты (в момент падения теста) и ссылки на видео (если велась запись).</p>
+</div>
+<div class="paragraph">
+<p>Просмотреть результаты в виде страницы-отчета можно <a href="https://docs.qameta.io/allure/#_reporting" class="ext-link" target="_blank" rel="noopener">одним из способов</a></p>
+</div>
+<div class="sect3">
+<h4 id="_Отчеты_и_fluent_api_3">6.8.1. Отчеты и Fluent API</h4>
+<div class="paragraph">
+<p>Для того чтобы отчеты содержали шаги, которые вы используете в тестах без <code>cucumber</code>, необходимо следующее:</p>
+</div>
+<div class="paragraph">
+<p>21. Добавить <code>allure</code> зависимость в проект</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    &lt;dependency&gt;
+      &lt;groupId&gt;io.qameta.allure&lt;/groupId&gt;
+      &lt;artifactId&gt;allure-junit4&lt;/artifactId&gt;
+      &lt;version&gt;2.10.0&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>22. Добавить <code>listener</code> в конфигурацию <code>maven-surefire-plugin</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>&lt;properties&gt;
+  &lt;property&gt;
+    &lt;name&gt;listener&lt;/name&gt;
+    &lt;value&gt;io.qameta.allure.junit4.AllureJunit4&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/properties&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>23. В случае, если требуется английская локализация фреймворк-шагов, то добавить в <code>application.properties</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>   junit.lang = en</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+По умолчанию язык русский
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>24. Свои методы следует аннотировать <code>@Step</code></p>
+</div>
+<div class="paragraph">
+<p>Пример:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">    @Step("Мой тестовый метод \"{parameter}\"")
+    public T yourMethod(String parameter) {
+        ...
+        return (T) this;
+    }</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Вспомогательные_методы_3">6.9. Вспомогательные методы</h3>
+<div class="sect3">
+<h4 id="_Вспомогательные_методы_использующие_рефлексию_3">6.9.1. Вспомогательные методы, использующие рефлексию</h4>
+<div class="paragraph">
+<p><code>mobile-plugin</code> предоставляет ряд методов для работы с блоками и типизированными элементами</p>
+</div>
+<div class="paragraph">
+<p>Обратиться к методам можно через <code>Environment.getReflection()</code></p>
+</div>
+<div class="sect4">
+<h5 id="_Работа_с_элементами_3">Работа с элементами</h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Метод</th>
+<th class="tableblock halign-center valign-middle">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String getElementTitle(Page page, Object element)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Возвращает значение аннотации <code>@ElementTitle</code> для переданного элемента</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean isRequiredElement(Field field, String title)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Проверяет, является ли поле объявляением элемента или нет (аннотировано <code>@ElementTitle</code> или нет)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String getFieldTitle(Field field)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Получает значение аннотации <code>@ElementTitle</code> поля</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;T&gt; T getElementByField(Object parentObject, Field field)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Получает объект поля для указанного родителя</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_Работа_с_глагольными_выражениями_3">Работа с глагольными выражениями</h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Метод</th>
+<th class="tableblock halign-center valign-middle">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">void executeMethodByTitle(Object context, String title, Object&#8230;&#8203; param)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Находит глагольное выражение в переданном контексте и выполняет его. В качестве контекста может выступать блок или страница</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean isRequiredAction(Method method, String title)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Проверяет, является ли метод глагольным выражением или нет (аннотирован <code>@ActionTitle</code> или <code>@ActionTitles</code> или нет)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_Другие_полезные_методы_6">Другие полезные методы</h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Метод</th>
+<th class="tableblock halign-center valign-middle">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List&lt;Method&gt; getDeclaredMethods(Class clazz)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Возвращает методы переданного класса, включая методы родителя</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">void fireValidationRule(Page page, String title, Object&#8230;&#8203; params)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Находит метод страницы, у которого значение аннотации <code>@ValidationRule</code> совпадает с переданным, и выполняет его</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List&lt;Tag&gt; getScenarioTags(ScenarioDefinition scenarioDefinition)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Получает список тэгов сценария</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Параллельный_запуск_тестов_на_симуляторах">6.10. Параллельный запуск тестов на симуляторах</h3>
 <div class="paragraph">
 <p>Будет описан метод при использовании Selenium Grid.</p>
 </div>
 <div class="sect3">
-<h4 id="_Скачать_и_запустить_selenium_server_standalone">6.1.1. Скачать и запустить selenium-server-standalone</h4>
+<h4 id="_Скачать_и_запустить_selenium_server_standalone">6.10.1. Скачать и запустить selenium-server-standalone</h4>
 <div class="paragraph">
 <p>Скачать здесь</p>
 </div>
@@ -8712,7 +11250,7 @@ connProps.put(MqFactory.JMS_CONNECTION, queueConnection);</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_Отконфигурировать_и_запустить_по_экземпляру_appium_на_каждый_симулятор">6.1.2. Отконфигурировать и запустить по экземпляру appium на каждый симулятор</h4>
+<h4 id="_Отконфигурировать_и_запустить_по_экземпляру_appium_на_каждый_симулятор">6.10.2. Отконфигурировать и запустить по экземпляру appium на каждый симулятор</h4>
 <div class="paragraph">
 <p>Будет приведен пример для двух симуляторов.</p>
 </div>
@@ -8816,7 +11354,7 @@ connProps.put(MqFactory.JMS_CONNECTION, queueConnection);</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_Внести_правки_в_application_properties">6.1.3. Внести правки в application.properties</h4>
+<h4 id="_Внести_правки_в_application_properties">6.10.3. Внести правки в application.properties</h4>
 <div class="paragraph">
 <p>В качестве appium.url указать адрес на котором открыт selenium-standalone.</p>
 </div>
@@ -8832,7 +11370,7 @@ appium.device.platform.version = ...</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_Внести_правки_в_pom_xml">6.1.4. Внести правки в pom.xml</h4>
+<h4 id="_Внести_правки_в_pom_xml">6.10.4. Внести правки в pom.xml</h4>
 <div class="paragraph">
 <p>Добавить в surefire plugin следующую конфигурацию</p>
 </div>
@@ -9191,7 +11729,7 @@ public class CucumberTest {}</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 16.0-SNAPSHOT<br>
-Last updated 2021-06-08 12:25:44 UTC
+Last updated 2021-06-18 14:33:06 UTC
 </div>
 </div>
 </body>
