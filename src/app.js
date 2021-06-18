@@ -38,8 +38,10 @@ function setVersion(version) {
 
 $.getJSON("releases.json", function (data) {
     const options = [];
-    $.each(data.reverse(), function (key, version) {
-        options.push(version.name);
+    console.log(data.map(release=>release.name));
+    const sortedReleases = data.map(release=>release.name).sort((a, b) => a.localeCompare(b, undefined, { numeric:true }));
+    $.each(sortedReleases.reverse(), function (key, version) {
+        options.push(version);
     });
     $('#versions').selectmenu({
         change: function (event, ui) {
