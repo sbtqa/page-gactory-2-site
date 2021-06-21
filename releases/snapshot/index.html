@@ -624,7 +624,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_mq_plugin">5. MQ plugin</a>
 <ul class="sectlevel2">
 <li><a href="#_Как_начать_использовать_4">5.1. Как начать использовать</a></li>
-<li><a href="#_Примеры_создания_коннекта_к_mq">5.2. Примеры создания коннекта к MQ</a></li>
+<li><a href="#_Примеры_создания_соединения_с_mq">5.2. Примеры создания соединения с MQ</a></li>
 </ul>
 </li>
 <li><a href="#_mobile_plugin">6. Mobile plugin</a>
@@ -689,7 +689,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_Параллельный_запуск_тестов_на_симуляторах">6.10. Параллельный запуск тестов на симуляторах</a>
 <ul class="sectlevel3">
 <li><a href="#_Скачать_и_запустить_selenium_server_standalone">6.10.1. Скачать и запустить selenium-server-standalone</a></li>
-<li><a href="#_Отконфигурировать_и_запустить_по_экземпляру_appium_на_каждый_симулятор">6.10.2. Отконфигурировать и запустить по экземпляру appium на каждый симулятор</a></li>
+<li><a href="#_Сконфигурировать_и_запустить_по_экземпляру_appium_на_каждый_симулятор">6.10.2. Сконфигурировать и запустить по экземпляру appium на каждый симулятор</a></li>
 <li><a href="#_Внести_правки_в_application_properties">6.10.3. Внести правки в application.properties</a></li>
 <li><a href="#_Внести_правки_в_pom_xml">6.10.4. Внести правки в pom.xml</a></li>
 </ul>
@@ -726,11 +726,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Инструмент позволяет писать автотесты на человекочитаемом языке, тем самым понижая входной порог для разработчиков тестов
 и повышая их читаемость неподготовленными пользователями.
-Page factory 2 использует framework Cucumber-JVM, но, в отличии от чистого использования, в котором довольно большую
+Page factory 2 использует framework Cucumber-JVM, но, в отличие от чистого использования, в котором довольно большую
 часть архитектуры занимают шаги(stepdefs), здесь акцент сделан на то, чтобы избавиться от необходимости писать их самому,
-или сократить количество самописных шагов(stepdefs) сосредоточившись на описании кода страниц с использованием паттерна
+или сократить количество самописных шагов (stepdefs) сосредоточившись на описании кода страниц с использованием паттерна
 PageObject.
-В Page Factory 2 уже реализовано много стандартных шагов(steps), которых хватит чтобы начать разрабатывать
+В Page Factory 2 уже реализовано много стандартных шагов(steps), которых хватит, чтобы начать разрабатывать
 автоматизированные тесты. Page Factory 2 кроссплатформенный фреймворк который позволяет запускать тесты на всех
 популярных браузерах. Также Page Factory 2 умеет работать с приложения на iOs и Android, использует для этого Appium.
 Для облегчения работы с feature файлами был разработан <a href="https://plugins.jetbrains.com/plugin/13227-test-automation-gears/">Idea-плагин</a>,
@@ -1130,14 +1130,14 @@ public abstract class YourPage extends WebPage {
 <p class="tableblock">Вернет <code>true</code>, если текст найден в списке элементов и <code>false</code>, если не найден</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; void clickOnElemenByText(List&lt;T&gt; elements, String text)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; void clickOnElementByText(List&lt;T&gt; elements, String text)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Находит элемент в списке элементов с заданным текстом и кликает по нему.</p>
 <p class="tableblock">Проверяет, не является ли элемент недоступным для редактирования. Если недоступен, кидает исключение</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; String getTextByElementXpath(T currentContext, String xpath)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Получает текстовое значение элемента по его xpath выражению</p>
-<p class="tableblock">В качетве параметра передается элемент, относительно которого будем выполнять
+<p class="tableblock">В качестве параметра передается элемент, относительно которого будем выполнять
 поиск</p>
 <p class="tableblock">Если элемент не был найден по указанному пути, то возвращает пустую строку</p></td>
 </tr>
@@ -1202,7 +1202,7 @@ public abstract class YourPage extends WebPage {
 <h5 id="_Проверка_текста_на_странице">Проверка текста на странице</h5>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Проверяет наличие текста на странице вне засисимости в одном он элементе или в нескольких</dt>
+<dt class="hdlist1">Проверяет наличие текста на странице вне зависимости в одном он элементе или в нескольких</dt>
 </dl>
 </div>
 <div class="listingblock">
@@ -1219,7 +1219,7 @@ public abstract class YourPage extends WebPage {
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>    * проверяет что элемент с текстом "Текст" существует
-    * проверяет что текст "Текст" отоброжается</code></pre>
+    * проверяет что текст "Текст" отображается</code></pre>
 </div>
 </div>
 </div>
@@ -1287,7 +1287,7 @@ public abstract class YourPage extends WebPage {
 </div>
 </div>
 <div class="sect4">
-<h5 id="_Выбор_из_стандартного_выпадающего_списка_опции_имееют_тэг_option">Выбор из стандартного выпадающего списка (опции имееют тэг option)</h5>
+<h5 id="_Выбор_из_стандартного_выпадающего_списка_опции_имеют_тэг_option">Выбор из стандартного выпадающего списка (опции имеют тэг option)</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>    * выбирает в "Элемент" значение "Опция"</code></pre>
@@ -1515,13 +1515,13 @@ T waitClickability(int timeout, String elementName)</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>Параметры рекумендуется задавать регулярным выражением <code>"([^\"]*)\"</code></p>
+<p>Параметры рекомендуется задавать регулярным выражением <code>"([^\"]*)\"</code></p>
 </li>
 <li>
 <p>Если шаг используется только на одной странице, лучше описать глагольное выражение на странице</p>
 </li>
 <li>
-<p>Шаги лучше хранить в каталоге отдельном от страниц (как правило, <code>stepdefs</code>) в классах, разбив их на логичесике группы, чтобы быстро и удобно находить их в зависимости от функциональности или принадлежности</p>
+<p>Шаги лучше хранить в каталоге отдельном от страниц (как правило, <code>stepdefs</code>) в классах, разбив их на логические группы, чтобы быстро и удобно находить их в зависимости от функциональности или принадлежности</p>
 </li>
 </ul>
 </div>
@@ -1641,7 +1641,7 @@ T waitClickability(int timeout, String elementName)</code></pre>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Каждый метод вашего класса с шгами должен возвращать объект типа <code>this</code> приведенный к <code>T</code>
+Каждый метод вашего класса с шагами должен возвращать объект типа <code>this</code> приведенный к <code>T</code>
 </td>
 </tr>
 </table>
@@ -1662,7 +1662,7 @@ T waitClickability(int timeout, String elementName)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Далее на основе этого класса нужно создать строго типизированный класс, который позволит до комплияции понимать, с каким контекстом происходит взаимодействие в текущий  момент. Сделать это можно следующим образом:</p>
+<p>Далее на основе этого класса нужно создать строго типизированный класс, который позволит до компиляции понимать, с каким контекстом происходит взаимодействие в текущий  момент. Сделать это можно следующим образом:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1932,7 +1932,7 @@ public abstract class YourPage extends WebPage {
 </div>
 </div>
 <div class="paragraph">
-<p>Обработка некритичной ошибки происходит аналогично работе с некритиными шагами</p>
+<p>Обработка некритичной ошибки происходит аналогично работе с некритичными шагами</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1958,7 +1958,7 @@ public abstract class YourPage extends WebPage {
 <div class="sect4">
 <h5 id="_Переопределение_шага">Переопределение шага</h5>
 <div class="paragraph">
-<p>Чтобы переопределить шаг, нужно унаследоваться от класса с шагаими - WebStepsImpl и переопределить метод как в примере</p>
+<p>Чтобы переопределить шаг, нужно наследоваться от класса с шагами - WebStepsImpl и переопределить метод как в примере</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1978,7 +1978,7 @@ public abstract class YourPage extends WebPage {
 <p>Для переопределения нужно:</p>
 </div>
 <div class="paragraph">
-<p>Создать класс, в котором будут храниться переопределенные методы, унаследовавшись от <code>WebPageActions</code>, и описать в нем методы. Пример для клика:</p>
+<p>Создать класс, в котором будут храниться переопределенные методы, наследованные от <code>WebPageActions</code>, и описать в нем методы. Пример для клика:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2133,10 +2133,10 @@ public abstract class YourPage extends WebPage {
 <p><strong><em>Сценарий: (Scenario:)</em></strong> - описание функциональности тестового сценария</p>
 </div>
 <div class="paragraph">
-<p><strong><em>Структура сценария: (Scenario Outline:)</em></strong> - описание функциональности тестового сценария. Используется при параметризации тестов в связке с ключевим словом <code>Примеры:</code></p>
+<p><strong><em>Структура сценария: (Scenario Outline:)</em></strong> - описание функциональности тестового сценария. Используется при параметризации тестов в связке с ключевым словом <code>Примеры:</code></p>
 </div>
 <div class="paragraph">
-<p><strong><em>Шаги и глагольные выражения</em></strong>  тестового сценария. Начинаются сразу после ключевого слова <code>Сценарий:</code>. Шаги должны начинаться с ключевых слов, таких как  <code>Если</code>, <code>Когда</code>, <code>Тогда</code> (<code>Given</code>, <code>When</code>, <code>Then</code>) либо с <code>*</code>. Для работоспособности не имеет значения, какое ключевое слово используется, но они позволяют сделать фичи более удобными для чтения</p>
+<p><strong><em>Шаги и глагольные выражения</em></strong>  тестового сценария. Начинаются сразу после ключевого слова <code>Сценарий:</code>. Шаги должны начинаться с ключевых слов, таких как <code>Если</code>, <code>Когда</code>, <code>Тогда</code> (<code>Given</code>, <code>When</code>, <code>Then</code>) либо с <code>*</code>. Для работоспособности не имеет значения, какое ключевое слово используется, но они позволяют сделать фичи более удобными для чтения</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -2145,7 +2145,7 @@ public abstract class YourPage extends WebPage {
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Чтобы использовать элемент или глагольное выражение нужно обозначить текущий контекст - страницу. Сделать это можно, например, шагом "открывается страница"
+Чтобы использовать элемент или глагольное выражение, нужно обозначить текущий контекст — страницу. Сделать это можно, например, шагом "открывается страница"
 </td>
 </tr>
 </table>
@@ -2175,7 +2175,7 @@ public abstract class YourPage extends WebPage {
 <p><strong><em>Фрагмент</em></strong> - набор шагов, который может быть подставлен в любой сценарий вместо заранее определенного шага</p>
 </div>
 <div class="paragraph">
-<p>Чтобы использовать фраменты, необходимо прописать в файле конфигурации <code>aplication.properties</code></p>
+<p>Чтобы использовать фрагменты, необходимо прописать в файле конфигурации <code>application.properties</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2186,7 +2186,7 @@ public abstract class YourPage extends WebPage {
 <dl>
 <dt class="hdlist1">Рассмотрим пример</dt>
 <dd>
-<p><strong><em>Сценарий A</em></strong> - сценарий, в который нужно подстановить шаги<br>
+<p><strong><em>Сценарий A</em></strong> - сценарий, в который нужно подставить шаги<br>
 <strong><em>Сценарий B</em></strong> - сценарий-фрагмент, шаги которого можно подставить в любой сценарий</p>
 </dd>
 </dl>
@@ -2214,7 +2214,7 @@ public abstract class YourPage extends WebPage {
 <h5 id="_Как_создавать_фрагменты">Как создавать фрагменты</h5>
 <div class="paragraph">
 <p>1. Создать фичу, которая будет содержать фрагменты<br>
-2. Прописать путь до каталога с фрагментами в файле конфигурациии <code>aplication.properties</code>. Например:</p>
+2. Прописать путь до каталога с фрагментами в файле конфигурации <code>application.properties</code>. Например:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2267,7 +2267,7 @@ public abstract class YourPage extends WebPage {
 <p>В <strong>B</strong> подстановка обозначена символами <strong>"&lt;&gt;"</strong>. Внутри указано имя параметра</p>
 </li>
 <li>
-<p>В <strong>А</strong> выполняется вставка фрагмента с параметрами в виде таблицы данных. Первая строка таблицы - имена парметров, вторая - значения</p>
+<p>В <strong>А</strong> выполняется вставка фрагмента с параметрами в виде таблицы данных. Первая строка таблицы — имена параметров, вторая — значения</p>
 </li>
 </ul>
 </div>
@@ -2286,13 +2286,13 @@ public abstract class YourPage extends WebPage {
 <div class="ulist">
 <ul>
 <li>
-<p>В случаях, когда в таблице параметров более одной строки, фрагмент будет подставлен столько раз, сколько строк в таблице. В каждой подстановоке будут использованы значения соответствующей строки</p>
+<p>В случаях, когда в таблице параметров более одной строки, фрагмент будет подставлен столько раз, сколько строк в таблице. В каждой подстановке будут использованы значения соответствующей строки</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_Цепочки_фргаментов">Цепочки фргаментов</h5>
+<h5 id="_Цепочки_фрагментов">Цепочки фрагментов</h5>
 <div class="paragraph">
 <p>Допускается использование фрагментов внутри других фрагментов</p>
 </div>
@@ -2335,7 +2335,7 @@ public abstract class YourPage extends WebPage {
 <p>Это так же может быть удобно для запуска в условиях постоянно меняющихся тестовых данных либо условий тестирования (различные версий приложения)</p>
 </div>
 <div class="paragraph">
-<p>Рассмотрим подробнее. Допустим, у нас есть тестовый сценарий, проверяющий работу с данными клиента. Клиент может быть новым (нет в системе) и старым. Если клиент новый, его нужно завести. Если старый, то найти через поиск и проверить, что он был найден. Поэтому в нашем примере будет два фргамента - по одному для каждой из ситуаций плюс тестовые данные сценария</p>
+<p>Рассмотрим подробнее. Допустим, у нас есть тестовый сценарий, проверяющий работу с данными клиента. Клиент может быть новым (нет в системе) и старым. Если клиент новый, его нужно завести. Если старый, то найти через поиск и проверить, что он был найден. Поэтому в нашем примере будет два фрагмента — по одному для каждой из ситуаций плюс тестовые данные сценария</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2410,7 +2410,7 @@ public abstract class YourPage extends WebPage {
 </div>
 </div>
 <div class="paragraph">
-<p>Если файлы имеют нестандартное для типа данных расширение, нужно указать его в настройках. Для <code>excel</code> не будет учитываться (всегда будет <code>xslx</code>). Например, для файлов с раширением <code>jsonp</code>:</p>
+<p>Если файлы имеют нестандартное для типа данных расширение, нужно указать его в настройках. Для <code>excel</code> не будет учитываться (всегда будет <code>xslx</code>). Например, для файлов с расширением <code>jsonp</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2496,7 +2496,7 @@ data.db = bd</code></pre>
 <p>Поддерживается работа со ссылками в данных, как внутри одной коллекции, так и на другие коллекции.</p>
 </div>
 <div class="paragraph">
-<p>Для <code>mongodb</code> используется втроенный механизм ссылок.</p>
+<p>Для <code>mongodb</code> используется встроенный механизм ссылок.</p>
 </div>
 <div class="paragraph">
 <p>Для <code>excel</code> достаточно в ячейке значения указать ссылку вида <code>$ref:&lt;имя коллекции&gt;:&lt;путь&gt;</code>:</p>
@@ -2583,7 +2583,7 @@ price = 20.00</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong><em>Пример рабооты со ссылками</em></strong></p>
+<p><strong><em>Пример работы со ссылками</em></strong></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2694,8 +2694,8 @@ price = 20.00</code></pre>
 <div class="paragraph">
 <p>Все последующие свойства переопределяют предыдущие. Приоритет значений следующий:<br>
 * По-умолчанию читается application.properties
-* Далее идет чтнетние TagConfigFile
-* Затем считытываются переменные окружения
+* Далее идет чтение TagConfigFile
+* Затем считываются переменные окружения
 * И в конце - java system properties</p>
 </div>
 </div>
@@ -2735,14 +2735,14 @@ price = 20.00</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tasks.to.kill</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Параметр позволяет принудительно убить процессы перед запуском тестовго прогона, если они запущены</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Параметр позволяет принудительно убить процессы перед запуском тестового прогона, если они запущены</p>
 <p class="tableblock">Пример:</p>
 <p class="tableblock">tasks.to.kill = iexplorer,chrome</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Не задано</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">driver.shared</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Определяет, оставлять ли драйвер после каждого тестовго сценария (кроме последнего из набора) запущенным или нет</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Определяет, оставлять ли драйвер после каждого тестового сценария (кроме последнего из набора) запущенным или нет</p>
 <p class="tableblock">Возможные значения: <code>true</code> или <code>false</code><br></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 </tr>
@@ -2767,7 +2767,7 @@ price = 20.00</code></pre>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">screenshot.strategy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Параметр определяет стратегию для работы с инструментами скриншотинга</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Параметр определяет стратегию для работы с инструментами снимков экрана</p>
 <p class="tableblock">Возможные значения: <code>driver</code> или <code>raw</code>.<br>
 <code>driver</code> - скриншот будет создаваться средствами <code>Selenium WebDriver</code>, т.е будет сделан только скриншот страницы<br>
 <code>raw</code> - будет сделан скриншот всего экрана</p></td>
@@ -3311,7 +3311,7 @@ selenoid.video.name = my-cool-video.mp4</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean isRequiredElement(Field field, String title)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Проверяет, является ли поле объявляением элемента или нет (аннотировано <code>@ElementTitle</code> или нет)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Проверяет, является ли поле объявлением элемента или нет (аннотировано <code>@ElementTitle</code> или нет)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String getFieldTitle(Field field)</p></td>
@@ -3382,7 +3382,7 @@ selenoid.video.name = my-cool-video.mp4</p></td>
 <div class="sect3">
 <h4 id="_Переопределение_методов_для_работы_с_рефлексией">2.10.2. Переопределение методов для работы с рефлексией</h4>
 <div class="paragraph">
-<p>Создать класс, унаследовавшись от <code>DefaultReflection</code>, и переопределить в нем методы. Пример для получения элемента:</p>
+<p>Создать класс, наследованный от <code>DefaultReflection</code>, и переопределить в нем методы. Пример для получения элемента:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3449,7 +3449,7 @@ selenoid.video.name = my-cool-video.mp4</p></td>
 <p>Для переопределения нужно:</p>
 </div>
 <div class="paragraph">
-<p>Создать класс, в котором будут храниться переопределенные методы, унаследовавшись от <code>WebPageChecks</code>, и описать в нем методы. Пример для клика:</p>
+<p>Создать класс, в котором будут храниться переопределенные методы, наследованные от <code>WebPageChecks</code>, и описать в нем методы. Пример для клика:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -4710,14 +4710,14 @@ public Block block;</code></pre>
 <p class="tableblock">Вернет <code>true</code>, если текст найден в списке элементов и <code>false</code>, если не найден</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; void clickOnElemenByText(List&lt;T&gt; elements, String text)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; void clickOnElementByText(List&lt;T&gt; elements, String text)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Находит элемент в списке элементов с заданным текстом и кликает по нему.</p>
 <p class="tableblock">Проверяет, не является ли элемент недоступным для редактирования. Если недоступен, кидает исключение</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; String getTextByElementXpath(T currentContext, String xpath)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Получает текстовое значение элемента по его xpath выражению</p>
-<p class="tableblock">В качетве параметра передается элемент, относительно которого будем выполнять
+<p class="tableblock">В качестве параметра передается элемент, относительно которого будем выполнять
 поиск</p>
 <p class="tableblock">Если элемент не был найден по указанному пути, то возвращает пустую строку</p></td>
 </tr>
@@ -4772,7 +4772,7 @@ public Block block;</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; WebElement getWebElement(T element)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Возвращает элеммент типа <code>WebElement</code> из типизированного элемента</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Возвращает элемент типа <code>WebElement</code> из типизированного элемента</p>
 <p class="tableblock">Если элемент уже имеет тип <code>WebElement</code>, то вернет его</p>
 <p class="tableblock">Если элемент является наследником <code>TypifiedElement</code>, то получит <code>WebElement</code> через <code>getWrappedElement()</code></p></td>
 </tr>
@@ -4837,7 +4837,7 @@ public Block block;</code></pre>
 <h5 id="_Проверка_текста_на_странице_2">Проверка текста на странице</h5>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Проверяет наличие текста на странице вне засисимости в одном он элементе или в нескольких</dt>
+<dt class="hdlist1">Проверяет наличие текста на странице вне зависимости в одном он элементе или в нескольких</dt>
 </dl>
 </div>
 <div class="listingblock">
@@ -4854,7 +4854,7 @@ public Block block;</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>    * проверяет что элемент с текстом "Текст" существует
-    * проверяет что текст "Текст" отоброжается</code></pre>
+    * проверяет что текст "Текст" отображается</code></pre>
 </div>
 </div>
 </div>
@@ -4922,7 +4922,7 @@ public Block block;</code></pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_Выбор_из_стандартного_выпадающего_списка_опции_имееют_тэг_option_2">Выбор из стандартного выпадающего списка (опции имееют тэг option)</h5>
+<h5 id="_Выбор_из_стандартного_выпадающего_списка_опции_имеют_тэг_option_2">Выбор из стандартного выпадающего списка (опции имеют тэг option)</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>    * выбирает в "Элемент" значение "Опция"</code></pre>
@@ -5150,13 +5150,13 @@ T waitClickability(int timeout, String elementName)</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>Параметры рекумендуется задавать регулярным выражением <code>"([^\"]*)\"</code></p>
+<p>Параметры рекомендуется задавать регулярным выражением <code>"([^\"]*)\"</code></p>
 </li>
 <li>
 <p>Если шаг используется только на одной странице, лучше описать глагольное выражение на странице</p>
 </li>
 <li>
-<p>Шаги лучше хранить в каталоге отдельном от страниц (как правило, <code>stepdefs</code>) в классах, разбив их на логичесике группы, чтобы быстро и удобно находить их в зависимости от функциональности или принадлежности</p>
+<p>Шаги лучше хранить в каталоге отдельном от страниц (как правило, <code>stepdefs</code>) в классах, разбив их на логические группы, чтобы быстро и удобно находить их в зависимости от функциональности или принадлежности</p>
 </li>
 </ul>
 </div>
@@ -5276,7 +5276,7 @@ T waitClickability(int timeout, String elementName)</code></pre>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Каждый метод вашего класса с шгами должен возвращать объект типа <code>this</code> приведенный к <code>T</code>
+Каждый метод вашего класса с шагами должен возвращать объект типа <code>this</code> приведенный к <code>T</code>
 </td>
 </tr>
 </table>
@@ -5297,7 +5297,7 @@ T waitClickability(int timeout, String elementName)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Далее на основе этого класса нужно создать строго типизированный класс, который позволит до комплияции понимать, с каким контекстом происходит взаимодействие в текущий  момент. Сделать это можно следующим образом:</p>
+<p>Далее на основе этого класса нужно создать строго типизированный класс, который позволит до компиляции понимать, с каким контекстом происходит взаимодействие в текущий  момент. Сделать это можно следующим образом:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -5700,7 +5700,7 @@ public class Product extends HtmlElement {
 </div>
 </div>
 <div class="paragraph">
-<p>Обработка некритичной ошибки происходит аналогично работе с некритиными шагами</p>
+<p>Обработка некритичной ошибки происходит аналогично работе с некритичными шагами</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -5726,7 +5726,7 @@ public class Product extends HtmlElement {
 <div class="sect4">
 <h5 id="_Переопределение_шага_2">Переопределение шага</h5>
 <div class="paragraph">
-<p>Чтобы переопределить шаг, нужно унаследоваться от класса с шагаими - HtmlStepsImpl и переопределить метод как в примере</p>
+<p>Чтобы переопределить шаг, нужно наследоваться от класса с шагами - HtmlStepsImpl и переопределить метод как в примере</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -5746,7 +5746,7 @@ public class Product extends HtmlElement {
 <p>Для переопределения нужно:</p>
 </div>
 <div class="paragraph">
-<p>Создать класс, в котором будут храниться переопределенные методы, унаследовавшись от <code>HtmlPageActions</code>, и описать в нем методы. Пример для клика:</p>
+<p>Создать класс, в котором будут храниться переопределенные методы, наследованные от <code>HtmlPageActions</code>, и описать в нем методы. Пример для клика:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -5901,10 +5901,10 @@ public abstract class YourPage extends HTMLPage {
 <p><strong><em>Сценарий: (Scenario:)</em></strong> - описание функциональности тестового сценария</p>
 </div>
 <div class="paragraph">
-<p><strong><em>Структура сценария: (Scenario Outline:)</em></strong> - описание функциональности тестового сценария. Используется при параметризации тестов в связке с ключевим словом <code>Примеры:</code></p>
+<p><strong><em>Структура сценария: (Scenario Outline:)</em></strong> - описание функциональности тестового сценария. Используется при параметризации тестов в связке с ключевым словом <code>Примеры:</code></p>
 </div>
 <div class="paragraph">
-<p><strong><em>Шаги и глагольные выражения</em></strong>  тестового сценария. Начинаются сразу после ключевого слова <code>Сценарий:</code>. Шаги должны начинаться с ключевых слов, таких как  <code>Если</code>, <code>Когда</code>, <code>Тогда</code> (<code>Given</code>, <code>When</code>, <code>Then</code>) либо с <code>*</code>. Для работоспособности не имеет значения, какое ключевое слово используется, но они позволяют сделать фичи более удобными для чтения</p>
+<p><strong><em>Шаги и глагольные выражения</em></strong>  тестового сценария. Начинаются сразу после ключевого слова <code>Сценарий:</code>. Шаги должны начинаться с ключевых слов, таких как <code>Если</code>, <code>Когда</code>, <code>Тогда</code> (<code>Given</code>, <code>When</code>, <code>Then</code>) либо с <code>*</code>. Для работоспособности не имеет значения, какое ключевое слово используется, но они позволяют сделать фичи более удобными для чтения</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -5913,7 +5913,7 @@ public abstract class YourPage extends HTMLPage {
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Чтобы использовать элемент или глагольное выражение нужно обозначить текущий контекст - страницу. Сделать это можно, например, шагом "открывается страница"
+Чтобы использовать элемент или глагольное выражение, нужно обозначить текущий контекст — страницу. Сделать это можно, например, шагом "открывается страница"
 </td>
 </tr>
 </table>
@@ -5943,7 +5943,7 @@ public abstract class YourPage extends HTMLPage {
 <p><strong><em>Фрагмент</em></strong> - набор шагов, который может быть подставлен в любой сценарий вместо заранее определенного шага</p>
 </div>
 <div class="paragraph">
-<p>Чтобы использовать фраменты, необходимо прописать в файле конфигурации <code>aplication.properties</code></p>
+<p>Чтобы использовать фрагменты, необходимо прописать в файле конфигурации <code>application.properties</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -5954,7 +5954,7 @@ public abstract class YourPage extends HTMLPage {
 <dl>
 <dt class="hdlist1">Рассмотрим пример</dt>
 <dd>
-<p><strong><em>Сценарий A</em></strong> - сценарий, в который нужно подстановить шаги<br>
+<p><strong><em>Сценарий A</em></strong> - сценарий, в который нужно подставить шаги<br>
 <strong><em>Сценарий B</em></strong> - сценарий-фрагмент, шаги которого можно подставить в любой сценарий</p>
 </dd>
 </dl>
@@ -5982,7 +5982,7 @@ public abstract class YourPage extends HTMLPage {
 <h5 id="_Как_создавать_фрагменты_2">Как создавать фрагменты</h5>
 <div class="paragraph">
 <p>9. Создать фичу, которая будет содержать фрагменты<br>
-10. Прописать путь до каталога с фрагментами в файле конфигурациии <code>aplication.properties</code>. Например:</p>
+10. Прописать путь до каталога с фрагментами в файле конфигурации <code>application.properties</code>. Например:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -6035,7 +6035,7 @@ public abstract class YourPage extends HTMLPage {
 <p>В <strong>B</strong> подстановка обозначена символами <strong>"&lt;&gt;"</strong>. Внутри указано имя параметра</p>
 </li>
 <li>
-<p>В <strong>А</strong> выполняется вставка фрагмента с параметрами в виде таблицы данных. Первая строка таблицы - имена парметров, вторая - значения</p>
+<p>В <strong>А</strong> выполняется вставка фрагмента с параметрами в виде таблицы данных. Первая строка таблицы — имена параметров, вторая — значения</p>
 </li>
 </ul>
 </div>
@@ -6054,13 +6054,13 @@ public abstract class YourPage extends HTMLPage {
 <div class="ulist">
 <ul>
 <li>
-<p>В случаях, когда в таблице параметров более одной строки, фрагмент будет подставлен столько раз, сколько строк в таблице. В каждой подстановоке будут использованы значения соответствующей строки</p>
+<p>В случаях, когда в таблице параметров более одной строки, фрагмент будет подставлен столько раз, сколько строк в таблице. В каждой подстановке будут использованы значения соответствующей строки</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_Цепочки_фргаментов_2">Цепочки фргаментов</h5>
+<h5 id="_Цепочки_фрагментов_2">Цепочки фрагментов</h5>
 <div class="paragraph">
 <p>Допускается использование фрагментов внутри других фрагментов</p>
 </div>
@@ -6103,7 +6103,7 @@ public abstract class YourPage extends HTMLPage {
 <p>Это так же может быть удобно для запуска в условиях постоянно меняющихся тестовых данных либо условий тестирования (различные версий приложения)</p>
 </div>
 <div class="paragraph">
-<p>Рассмотрим подробнее. Допустим, у нас есть тестовый сценарий, проверяющий работу с данными клиента. Клиент может быть новым (нет в системе) и старым. Если клиент новый, его нужно завести. Если старый, то найти через поиск и проверить, что он был найден. Поэтому в нашем примере будет два фргамента - по одному для каждой из ситуаций плюс тестовые данные сценария</p>
+<p>Рассмотрим подробнее. Допустим, у нас есть тестовый сценарий, проверяющий работу с данными клиента. Клиент может быть новым (нет в системе) и старым. Если клиент новый, его нужно завести. Если старый, то найти через поиск и проверить, что он был найден. Поэтому в нашем примере будет два фрагмента — по одному для каждой из ситуаций плюс тестовые данные сценария</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -6178,7 +6178,7 @@ public abstract class YourPage extends HTMLPage {
 </div>
 </div>
 <div class="paragraph">
-<p>Если файлы имеют нестандартное для типа данных расширение, нужно указать его в настройках. Для <code>excel</code> не будет учитываться (всегда будет <code>xslx</code>). Например, для файлов с раширением <code>jsonp</code>:</p>
+<p>Если файлы имеют нестандартное для типа данных расширение, нужно указать его в настройках. Для <code>excel</code> не будет учитываться (всегда будет <code>xslx</code>). Например, для файлов с расширением <code>jsonp</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -6264,7 +6264,7 @@ data.db = bd</code></pre>
 <p>Поддерживается работа со ссылками в данных, как внутри одной коллекции, так и на другие коллекции.</p>
 </div>
 <div class="paragraph">
-<p>Для <code>mongodb</code> используется втроенный механизм ссылок.</p>
+<p>Для <code>mongodb</code> используется встроенный механизм ссылок.</p>
 </div>
 <div class="paragraph">
 <p>Для <code>excel</code> достаточно в ячейке значения указать ссылку вида <code>$ref:&lt;имя коллекции&gt;:&lt;путь&gt;</code>:</p>
@@ -6351,7 +6351,7 @@ price = 20.00</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong><em>Пример рабооты со ссылками</em></strong></p>
+<p><strong><em>Пример работы со ссылками</em></strong></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -6462,8 +6462,8 @@ price = 20.00</code></pre>
 <div class="paragraph">
 <p>Все последующие свойства переопределяют предыдущие. Приоритет значений следующий:<br>
 * По-умолчанию читается application.properties
-* Далее идет чтнетние TagConfigFile
-* Затем считытываются переменные окружения
+* Далее идет чтение TagConfigFile
+* Затем считываются переменные окружения
 * И в конце - java system properties</p>
 </div>
 </div>
@@ -6503,14 +6503,14 @@ price = 20.00</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tasks.to.kill</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Параметр позволяет принудительно убить процессы перед запуском тестовго прогона, если они запущены</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Параметр позволяет принудительно убить процессы перед запуском тестового прогона, если они запущены</p>
 <p class="tableblock">Пример:</p>
 <p class="tableblock">tasks.to.kill = iexplorer,chrome</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Не задано</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">driver.shared</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Определяет, оставлять ли драйвер после каждого тестовго сценария (кроме последнего из набора) запущенным или нет</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Определяет, оставлять ли драйвер после каждого тестового сценария (кроме последнего из набора) запущенным или нет</p>
 <p class="tableblock">Возможные значения: <code>true</code> или <code>false</code><br></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 </tr>
@@ -6535,7 +6535,7 @@ price = 20.00</code></pre>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">screenshot.strategy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Параметр определяет стратегию для работы с инструментами скриншотинга</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Параметр определяет стратегию для работы с инструментами снимков экрана</p>
 <p class="tableblock">Возможные значения: <code>driver</code> или <code>raw</code>.<br>
 <code>driver</code> - скриншот будет создаваться средствами <code>Selenium WebDriver</code>, т.е будет сделан только скриншот страницы<br>
 <code>raw</code> - будет сделан скриншот всего экрана</p></td>
@@ -7079,7 +7079,7 @@ selenoid.video.name = my-cool-video.mp4</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean isRequiredElement(Field field, String title)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Проверяет, является ли поле объявляением элемента или нет (аннотировано <code>@ElementTitle</code> или нет)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Проверяет, является ли поле объявлением элемента или нет (аннотировано <code>@ElementTitle</code> или нет)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String getFieldTitle(Field field)</p></td>
@@ -7254,7 +7254,7 @@ selenoid.video.name = my-cool-video.mp4</p></td>
 <div class="sect3">
 <h4 id="_Переопределение_методов_для_работы_с_рефлексией_2">3.14.5. Переопределение методов для работы с рефлексией</h4>
 <div class="paragraph">
-<p>Создать класс, унаследовавшись от <code>HtmlReflection</code>, и переопределить в нем методы. Пример для получения элемента:</p>
+<p>Создать класс, наследованный от <code>HtmlReflection</code>, и переопределить в нем методы. Пример для получения элемента:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -7321,7 +7321,7 @@ selenoid.video.name = my-cool-video.mp4</p></td>
 <p>Для переопределения нужно:</p>
 </div>
 <div class="paragraph">
-<p>Создать класс, в котором будут храниться переопределенные методы, унаследовавшись от <code>WebPageChecks</code>, и описать в нем методы. Пример для клика:</p>
+<p>Создать класс, в котором будут храниться переопределенные методы, наследованные от <code>WebPageChecks</code>, и описать в нем методы. Пример для клика:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -8004,7 +8004,7 @@ public class ApiEntry extends EndpointEntry {
 </div>
 </div>
 <div class="paragraph">
-<p>Шаг с присвоением значений парметров:</p>
+<p>Шаг с присвоением значений параметров:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -8027,10 +8027,10 @@ public class ApiEntry extends EndpointEntry {
 <p><strong><em>@Header</em></strong> - параметр заголовка</p>
 </li>
 <li>
-<p><strong><em>@Query</em></strong> - query параметр (Будет подставлен в URL запроса). Так же этот парамтер может быть использован для параметризации пути url. Например: <a href="https://github.com/${org}/${repo}" class="bare">https://github.com/${org}/${repo}</a></p>
+<p><strong><em>@Query</em></strong> - query параметр (Будет подставлен в URL запроса). Так же этот параметр может быть использован для параметризации пути url. Например: <a href="https://github.com/${org}/${repo}" class="bare">https://github.com/${org}/${repo}</a></p>
 </li>
 <li>
-<p><strong><em>@Cookie</em></strong> - парметр cookie</p>
+<p><strong><em>@Cookie</em></strong> - параметр cookie</p>
 </li>
 </ul>
 </div>
@@ -8125,7 +8125,7 @@ public class ReplacerEntry extends EndpointEntry {
 </div>
 </div>
 <div class="sect4">
-<h5 id="_Передача_парметров_формы_form_data">Передача парметров формы (form-data)</h5>
+<h5 id="_Передача_параметров_формы_form_data">Передача параметров формы (form-data)</h5>
 <div class="paragraph">
 <p>Если нужно передать параметры формы, то достаточно описать параметры для метода.<br></p>
 </div>
@@ -8161,7 +8161,7 @@ public class ReplacerEntry extends EndpointEntry {
 <div class="sect4">
 <h5 id="_Подстановка_фрагмента_параметра">Подстановка фрагмента параметра</h5>
 <div class="paragraph">
-<p>Можно параметризировать Entry, используя аналогичную json подстановку через ${}</p>
+<p>Можно параметризовать Entry, используя аналогичную json подстановку через ${}</p>
 </div>
 <div class="paragraph">
 <p><strong><em>Пример:</em></strong></p>
@@ -8398,7 +8398,7 @@ public class ReplacerEntry extends EndpointEntry {
 <div class="sect3">
 <h4 id="_Как_писать_реализацию_проверок">4.4.4. Как писать реализацию проверок</h4>
 <div class="paragraph">
-<p>Получить ответ запроса можно методом <code>getResponse()</code> в любом <code>Entry</code>-классе. Этот метод вернет <code>ValidatableResponse</code>. О том, как с ним работать и какие проверки он имеет можно узнать в доументации <a href="https://github.com/rest-assured/rest-assured/wiki/Usage#verifying-response-data" class="ext-link" target="_blank" rel="noopener">rest-assured</a></p>
+<p>Получить ответ запроса можно методом <code>getResponse()</code> в любом <code>Entry</code>-классе. Этот метод вернет <code>ValidatableResponse</code>. О том, как с ним работать и какие проверки он имеет можно узнать в документации <a href="https://github.com/rest-assured/rest-assured/wiki/Usage#verifying-response-data" class="ext-link" target="_blank" rel="noopener">rest-assured</a></p>
 </div>
 <div class="paragraph">
 <p>Пример:</p>
@@ -8531,13 +8531,13 @@ public class ReplacerEntry extends EndpointEntry {
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<span class="aqua">В качества параметра пути указыватся xpath или jpath путь до значения тела в соответствующей структуре</span>
+<span class="aqua">В качества параметра пути указывается xpath или jsonpath путь до значения тела в соответствующей структуре</span>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>После того, как все параметры заполнены нужно выполнить отправку собранного запроса:</p>
+<p>После того как все параметры заполнены нужно выполнить отправку собранного запроса:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -8683,7 +8683,7 @@ kafka.timeout = 500</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_Примеры_создания_коннекта_к_mq">5.2. Примеры создания коннекта к MQ</h3>
+<h3 id="_Примеры_создания_соединения_с_mq">5.2. Примеры создания соединения с MQ</h3>
 <div class="paragraph">
 <p>Рассмотрим примеры подключения к ActiveMQ и WebSphere. Для создания подключения необходимо использовать статический метод <code>getMq</code>, передав параметры подключения в качестве параметра</p>
 </div>
@@ -8834,8 +8834,8 @@ public class CucumberTest extends Tag{}</code></pre>
 <div class="paragraph">
 <p>Все последующие свойства переопределяют предыдущие. Приоритет значений следующий:<br>
 * По-умолчанию читается application.properties
-* Далее идет чтнетние TagConfigFile
-* Затем считытываются переменные окружения
+* Далее идет чтение TagConfigFile
+* Затем считываются переменные окружения
 * И в конце - java system properties</p>
 </div>
 </div>
@@ -8875,14 +8875,14 @@ public class CucumberTest extends Tag{}</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tasks.to.kill</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Параметр позволяет принудительно убить процессы перед запуском тестовго прогона, если они запущены</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Параметр позволяет принудительно убить процессы перед запуском тестового прогона, если они запущены</p>
 <p class="tableblock">Пример:</p>
 <p class="tableblock">tasks.to.kill = iexplorer,chrome</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Не задано</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">driver.shared</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Определяет, оставлять ли драйвер после каждого тестовго сценария (кроме последнего из набора) запущенным или нет</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Определяет, оставлять ли драйвер после каждого тестового сценария (кроме последнего из набора) запущенным или нет</p>
 <p class="tableblock">Возможные значения: <code>true</code> или <code>false</code><br></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 </tr>
@@ -8907,7 +8907,7 @@ public class CucumberTest extends Tag{}</code></pre>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">screenshot.strategy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Параметр определяет стратегию для работы с инструментами скриншотинга</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Параметр определяет стратегию для работы с инструментами снимков экрана</p>
 <p class="tableblock">Возможные значения: <code>driver</code> или <code>raw</code>.<br>
 <code>driver</code> - скриншот будет создаваться средствами <code>Selenium WebDriver</code>, т.е будет сделан только скриншот страницы<br>
 <code>raw</code> - будет сделан скриншот всего экрана</p></td>
@@ -9125,7 +9125,7 @@ public class CucumberTest extends Tag{}</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">appium.strategies.reset</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Если будет указано 'noreset', то будет активирована стратетия noReset. Если 'fullreset', то fullReset стратегия, в остальных случаях - стратегия по-умолчанию.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Если будет указано 'noreset', то будет активирована стратегия noReset. Если 'fullreset', то fullReset стратегия, в остальных случаях - стратегия по-умолчанию.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">appium.permissions</p></td>
@@ -9641,14 +9641,14 @@ public abstract class YourPage extends MobilePage {
 <p class="tableblock">Вернет <code>true</code>, если текст найден в списке элементов и <code>false</code>, если не найден</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; void clickOnElemenByText(List&lt;T&gt; elements, String text)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; void clickOnElementByText(List&lt;T&gt; elements, String text)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Находит элемент в списке элементов с заданным текстом и кликает по нему.</p>
 <p class="tableblock">Проверяет, не является ли элемент недоступным для редактирования. Если недоступен, кидает исключение</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">static &lt;T extends WebElement&gt; String getTextByElementXpath(T currentContext, String xpath)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Получает текстовое значение элемента по его xpath выражению</p>
-<p class="tableblock">В качетве параметра передается элемент, относительно которого будем выполнять
+<p class="tableblock">В качестве параметра передается элемент, относительно которого будем выполнять
 поиск</p>
 <p class="tableblock">Если элемент не был найден по указанному пути, то возвращает пустую строку</p></td>
 </tr>
@@ -9679,7 +9679,7 @@ public abstract class YourPage extends MobilePage {
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Перед шагом можно прописать действующее лицо - <strong><em>пользователь</em></strong> или <strong><em>он</em></strong> в любом из шагов, предполагающих что кто-либо совершает какое-либо действие, например <strong><em>заполняет поле</em></strong>
+Перед шагом можно прописать действующее лицо - <strong><em>пользователь</em></strong> или <strong><em>он</em></strong> в любом из шагов, предполагающих, что кто-либо совершает какое-либо действие, например <strong><em>заполняет поле</em></strong>
 </td>
 </tr>
 </table>
@@ -9759,7 +9759,7 @@ public abstract class YourPage extends MobilePage {
 </div>
 </div>
 <div class="sect4">
-<h5 id="_Выбор_из_стандартного_выпадающего_списка_опции_имееют_тэг_option_3">Выбор из стандартного выпадающего списка (опции имееют тэг option)</h5>
+<h5 id="_Выбор_из_стандартного_выпадающего_списка_опции_имеют_тэг_option_3">Выбор из стандартного выпадающего списка (опции имеют тэг option)</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>    * выбирает в "Элемент" значение "Опция"</code></pre>
@@ -9993,7 +9993,7 @@ T waitClickability(int timeout, String elementName)</code></pre>
 <p>Если шаг используется только на одной странице, лучше описать глагольное выражение на странице</p>
 </li>
 <li>
-<p>Шаги лучше хранить в отдельном от страниц каталоге (как правило, <code>stepdefs</code>), разбив их на логичесике группы, чтобы быстро и удобно находить их в зависимости от функциональности или принадлежности</p>
+<p>Шаги лучше хранить в отдельном от страниц каталоге (как правило, <code>stepdefs</code>), разбив их на логические группы, чтобы быстро и удобно находить их в зависимости от функциональности или принадлежности</p>
 </li>
 </ul>
 </div>
@@ -10064,7 +10064,7 @@ T waitClickability(int timeout, String elementName)</code></pre>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Каждый метод вашего класса с шгами должен возвращать объект типа <code>this</code> приведенный к <code>T</code>
+Каждый метод вашего класса с шагами должен возвращать объект типа <code>this</code> приведенный к <code>T</code>
 </td>
 </tr>
 </table>
@@ -10085,7 +10085,7 @@ T waitClickability(int timeout, String elementName)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Далее на основе этого класса нужно создать строго типизированный класс, который позволит до комплияции понимать, с каким контекстом происходит взаимодействие в текущий  момент. Сделать это можно следующим образом:</p>
+<p>Далее на основе этого класса нужно создать строго типизированный класс, который позволит до компиляции понимать, с каким контекстом происходит взаимодействие в текущий  момент. Сделать это можно следующим образом:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -10312,7 +10312,7 @@ public abstract class YourPage extends MobilePage {
 <div class="sect4">
 <h5 id="_Переопределение_шага_3">Переопределение шага</h5>
 <div class="paragraph">
-<p>Чтобы переопределить шаг, нужно унаследоваться от класса с шагаими - MobileStepsImpl и переопределить метод как в примере</p>
+<p>Чтобы переопределить шаг, нужно наследоваться от класса с шагами - MobileStepsImpl и переопределить метод как в примере</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -10332,7 +10332,7 @@ public abstract class YourPage extends MobilePage {
 <p>Для переопределения нужно:</p>
 </div>
 <div class="paragraph">
-<p>Создать класс, в котором будут храниться переопределенные методы, унаследовавшись от <code>MobilePageActions</code>, и описать в нем методы. Пример для клика:</p>
+<p>Создать класс, в котором будут храниться переопределенные методы, наследованные от <code>MobilePageActions</code>, и описать в нем методы. Пример для клика:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -10487,10 +10487,10 @@ public abstract class YourPage extends MobilePage {
 <p><strong><em>Сценарий: (Scenario:)</em></strong> - описание функциональности тестового сценария</p>
 </div>
 <div class="paragraph">
-<p><strong><em>Структура сценария: (Scenario Outline:)</em></strong> - описание функциональности тестового сценария. Используется при параметризации тестов в связке с ключевим словом <code>Примеры:</code></p>
+<p><strong><em>Структура сценария: (Scenario Outline:)</em></strong> - описание функциональности тестового сценария. Используется при параметризации тестов в связке с ключевым словом <code>Примеры:</code></p>
 </div>
 <div class="paragraph">
-<p><strong><em>Шаги и глагольные выражения</em></strong>  тестового сценария. Начинаются сразу после ключевого слова <code>Сценарий:</code>. Шаги должны начинаться с ключевых слов, таких как  <code>Если</code>, <code>Когда</code>, <code>Тогда</code> (<code>Given</code>, <code>When</code>, <code>Then</code>) либо с <code>*</code>. Для работоспособности не имеет значения, какое ключевое слово используется, но они позволяют сделать фичи более удобными для чтения</p>
+<p><strong><em>Шаги и глагольные выражения</em></strong>  тестового сценария. Начинаются сразу после ключевого слова <code>Сценарий:</code>. Шаги должны начинаться с ключевых слов, таких как <code>Если</code>, <code>Когда</code>, <code>Тогда</code> (<code>Given</code>, <code>When</code>, <code>Then</code>) либо с <code>*</code>. Для работоспособности не имеет значения, какое ключевое слово используется, но они позволяют сделать фичи более удобными для чтения</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -10499,7 +10499,7 @@ public abstract class YourPage extends MobilePage {
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Чтобы использовать элемент или глагольное выражение нужно обозначить текущий контекст - страницу. Сделать это можно, например, шагом "открывается страница"
+Чтобы использовать элемент или глагольное выражение, нужно обозначить текущий контекст — страницу. Сделать это можно, например, шагом "открывается страница"
 </td>
 </tr>
 </table>
@@ -10529,7 +10529,7 @@ public abstract class YourPage extends MobilePage {
 <p><strong><em>Фрагмент</em></strong> - набор шагов, который может быть подставлен в любой сценарий вместо заранее определенного шага</p>
 </div>
 <div class="paragraph">
-<p>Чтобы использовать фраменты, необходимо прописать в файле конфигурации <code>aplication.properties</code></p>
+<p>Чтобы использовать фрагменты, необходимо прописать в файле конфигурации <code>application.properties</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -10540,7 +10540,7 @@ public abstract class YourPage extends MobilePage {
 <dl>
 <dt class="hdlist1">Рассмотрим пример</dt>
 <dd>
-<p><strong><em>Сценарий A</em></strong> - сценарий, в который нужно подстановить шаги<br>
+<p><strong><em>Сценарий A</em></strong> - сценарий, в который нужно подставить шаги<br>
 <strong><em>Сценарий B</em></strong> - сценарий-фрагмент, шаги которого можно подставить в любой сценарий</p>
 </dd>
 </dl>
@@ -10568,7 +10568,7 @@ public abstract class YourPage extends MobilePage {
 <h5 id="_Как_создавать_фрагменты_3">Как создавать фрагменты</h5>
 <div class="paragraph">
 <p>17. Создать фичу, которая будет содержать фрагменты<br>
-18. Прописать путь до каталога с фрагментами в файле конфигурациии <code>aplication.properties</code>. Например:</p>
+18. Прописать путь до каталога с фрагментами в файле конфигурации <code>application.properties</code>. Например:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -10621,7 +10621,7 @@ public abstract class YourPage extends MobilePage {
 <p>В <strong>B</strong> подстановка обозначена символами <strong>"&lt;&gt;"</strong>. Внутри указано имя параметра</p>
 </li>
 <li>
-<p>В <strong>А</strong> выполняется вставка фрагмента с параметрами в виде таблицы данных. Первая строка таблицы - имена парметров, вторая - значения</p>
+<p>В <strong>А</strong> выполняется вставка фрагмента с параметрами в виде таблицы данных. Первая строка таблицы — имена параметров, вторая — значения</p>
 </li>
 </ul>
 </div>
@@ -10640,13 +10640,13 @@ public abstract class YourPage extends MobilePage {
 <div class="ulist">
 <ul>
 <li>
-<p>В случаях, когда в таблице параметров более одной строки, фрагмент будет подставлен столько раз, сколько строк в таблице. В каждой подстановоке будут использованы значения соответствующей строки</p>
+<p>В случаях, когда в таблице параметров более одной строки, фрагмент будет подставлен столько раз, сколько строк в таблице. В каждой подстановке будут использованы значения соответствующей строки</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_Цепочки_фргаментов_3">Цепочки фргаментов</h5>
+<h5 id="_Цепочки_фрагментов_3">Цепочки фрагментов</h5>
 <div class="paragraph">
 <p>Допускается использование фрагментов внутри других фрагментов</p>
 </div>
@@ -10689,7 +10689,7 @@ public abstract class YourPage extends MobilePage {
 <p>Это так же может быть удобно для запуска в условиях постоянно меняющихся тестовых данных либо условий тестирования (различные версий приложения)</p>
 </div>
 <div class="paragraph">
-<p>Рассмотрим подробнее. Допустим, у нас есть тестовый сценарий, проверяющий работу с данными клиента. Клиент может быть новым (нет в системе) и старым. Если клиент новый, его нужно завести. Если старый, то найти через поиск и проверить, что он был найден. Поэтому в нашем примере будет два фргамента - по одному для каждой из ситуаций плюс тестовые данные сценария</p>
+<p>Рассмотрим подробнее. Допустим, у нас есть тестовый сценарий, проверяющий работу с данными клиента. Клиент может быть новым (нет в системе) и старым. Если клиент новый, его нужно завести. Если старый, то найти через поиск и проверить, что он был найден. Поэтому в нашем примере будет два фрагмента — по одному для каждой из ситуаций плюс тестовые данные сценария</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -10764,7 +10764,7 @@ public abstract class YourPage extends MobilePage {
 </div>
 </div>
 <div class="paragraph">
-<p>Если файлы имеют нестандартное для типа данных расширение, нужно указать его в настройках. Для <code>excel</code> не будет учитываться (всегда будет <code>xslx</code>). Например, для файлов с раширением <code>jsonp</code>:</p>
+<p>Если файлы имеют нестандартное для типа данных расширение, нужно указать его в настройках. Для <code>excel</code> не будет учитываться (всегда будет <code>xslx</code>). Например, для файлов с расширением <code>jsonp</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -10850,7 +10850,7 @@ data.db = bd</code></pre>
 <p>Поддерживается работа со ссылками в данных, как внутри одной коллекции, так и на другие коллекции.</p>
 </div>
 <div class="paragraph">
-<p>Для <code>mongodb</code> используется втроенный механизм ссылок.</p>
+<p>Для <code>mongodb</code> используется встроенный механизм ссылок.</p>
 </div>
 <div class="paragraph">
 <p>Для <code>excel</code> достаточно в ячейке значения указать ссылку вида <code>$ref:&lt;имя коллекции&gt;:&lt;путь&gt;</code>:</p>
@@ -10937,7 +10937,7 @@ price = 20.00</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong><em>Пример рабооты со ссылками</em></strong></p>
+<p><strong><em>Пример работы со ссылками</em></strong></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -11156,7 +11156,7 @@ price = 20.00</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean isRequiredElement(Field field, String title)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Проверяет, является ли поле объявляением элемента или нет (аннотировано <code>@ElementTitle</code> или нет)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Проверяет, является ли поле объявлением элемента или нет (аннотировано <code>@ElementTitle</code> или нет)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String getFieldTitle(Field field)</p></td>
@@ -11250,7 +11250,7 @@ price = 20.00</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_Отконфигурировать_и_запустить_по_экземпляру_appium_на_каждый_симулятор">6.10.2. Отконфигурировать и запустить по экземпляру appium на каждый симулятор</h4>
+<h4 id="_Сконфигурировать_и_запустить_по_экземпляру_appium_на_каждый_симулятор">6.10.2. Сконфигурировать и запустить по экземпляру appium на каждый симулятор</h4>
 <div class="paragraph">
 <p>Будет приведен пример для двух симуляторов.</p>
 </div>
@@ -11729,7 +11729,7 @@ public class CucumberTest {}</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 16.0-SNAPSHOT<br>
-Last updated 2021-06-21 04:38:58 UTC
+Last updated 2021-06-21 06:04:09 UTC
 </div>
 </div>
 </body>
