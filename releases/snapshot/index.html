@@ -2381,6 +2381,9 @@ public abstract class YourPage extends WebPage {
 <li>
 <p>mongo</p>
 </li>
+<li>
+<p>custom test data provider</p>
+</li>
 </ul>
 </div>
 <div class="sect5">
@@ -2462,6 +2465,37 @@ data.db = bd</code></pre>
 <div class="content">
 <pre class="highlight"><code>data.arrayDelimiter = !</code></pre>
 </div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_Подключение_своего_провайдера_тестовых_данных">Подключение своего провайдера тестовых данных</h6>
+<div class="paragraph">
+<p>Есть возможность зарегистрировать свой провайдер данных. Для этого необходимо, реализовать интерфейс <a href="https://github.com/sbtqa/datajack/blob/master/datajack-api/src/main/java/ru/sbtqa/tag/datajack/TestDataProvider.java">TestDataProvider</a>.</p>
+</div>
+<div class="paragraph">
+<p>В классе реализации должен присутствовать конструктор со следующими параметрами: <code>new MyDataProvider(String initialCollection, String extensionOrDb)</code></p>
+</div>
+<div class="paragraph">
+<p>Конфигурация задается следующими параметрам в <code>application.properties</code> (на примере JsonDataProvider):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># Полное имя java пакета
+data.provider.fqdn=ru.sbtqa.tag.datajack.providers
+
+# Имя артефакта и имя класса реализации
+data.type = json.JsonDataProvider
+
+# Указать изначальную коллекцию
+data.initial.collection = Data
+
+# Задать расширение файла, либо имя базы данных (нельзя задавать оба значения одновременно)
+data.extension = json
+# data.db = bd</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Это позволит начать использовать свой провайдер данных по общим правилам фреймворка.</p>
 </div>
 </div>
 <div class="sect5">
@@ -6149,6 +6183,9 @@ public abstract class YourPage extends HTMLPage {
 <li>
 <p>mongo</p>
 </li>
+<li>
+<p>custom test data provider</p>
+</li>
 </ul>
 </div>
 <div class="sect5">
@@ -6230,6 +6267,37 @@ data.db = bd</code></pre>
 <div class="content">
 <pre class="highlight"><code>data.arrayDelimiter = !</code></pre>
 </div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_Подключение_своего_провайдера_тестовых_данных_2">Подключение своего провайдера тестовых данных</h6>
+<div class="paragraph">
+<p>Есть возможность зарегистрировать свой провайдер данных. Для этого необходимо, реализовать интерфейс <a href="https://github.com/sbtqa/datajack/blob/master/datajack-api/src/main/java/ru/sbtqa/tag/datajack/TestDataProvider.java">TestDataProvider</a>.</p>
+</div>
+<div class="paragraph">
+<p>В классе реализации должен присутствовать конструктор со следующими параметрами: <code>new MyDataProvider(String initialCollection, String extensionOrDb)</code></p>
+</div>
+<div class="paragraph">
+<p>Конфигурация задается следующими параметрам в <code>application.properties</code> (на примере JsonDataProvider):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># Полное имя java пакета
+data.provider.fqdn=ru.sbtqa.tag.datajack.providers
+
+# Имя артефакта и имя класса реализации
+data.type = json.JsonDataProvider
+
+# Указать изначальную коллекцию
+data.initial.collection = Data
+
+# Задать расширение файла, либо имя базы данных (нельзя задавать оба значения одновременно)
+data.extension = json
+# data.db = bd</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Это позволит начать использовать свой провайдер данных по общим правилам фреймворка.</p>
 </div>
 </div>
 <div class="sect5">
@@ -10735,6 +10803,9 @@ public abstract class YourPage extends MobilePage {
 <li>
 <p>mongo</p>
 </li>
+<li>
+<p>custom test data provider</p>
+</li>
 </ul>
 </div>
 <div class="sect5">
@@ -10816,6 +10887,37 @@ data.db = bd</code></pre>
 <div class="content">
 <pre class="highlight"><code>data.arrayDelimiter = !</code></pre>
 </div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_Подключение_своего_провайдера_тестовых_данных_3">Подключение своего провайдера тестовых данных</h6>
+<div class="paragraph">
+<p>Есть возможность зарегистрировать свой провайдер данных. Для этого необходимо, реализовать интерфейс <a href="https://github.com/sbtqa/datajack/blob/master/datajack-api/src/main/java/ru/sbtqa/tag/datajack/TestDataProvider.java">TestDataProvider</a>.</p>
+</div>
+<div class="paragraph">
+<p>В классе реализации должен присутствовать конструктор со следующими параметрами: <code>new MyDataProvider(String initialCollection, String extensionOrDb)</code></p>
+</div>
+<div class="paragraph">
+<p>Конфигурация задается следующими параметрам в <code>application.properties</code> (на примере JsonDataProvider):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># Полное имя java пакета
+data.provider.fqdn=ru.sbtqa.tag.datajack.providers
+
+# Имя артефакта и имя класса реализации
+data.type = json.JsonDataProvider
+
+# Указать изначальную коллекцию
+data.initial.collection = Data
+
+# Задать расширение файла, либо имя базы данных (нельзя задавать оба значения одновременно)
+data.extension = json
+# data.db = bd</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Это позволит начать использовать свой провайдер данных по общим правилам фреймворка.</p>
 </div>
 </div>
 <div class="sect5">
@@ -11729,7 +11831,7 @@ public class CucumberTest {}</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 17.0-SNAPSHOT<br>
-Last updated 2021-10-13 03:16:54 UTC
+Last updated 2021-11-10 09:15:33 UTC
 </div>
 </div>
 </body>
