@@ -8031,6 +8031,9 @@ public class CucumberTest extends Tag{}</code></pre>
 <p><code>method</code> - метод (POST, GET, PUT, DELETE, PATCH, OPTIONS, HEAD)</p>
 </li>
 <li>
+<p><code>host</code> - url вида &lt;схема&gt;://&lt;хост&gt;[:&lt;порт&gt;]. В случае если не задано, будет использовано <code>api.baseURI</code></p>
+</li>
+<li>
 <p><code>path</code> - путь, относительно заданного в <code>api.baseURI</code></p>
 </li>
 <li>
@@ -8046,11 +8049,23 @@ public class CucumberTest extends Tag{}</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>@Endpoint(method = Rest.GET, path = "repos/qa", title = "Запрос")
+<pre class="highlight"><code>@Endpoint(method = Rest.GET, host = "http://example.pf2.ru:8080", path = "repos/qa", title = "Запрос")
 public class ApiEntry extends EndpointEntry {
 ...
 }</code></pre>
 </div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Параметр host можно задавать динамически. Для этого нужно использовать плейсхолдер вида <code>host = "${env.myHost}"</code>. В мавен нужно будет передать это параметр как <code>mvn clean test -Denv.myHost=https://localhost:8888</code>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Путь до пакета с описанными API-методами необходимо прописать в файле конфигурации. Например:</p>
@@ -11831,7 +11846,7 @@ public class CucumberTest {}</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 17.0-SNAPSHOT<br>
-Last updated 2021-11-10 09:15:33 UTC
+Last updated 2021-11-22 08:52:27 UTC
 </div>
 </div>
 </body>
