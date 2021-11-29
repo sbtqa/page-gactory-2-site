@@ -618,7 +618,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_Сборка_запроса_из_фичи">4.5. Сборка запроса из фичи</a></li>
 <li><a href="#_Шаги_работы_с_api_в_английской_локализации">4.6. Шаги работы с API в английской локализации</a></li>
-<li><a href="#_ssl">4.7. SSL</a></li>
+<li><a href="#_Настройки_проекта_3">4.7. Настройки проекта</a></li>
+<li><a href="#_ssl">4.8. SSL</a></li>
 </ul>
 </li>
 <li><a href="#_mq_plugin">5. MQ plugin</a>
@@ -630,7 +631,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_mobile_plugin">6. Mobile plugin</a>
 <ul class="sectlevel2">
 <li><a href="#_Как_начать_использовать_5">6.1. Как начать использовать</a></li>
-<li><a href="#_Настройки_проекта_3">6.2. Настройки проекта</a>
+<li><a href="#_Настройки_проекта_4">6.2. Настройки проекта</a>
 <ul class="sectlevel3">
 <li><a href="#_Конфигурационный_файл_3">6.2.1. Конфигурационный файл</a></li>
 <li><a href="#_Общие_конфигурации_3">6.2.2. Общие конфигурации</a></li>
@@ -8042,6 +8043,9 @@ public class CucumberTest extends Tag{}</code></pre>
 <li>
 <p><code>template</code> - шаблон запроса</p>
 </li>
+<li>
+<p><code>shouldRemoveEmptyObjects</code> - необходимо ли удалять пустые объекты в шаблоне</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -8165,6 +8169,9 @@ public class ReplacerEntry extends EndpointEntry {
 </div>
 <div class="paragraph">
 <p>При этом подстановка в шаблон будет выполнена по соответствию параметра <code>name</code> аннотации <code>@Body</code> и значения, обозначенного через <code>${}</code></p>
+</div>
+<div class="paragraph">
+<p>Если необходимо из шаблона удалять пустые объекты вида <code>"key": { }</code>, то в конфигурационном файле необходимо указать параметр <code>api.template.remove.empties = true</code></p>
 </div>
 <div class="paragraph">
 <p>BodyArray используется для параметризации массивов. Элементы массива приводятся к одному типу.
@@ -8710,7 +8717,63 @@ public class ReplacerEntry extends EndpointEntry {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ssl">4.7. SSL</h3>
+<h3 id="_Настройки_проекта_3">4.7. Настройки проекта</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Параметр</th>
+<th class="tableblock halign-center valign-middle">Описание</th>
+<th class="tableblock halign-center valign-middle">Значение по умолчанию</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api.template.remove.empties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Удалять пустые вида "key": { } из шаблона</p>
+<p class="tableblock">Возможные значения: true или false.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api.baseURI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Базовый урл</p>
+<p class="tableblock">Пример: https//localhost:8080</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api.endpoint.package</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Путь к Endpoint объектам</p>
+<p class="tableblock">Пример: ru.qa.rest</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api.template.encoding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Кодировка шаблона</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UTF-8</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api.ssl.relaxed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Упрощенная схема работы с ssl</p>
+<p class="tableblock">Возможные значения: true или false.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api.template.remove.optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Удалять опциональные параметры, которые после подстановки параметров в шаблон, остались с плейхолдером</p>
+<p class="tableblock">Возможные значения: true или false.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_ssl">4.8. SSL</h3>
 <div class="paragraph">
 <p>Включить упрощенную схему работы с ssl можно следующим образом:</p>
 </div>
@@ -8889,7 +8952,7 @@ public class CucumberTest extends Tag{}</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_Настройки_проекта_3">6.2. Настройки проекта</h3>
+<h3 id="_Настройки_проекта_4">6.2. Настройки проекта</h3>
 <div class="sect3">
 <h4 id="_Конфигурационный_файл_3">6.2.1. Конфигурационный файл</h4>
 <div class="paragraph">
@@ -11846,7 +11909,7 @@ public class CucumberTest {}</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 17.0-SNAPSHOT<br>
-Last updated 2021-11-24 04:58:03 UTC
+Last updated 2021-11-29 09:55:13 UTC
 </div>
 </div>
 </body>
