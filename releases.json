@@ -736,6 +736,22 @@
     }
   },
   {
+    "name": "17.0.0",
+    "path": "releases/17.0.0",
+    "sha": "dbe8b4ef5f472b6cc853ddf97e7d7c045e7f5e08",
+    "size": 0,
+    "url": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/17.0.0?ref=master",
+    "html_url": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/17.0.0",
+    "git_url": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/dbe8b4ef5f472b6cc853ddf97e7d7c045e7f5e08",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sbtqa/page-factory-2-site/contents/releases/17.0.0?ref=master",
+      "git": "https://api.github.com/repos/sbtqa/page-factory-2-site/git/trees/dbe8b4ef5f472b6cc853ddf97e7d7c045e7f5e08",
+      "html": "https://github.com/sbtqa/page-factory-2-site/tree/master/releases/17.0.0"
+    }
+  },
+  {
     "name": "snapshot",
     "path": "releases/snapshot",
     "sha": "b3445869c08aac4dd57adc54711a9410d28e545b",
