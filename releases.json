@@ -784,6 +784,22 @@
     }
   },
   {
+    "name": "18.0.1",
+    "path": "releases/18.0.1",
+    "sha": "0a7bd2c3ed210316746433258ae61531ad16b38f",
+    "size": 0,
+    "url": "https://api.github.com/repos/sbtqa/sbtqa.github.io/contents/releases/18.0.1?ref=master",
+    "html_url": "https://github.com/sbtqa/sbtqa.github.io/tree/master/releases/18.0.1",
+    "git_url": "https://api.github.com/repos/sbtqa/sbtqa.github.io/git/trees/0a7bd2c3ed210316746433258ae61531ad16b38f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sbtqa/sbtqa.github.io/contents/releases/18.0.1?ref=master",
+      "git": "https://api.github.com/repos/sbtqa/sbtqa.github.io/git/trees/0a7bd2c3ed210316746433258ae61531ad16b38f",
+      "html": "https://github.com/sbtqa/sbtqa.github.io/tree/master/releases/18.0.1"
+    }
+  },
+  {
     "name": "snapshot",
     "path": "releases/snapshot",
     "sha": "4583e06d46209bfc668b06c706f22e71e861af58",
