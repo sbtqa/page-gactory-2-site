@@ -898,16 +898,16 @@
   {
     "name": "snapshot",
     "path": "releases/snapshot",
-    "sha": "bc36c4d04657a8c96260b8d40fc13e6ee273d00c",
+    "sha": "487492f8b60f43399856a2e2ecbcfe0e56857b95",
     "size": 0,
     "url": "https://api.github.com/repos/sbtqa/sbtqa.github.io/contents/releases/snapshot?ref=master",
     "html_url": "https://github.com/sbtqa/sbtqa.github.io/tree/master/releases/snapshot",
-    "git_url": "https://api.github.com/repos/sbtqa/sbtqa.github.io/git/trees/bc36c4d04657a8c96260b8d40fc13e6ee273d00c",
+    "git_url": "https://api.github.com/repos/sbtqa/sbtqa.github.io/git/trees/487492f8b60f43399856a2e2ecbcfe0e56857b95",
     "download_url": null,
     "type": "dir",
     "_links": {
       "self": "https://api.github.com/repos/sbtqa/sbtqa.github.io/contents/releases/snapshot?ref=master",
-      "git": "https://api.github.com/repos/sbtqa/sbtqa.github.io/git/trees/bc36c4d04657a8c96260b8d40fc13e6ee273d00c",
+      "git": "https://api.github.com/repos/sbtqa/sbtqa.github.io/git/trees/487492f8b60f43399856a2e2ecbcfe0e56857b95",
       "html": "https://github.com/sbtqa/sbtqa.github.io/tree/master/releases/snapshot"
     }
   }
