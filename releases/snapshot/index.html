@@ -923,6 +923,14 @@ public abstract class YourPage extends WebPage {
 }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Также можно переопределить декоратор для всего проекта, для этого необходимо добавить следующий параметр в файл конфигурации application.properties</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>plugins.html.decorator.fqcn = ru.sbtqa.tag.pagefactory2example.html.loader.MyCustomHtmlElementDecorator</code></pre>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_Поиск_элементов">2.4. Поиск элементов</h3>
@@ -4231,6 +4239,14 @@ public abstract class YourPage extends HTMLPage {
         super(new HtmlElementDecorator(new HtmlElementLocatorFactory(Environment.getDriverService().getDriver())));
     }
 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Также можно переопределить декоратор для всего проекта, для этого необходимо добавить следующий параметр в файл конфигурации application.properties</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>plugins.html.decorator.fqcn = ru.sbtqa.tag.pagefactory2example.html.loader.MyCustomHtmlElementDecorator</code></pre>
 </div>
 </div>
 </div>
@@ -9590,6 +9606,14 @@ public abstract class YourPage extends MobilePage {
 }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Также можно переопределить декоратор для всего проекта, для этого необходимо добавить следующий параметр в файл конфигурации application.properties</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>plugins.html.decorator.fqcn = ru.sbtqa.tag.pagefactory2example.html.loader.MyCustomHtmlElementDecorator</code></pre>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_Методы_работы_с_элементами_3">6.5. Методы работы с элементами</h3>
@@ -11909,7 +11933,7 @@ public class CucumberTest {}</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 17.0-SNAPSHOT<br>
-Last updated 2023-04-26 03:59:58 UTC
+Last updated 2023-05-05 06:27:04 UTC
 </div>
 </div>
 </body>
