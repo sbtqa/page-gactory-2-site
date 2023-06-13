@@ -620,6 +620,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_Шаги_работы_с_api_в_английской_локализации">4.6. Шаги работы с API в английской локализации</a></li>
 <li><a href="#_Настройки_проекта_3">4.7. Настройки проекта</a></li>
 <li><a href="#_ssl">4.8. SSL</a></li>
+<li><a href="#_Филтрация_запросов">4.9. Филтрация запросов</a></li>
 </ul>
 </li>
 <li><a href="#_mq_plugin">5. MQ plugin</a>
@@ -8749,10 +8750,11 @@ public class ReplacerEntry extends EndpointEntry {
 </thead>
 <tfoot>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">api.template.remove.empties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Удалять пустые вида "key": { } из шаблона</p>
-<p class="tableblock">Возможные значения: true или false.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api.request.filters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Фильтры для запросов</p>
+<p class="tableblock">Возможные значения: путь до классов, которые реализуют интерфейс <code>io.restassured.filter.Filter</code></p>
+<p class="tableblock">Если используется несколько фильтров, то указываются через запятую</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tfoot>
 <tbody>
@@ -8785,6 +8787,12 @@ public class ReplacerEntry extends EndpointEntry {
 <p class="tableblock">Возможные значения: true или false.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api.template.remove.empties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Удалять пустые вида "key": { } из шаблона</p>
+<p class="tableblock">Возможные значения: true или false.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -8800,6 +8808,21 @@ public class ReplacerEntry extends EndpointEntry {
 </div>
 <div class="paragraph">
 <p>Подробнее об этом можно узнать в документации <a href="https://github.com/rest-assured/rest-assured/wiki/Usage#ssl" class="ext-link" target="_blank" rel="noopener">rest-assured</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Филтрация_запросов">4.9. Филтрация запросов</h3>
+<div class="paragraph">
+<p>Фильтр позволяет проверять и изменять запрос до того, как он будет отправлен, а также проверять и изменять ответ до того, как он вернется. Фильтры можно использовать для реализации пользовательских схем аутентификации, управления сеансами, ведения журналов и т. д. Чтобы создать фильтр, вам необходимо реализовать интерфейс <code>io.restassured.filter.Filter</code>
+Чтобы использовать фильтр, вы можете указать в параметре классы фильтров (если несколько, то необходимо указывать через запятую):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>api.request.filters = ru.sbtqa.tag.api.TestFilter</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Подробнее об этом можно узнать в документации <a href="https://github.com/rest-assured/rest-assured/wiki/Usage#filters" class="ext-link" target="_blank" rel="noopener">rest-assured</a></p>
 </div>
 </div>
 </div>
@@ -11933,7 +11956,7 @@ public class CucumberTest {}</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 17.0-SNAPSHOT<br>
-Last updated 2023-06-09 08:27:43 UTC
+Last updated 2023-06-13 04:36:37 UTC
 </div>
 </div>
 </body>
